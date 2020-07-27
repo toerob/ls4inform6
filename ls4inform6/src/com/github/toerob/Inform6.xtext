@@ -1,0 +1,371 @@
+grammar com.github.toerob.Inform6 with org.eclipse.xtext.common.Terminals
+
+generate inform6 "http://www.xtext.org/toerob/inform6/Inform6"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+/*
+Inform 6 grammar for Xtext lexer and parser generation for use with the 
+Language Server Protocol (LSP) as a code assister within various of editors
+
+ 
+The MIT License (MIT)
+
+Copyright (c) 2020 Tomas Öberg
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. 
+ */
+ 
+Program:
+	(directives+=Directive | imports+=IncludeDeclaration)*;
+
+
+//=============================================================
+// D I R E C T I V E S 
+//=============================================================
+Directive:
+	ReleaseDirective
+	| ZcharacterDirective
+	| CommentDeclaration
+	| ReplaceDirective
+	| SerialDirective
+	| SwitchesDeclaration
+	| GlobalDeclaration
+	| GlobalDefaultDeclaration
+	| GlobalConstantDeclaration
+	| GlobalFunctionDefinition
+	| AttributeDeclaration
+	| PropertyDeclaration
+	| ClassDeclaration
+	| ObjectDeclaration
+	| IdlessObjectDeclaration
+	| NearbyDeclaration
+	| VerbDeclaration
+	| ArrayDeclaration
+	| PropertyDirective
+	| MessageDirective
+	| {Directive} EndDirective
+	| {Directive} LowStringDirective
+	| {Directive} PREPROCESSORDIR
+	| {Directive} FakeActionDirective
+	| {Directive} SystemFileDirective
+;
+
+
+SystemFileDirective:
+	'System_file' ';'
+;
+
+FakeActionDirective:
+	'Fake_Action' ID ';'
+;
+
+MessageDirective:
+	'Message' name=ID? string=STRING ';' 
+;
+
+ZcharacterDirective: 
+	'Zcharacter' string=STRING ';' 
+;
+
+CommentDeclaration:
+	CompilerDirective
+	| {CommentDeclaration} SL_COMMENT
+;
+
+CompilerDirective:
+	value=COMPILER_DIRECTIVE_COMMENT
+;
+
+
+IncludeDeclaration:
+	('Include'|'Link') importURI=STRING ';';
+
+EndDirective:
+	"End" ';'
+;
+
+//FIXME: DIRECTIONS should be able to cross reference the same way as attributes
+PropertyDirective:
+	"Property" additive='additive'? name=(ID|DIRECTIONS|'found_in') value=ID? ';'
+;
+
+LowStringDirective:
+	"Lowstring" ID STRING ";"
+;
+
+ReleaseDirective:	name="Release" version=INT ';';
+ReplaceDirective:	name="Replace" id=ID ';';
+SerialDirective:	name="Serial" serial=STRING ';';
+
+GlobalConstantDeclaration:
+	'Constant' name=ID '='? value=GlobalConstantValue? ';';
+
+GlobalDefaultDeclaration:
+	'Default' name=ID '='? value=GlobalConstantValue? ';';
+
+
+SwitchesDeclaration:	name='Switches' (switches+=Primary*) ';';
+
+//FIXME: 'meta' here should be a global declaration, and instead used as a [GlobalDeclaration]
+// in the grammar instead of a keyword.
+GlobalDeclaration:		'Global' name=(ID|'meta') ('=' value=Primary)? ';';
+GlobalConstantValue:	name=Primary;
+
+AttributeDeclaration: 	'Attribute' name=ID ';';
+PropertyDeclaration: 	'Property' name=ID value=Primary ';';
+
+ClassDeclaration:
+	{ClassDeclaration} 
+		('Class'|'class') name=ID 
+			(cardinality='(' max=Primary ')')?
+				(properties+=(ClassSection|PropertySection|AttributeSection))? 
+				(','? properties+=(ClassSection|PropertySection|AttributeSection))*
+		';'
+	;	
+
+ObjectDeclaration:
+	({ObjectDeclaration} (object='Object'|superType=[ClassDeclaration|ID]) level+=BYTE_ARROW* name=ID headline=STRING? in=[ObjectDeclaration]?
+		(properties+=(ClassSection|PropertySection|AttributeSection))? 
+		(','? properties+=(ClassSection|PropertySection|AttributeSection))*)
+	';'
+;
+
+IdlessObjectDeclaration:
+	{ObjectDeclaration} (object='Object'|superType=[ClassDeclaration|ID]) level+=BYTE_ARROW* name=STRING? in=[ObjectDeclaration]?
+		(properties+=(ClassSection|PropertySection|AttributeSection))? 
+		(','? properties+=(ClassSection|PropertySection|AttributeSection))*
+	';'
+;
+
+NearbyDeclaration:
+	{ObjectDeclaration} 'Nearby' name=ID? headline=STRING in=[ObjectDeclaration|ID]?
+		(properties+=(ClassSection|PropertySection|AttributeSection))? 
+		(','? properties+=(ClassSection|PropertySection|AttributeSection))*
+	';'
+;
+
+VerbDeclaration:
+	{VerbDeclaration} name='Verb' ^meta='meta'? syn+=STRING* defintions+=VerbBody* ';' 
+	| {VerbDeclaration} name='Extend' only='only'? syn+=STRING* ('first'|'last')? defintions+=VerbBody* ';' 
+;
+
+VerbBody:
+	'*' definitions+=VerbAssignment* BYTE_ARROW name=ID reverse='reverse'?
+;
+
+VerbAssignment:
+	Primary
+	| ID '=' Primary
+	| {VerbAssignment} STRING ('/' STRING)+
+;
+
+ArrayDeclaration:
+	'Array' name=(ID|'buffer') arrayBody=ArrayType
+	';'
+;
+
+// TODO: See Swedish.h, arrays need to be further refined
+ArrayType:
+	{BYTE_ARRAY} type=BYTE_ARROW content+=PrimaryExpression* 
+	| {WORD_ARRAY} type=WORD_ARROW content+=PrimaryExpression*
+	| {TABLE_ARRAY} type=('table'|'buffer') size=Primary? content+=Primary?
+	| {STRING_ARRAY} type='string' size=Primary? content+=STRING?
+;
+
+// NOTE: Just enough to make statements such as
+// PARSE_BUFFER_LEN/WORDSIZE pass. This needs more work
+
+PrimaryExpression returns PrimaryExpression:
+	left=Primary ('/'|'*'|'+'|'-') right=Primary
+	| '(' left=Primary ')'
+	| left=Primary
+;
+
+ClassSection:
+	({PropertySection} name='class' (classProperty=Property))	
+;
+
+PropertySection:
+	({PropertySection} name=('with'|'private') 
+		(properties+=Property)? (',' properties+=Property)*
+		| {PropertySection} PREPROCESSORDIR	
+	) ','?
+;
+
+AttributeSection:
+	{AttributeSection} name='has' attributes+=Attribute (attributes+=Attribute)*;
+
+//FIXME: DIRECTIONS here should be able to cross reference the same way as attributes, 
+// so it should be removed and be replaced with something either as [PropertyDirective|ID] or
+// ID if not declared before
+
+Property:
+	{Property} name=ID (method=Method | array=AbstractArray) 
+	| 
+	{Property}
+		(name=DIRECTIONS) 
+			(objectReference=[ObjectDeclaration|ID]
+			|value=Primary
+			|method=Method
+			|array=AbstractArray)
+	| {Property} 'found_in' (
+			objectReferences+=[ObjectDeclaration|ID]*
+			|method=Method
+			|value=Primary
+		)
+;
+
+AbstractArray:
+	{AbstractArray} (array+=Primary? (array+=Primary)*)
+	;
+
+Method returns AbstractProperty:
+	'[' functionBody=FunctionBody ']'
+;
+
+GlobalFunctionDefinition:
+	'[' functionBody=FunctionBody ']'
+	';'
+;
+
+FunctionBody:
+	(	
+		Expression
+		|';'|':'|'('|')'|'/'|'-'|'--'|'+'|'~'|'='|'!'|'*'|','|'#'|'##'
+		|'string'
+		|'reverse'
+		|'meta'
+		|'buffer'
+		|'table'
+		|'has'
+		|'hasnt'
+		|'Class'
+		|'class'
+		|'Object'
+		|'last'
+		|'first'
+		|'only'
+	)*
+;
+
+/* Encapsulates all possibly combinations into one abstract function body 
+ * TODO: this should be broken up into real expression and statements, so real 
+ * analysis can be made
+ */
+Expression:	
+	(ANY_OTHER|STRING|INT|ID|ML_COMMENT|SL_COMMENT|WS
+		|PREPROCESSORDIR
+		|BYTE_ARROW
+		|WORD_ARROW
+		|DIRECTIONS
+		|HEX
+		|BINARY
+	) ';'?	
+;
+
+Primary:
+	{Primary} id=ID 
+	| number=Number 
+	| {Primary} string=STRING 
+	| {Primary} direction=DIRECTIONS
+	| {Primary} hex=HEX
+	| {Primary} binary=BINARY
+	;
+	
+
+
+Number:
+	{Number} negative='-'? value=INT
+;
+Attribute:
+	{Attribute} '~'? name=[AttributeDeclaration|ID]
+;
+
+terminal BYTE_ARROW: '->';
+terminal WORD_ARROW: '-->';
+	
+terminal DIRECTIONS:
+	'e_to'|'w_to'|'n_to'|'s_to'|'u_to'|'d_to'|'se_to'|'sw_to'|'nw_to'|'ne_to'|'in_to'|'out_to'
+;
+
+@Override	
+terminal INT returns ecore::EInt:
+	('0'..'9')* ('.' ('0'..'9')+)?;
+	
+terminal HEX:
+	'$'  ('0'..'9'|'a'..'f'|'A'..'F')*;
+
+terminal BINARY:
+	'$' '$' ('0'|'1')*;
+
+terminal COMPILER_DIRECTIVE_COMMENT: '!' '%' !('\n'|'\r')* ('\r'? '\n')?;
+
+@Override 
+terminal SL_COMMENT: '!' !('\n'|'\r')* ('\r'? '\n')?;
+
+@Override 
+terminal STRING:
+			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+		;
+
+
+// For now, just skip preprocessor directives
+terminal PREPROCESSORDIR :
+		'#'
+		(
+			(I F D E F)
+			| (I F N D E F)
+			| (E N D I F)
+			| (I F T R U E)
+			| (I F F A L S E)
+			| (I F N O T )
+			| (D E F I N E)
+			| (I F V ('3'|'5'|'8') )
+			| ID // Catch all else with this, in case it gets mixed up with addresses 
+		)
+		!(';')* ';';
+
+terminal fragment A: 'A'|'a';
+terminal fragment B: 'B'|'b';
+terminal fragment C: 'C'|'c';
+terminal fragment D: 'D'|'d';
+terminal fragment E: 'E'|'e';
+terminal fragment F: 'F'|'f';
+terminal fragment G: 'G'|'g';
+terminal fragment H: 'H'|'h';
+terminal fragment I: 'I'|'i';
+terminal fragment J: 'J'|'j';
+terminal fragment K: 'K'|'k';
+terminal fragment L: 'L'|'l';
+terminal fragment M: 'M'|'m';
+terminal fragment N: 'N'|'n';
+terminal fragment O: 'O'|'o';
+terminal fragment P: 'P'|'p';
+terminal fragment Q: 'Q'|'q';
+terminal fragment R: 'R'|'r';
+terminal fragment S: 'S'|'s';
+terminal fragment T: 'T'|'t';
+terminal fragment U: 'U'|'u';
+terminal fragment V: 'V'|'v';
+terminal fragment W: 'W'|'w';
+terminal fragment X: 'X'|'x';
+terminal fragment Y: 'Y'|'y';
+terminal fragment Z: 'Z'|'z';

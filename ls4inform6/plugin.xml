@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.xtext.org/toerob/inform6/Inform6"
+			class = "com.github.toerob.inform6.Inform6Package"
+			genModel = "model/generated/Inform6.genmodel" />
+	</extension>
+</plugin>
