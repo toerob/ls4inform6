@@ -4,6 +4,7 @@
 package com.github.toerob.ui.labeling;
 
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
@@ -47,6 +48,8 @@ import com.google.inject.Inject;
  * https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#label-provider
  */
 public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
+
+	private static final String GLOBAL_FUNCTION_STR = "Global function";
 
 	@Inject
 	public Inform6LabelProvider(AdapterFactoryLabelProvider delegate) {
@@ -158,13 +161,19 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 	public String text(ClassSection ele) {
 		return "Superclasses";
 	}
-	
 
 	public String text(GlobalFunctionDefinition ele) {
-		int firstBracket = ele.getFunctionBody().indexOf("[");
-		int endOfVariableNames = ele.getFunctionBody().indexOf(";", firstBracket);
-		String functionName = ele.getFunctionBody().substring(firstBracket + 1, endOfVariableNames);
-		return functionName + ": Global function";
+		if (!ele.getFunctionHeader().getVariables().isEmpty()) {
+			String functionName = ele.getFunctionHeader().getVariables().get(0);
+			int size = ele.getFunctionHeader().getVariables().size();
+			if (size > 1) {
+				List<String> variableList = ele.getFunctionHeader().getVariables().subList(1, size);
+				String variables = variableList.stream().collect(Collectors.joining(", "));
+				return functionName + "(" + variables + ") ( " + GLOBAL_FUNCTION_STR + ")";
+			}
+			return functionName + "( " + GLOBAL_FUNCTION_STR + ")";
+		}
+		return GLOBAL_FUNCTION_STR;
 	}
 
 	// Constant, globals, attributes and imports

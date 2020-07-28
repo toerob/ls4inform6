@@ -3,12 +3,16 @@
  */
 package com.github.toerob.inform6.impl;
 
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalFunctionDefinition;
 import com.github.toerob.inform6.Inform6Package;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -20,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.github.toerob.inform6.impl.GlobalFunctionDefinitionImpl#getFunctionHeader <em>Function Header</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.GlobalFunctionDefinitionImpl#getFunctionBody <em>Function Body</em>}</li>
  * </ul>
  *
@@ -28,24 +33,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements GlobalFunctionDefinition
 {
   /**
-   * The default value of the '{@link #getFunctionBody() <em>Function Body</em>}' attribute.
+   * The cached value of the '{@link #getFunctionHeader() <em>Function Header</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunctionBody()
+   * @see #getFunctionHeader()
    * @generated
    * @ordered
    */
-  protected static final String FUNCTION_BODY_EDEFAULT = null;
+  protected FunctionHeader functionHeader;
 
   /**
-   * The cached value of the '{@link #getFunctionBody() <em>Function Body</em>}' attribute.
+   * The cached value of the '{@link #getFunctionBody() <em>Function Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFunctionBody()
    * @generated
    * @ordered
    */
-  protected String functionBody = FUNCTION_BODY_EDEFAULT;
+  protected Expression functionBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +79,57 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
    * @generated
    */
   @Override
-  public String getFunctionBody()
+  public FunctionHeader getFunctionHeader()
+  {
+    return functionHeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFunctionHeader(FunctionHeader newFunctionHeader, NotificationChain msgs)
+  {
+    FunctionHeader oldFunctionHeader = functionHeader;
+    functionHeader = newFunctionHeader;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, oldFunctionHeader, newFunctionHeader);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFunctionHeader(FunctionHeader newFunctionHeader)
+  {
+    if (newFunctionHeader != functionHeader)
+    {
+      NotificationChain msgs = null;
+      if (functionHeader != null)
+        msgs = ((InternalEObject)functionHeader).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, null, msgs);
+      if (newFunctionHeader != null)
+        msgs = ((InternalEObject)newFunctionHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, null, msgs);
+      msgs = basicSetFunctionHeader(newFunctionHeader, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, newFunctionHeader, newFunctionHeader));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Expression getFunctionBody()
   {
     return functionBody;
   }
@@ -84,13 +139,56 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setFunctionBody(String newFunctionBody)
+  public NotificationChain basicSetFunctionBody(Expression newFunctionBody, NotificationChain msgs)
   {
-    String oldFunctionBody = functionBody;
+    Expression oldFunctionBody = functionBody;
     functionBody = newFunctionBody;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY, oldFunctionBody, functionBody));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY, oldFunctionBody, newFunctionBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFunctionBody(Expression newFunctionBody)
+  {
+    if (newFunctionBody != functionBody)
+    {
+      NotificationChain msgs = null;
+      if (functionBody != null)
+        msgs = ((InternalEObject)functionBody).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY, null, msgs);
+      if (newFunctionBody != null)
+        msgs = ((InternalEObject)newFunctionBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY, null, msgs);
+      msgs = basicSetFunctionBody(newFunctionBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY, newFunctionBody, newFunctionBody));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        return basicSetFunctionHeader(null, msgs);
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
+        return basicSetFunctionBody(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -103,6 +201,8 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        return getFunctionHeader();
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
         return getFunctionBody();
     }
@@ -119,8 +219,11 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        setFunctionHeader((FunctionHeader)newValue);
+        return;
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
-        setFunctionBody((String)newValue);
+        setFunctionBody((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +239,11 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        setFunctionHeader((FunctionHeader)null);
+        return;
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
-        setFunctionBody(FUNCTION_BODY_EDEFAULT);
+        setFunctionBody((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -153,27 +259,12 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        return functionHeader != null;
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
-        return FUNCTION_BODY_EDEFAULT == null ? functionBody != null : !FUNCTION_BODY_EDEFAULT.equals(functionBody);
+        return functionBody != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (functionBody: ");
-    result.append(functionBody);
-    result.append(')');
-    return result.toString();
   }
 
 } //GlobalFunctionDefinitionImpl

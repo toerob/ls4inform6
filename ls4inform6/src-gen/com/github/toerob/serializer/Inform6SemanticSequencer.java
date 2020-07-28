@@ -14,6 +14,9 @@ import com.github.toerob.inform6.ClassDeclaration;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionBody;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -100,6 +103,26 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case Inform6Package.DIRECTIVE:
 				sequence_Directive(context, (Directive) semanticObject); 
+				return; 
+			case Inform6Package.EXPRESSION:
+				sequence_FunctionBody(context, (Expression) semanticObject); 
+				return; 
+			case Inform6Package.FUNCTION_BODY:
+				if (rule == grammarAccess.getAnyTokenRule()) {
+					sequence_AnyToken(context, (FunctionBody) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getExpressionRule()) {
+					sequence_Expression(context, (FunctionBody) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getUnparsedTokenRule()) {
+					sequence_UnparsedToken(context, (FunctionBody) semanticObject); 
+					return; 
+				}
+				else break;
+			case Inform6Package.FUNCTION_HEADER:
+				sequence_FunctionHeader(context, (FunctionHeader) semanticObject); 
 				return; 
 			case Inform6Package.GLOBAL_CONSTANT_DECLARATION:
 				sequence_GlobalConstantDeclaration(context, (GlobalConstantDeclaration) semanticObject); 
@@ -223,6 +246,18 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     AnyToken returns FunctionBody
+	 *
+	 * Constraint:
+	 *     unparsed=UnparsedToken?
+	 */
+	protected void sequence_AnyToken(ISerializationContext context, FunctionBody semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Directive returns ArrayDeclaration
 	 *     ArrayDeclaration returns ArrayDeclaration
 	 *
@@ -263,7 +298,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ArrayType returns TABLE_ARRAY
 	 *
 	 * Constraint:
-	 *     ((type='table' | type='buffer') size=Primary? content+=Primary?)
+	 *     ((type='table' | type='buffer') size=Primary? content+=Primary*)
 	 */
 	protected void sequence_ArrayType(ISerializationContext context, TABLE_ARRAY semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -341,7 +376,8 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=ID 
 	 *         (cardinality='(' max=Primary)? 
 	 *         (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *         (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
+	 *         properties+=ClassSection? 
+	 *         ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
 	 *     )
 	 */
 	protected void sequence_ClassDeclaration(ISerializationContext context, ClassDeclaration semanticObject) {
@@ -417,6 +453,42 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Expression returns FunctionBody
+	 *
+	 * Constraint:
+	 *     (anyToken=AnyToken | semicolon=';')
+	 */
+	protected void sequence_Expression(ISerializationContext context, FunctionBody semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FunctionBody returns Expression
+	 *
+	 * Constraint:
+	 *     expressions+=Expression*
+	 */
+	protected void sequence_FunctionBody(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FunctionHeader returns FunctionHeader
+	 *
+	 * Constraint:
+	 *     variables+=ID*
+	 */
+	protected void sequence_FunctionHeader(ISerializationContext context, FunctionHeader semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Directive returns GlobalConstantDeclaration
 	 *     GlobalConstantDeclaration returns GlobalConstantDeclaration
 	 *
@@ -478,16 +550,10 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     GlobalFunctionDefinition returns GlobalFunctionDefinition
 	 *
 	 * Constraint:
-	 *     functionBody=FunctionBody
+	 *     (functionHeader=FunctionHeader? functionBody=FunctionBody)
 	 */
 	protected void sequence_GlobalFunctionDefinition(ISerializationContext context, GlobalFunctionDefinition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGlobalFunctionDefinitionAccess().getFunctionBodyFunctionBodyParserRuleCall_1_0(), semanticObject.getFunctionBody());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -504,8 +570,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             headline=STRING? 
 	 *             in=[ObjectDeclaration|ID]? 
 	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=ClassSection? 
-	 *             ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
+	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
 	 *         ) | 
 	 *         (
 	 *             (object='Object' | superType=[ClassDeclaration|ID]) 
@@ -513,16 +578,15 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             name=STRING? 
 	 *             in=[ObjectDeclaration|ID]? 
 	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=AttributeSection? 
-	 *             ((properties+=ClassSection | properties+=PropertySection)? properties+=AttributeSection?)*
+	 *             properties+=ClassSection? 
+	 *             ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
 	 *         ) | 
 	 *         (
 	 *             name=ID? 
 	 *             headline=STRING 
 	 *             in=[ObjectDeclaration|ID]? 
 	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=ClassSection? 
-	 *             ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
+	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
 	 *         )
 	 *     )
 	 */
@@ -657,7 +721,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PrimaryExpression returns PrimaryExpression
 	 *
 	 * Constraint:
-	 *     ((left=Primary right=Primary) | left=Primary | left=Primary)
+	 *     ((left=Primary right=Primary) | left=Primary | (left=Primary params+=Expression*))
 	 */
 	protected void sequence_PrimaryExpression(ISerializationContext context, PrimaryExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -677,7 +741,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         direction=DIRECTIONS | 
 	 *         hex=HEX | 
 	 *         binary=BINARY
-	 *     )
+	 *     )?
 	 */
 	protected void sequence_Primary(ISerializationContext context, Primary semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -749,12 +813,11 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         (name=ID object=[ObjectDeclaration|ID]) | 
 	 *         (name=ID (method=Method | array=AbstractArray)) | 
 	 *         (name=DIRECTIONS (objectReference=[ObjectDeclaration|ID] | value=Primary | method=Method | array=AbstractArray)) | 
-	 *         objectReferences+=[ObjectDeclaration|ID]+ | 
-	 *         method=Method | 
-	 *         value=Primary
-	 *     )?
+	 *         ((objectReferences+=[ObjectDeclaration|ID]+ | method=Method | value=Primary)? name=ID val=Primary)
+	 *     )
 	 */
 	protected void sequence_Property(ISerializationContext context, Property semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -836,6 +899,54 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (name='Switches' switches+=Primary*)
 	 */
 	protected void sequence_SwitchesDeclaration(ISerializationContext context, SwitchesDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     UnparsedToken returns FunctionBody
+	 *
+	 * Constraint:
+	 *     (
+	 *         token=':' | 
+	 *         token='(' | 
+	 *         token=')' | 
+	 *         token='/' | 
+	 *         token='-' | 
+	 *         token='--' | 
+	 *         token='+' | 
+	 *         token='~' | 
+	 *         token='=' | 
+	 *         token='!' | 
+	 *         token='*' | 
+	 *         token=',' | 
+	 *         token='#' | 
+	 *         token='##' | 
+	 *         token='string' | 
+	 *         token='reverse' | 
+	 *         token='meta' | 
+	 *         token='buffer' | 
+	 *         token='table' | 
+	 *         token='has' | 
+	 *         token='hasnt' | 
+	 *         token='Class' | 
+	 *         token='class' | 
+	 *         token='Object' | 
+	 *         token='last' | 
+	 *         token='move' | 
+	 *         token='to' | 
+	 *         token='in' | 
+	 *         token='first' | 
+	 *         token='print' | 
+	 *         token='print_ret' | 
+	 *         token='self' | 
+	 *         token='true' | 
+	 *         token='false' | 
+	 *         token='only'
+	 *     )
+	 */
+	protected void sequence_UnparsedToken(ISerializationContext context, FunctionBody semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

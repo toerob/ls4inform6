@@ -4,11 +4,14 @@
 package com.github.toerob.inform6.impl;
 
 import com.github.toerob.inform6.AbstractProperty;
+import com.github.toerob.inform6.Expression;
 import com.github.toerob.inform6.Inform6Package;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -29,24 +32,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AbstractPropertyImpl extends MinimalEObjectImpl.Container implements AbstractProperty
 {
   /**
-   * The default value of the '{@link #getFunctionBody() <em>Function Body</em>}' attribute.
+   * The cached value of the '{@link #getFunctionBody() <em>Function Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFunctionBody()
    * @generated
    * @ordered
    */
-  protected static final String FUNCTION_BODY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFunctionBody() <em>Function Body</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunctionBody()
-   * @generated
-   * @ordered
-   */
-  protected String functionBody = FUNCTION_BODY_EDEFAULT;
+  protected Expression functionBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +68,7 @@ public class AbstractPropertyImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public String getFunctionBody()
+  public Expression getFunctionBody()
   {
     return functionBody;
   }
@@ -85,13 +78,54 @@ public class AbstractPropertyImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setFunctionBody(String newFunctionBody)
+  public NotificationChain basicSetFunctionBody(Expression newFunctionBody, NotificationChain msgs)
   {
-    String oldFunctionBody = functionBody;
+    Expression oldFunctionBody = functionBody;
     functionBody = newFunctionBody;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY, oldFunctionBody, functionBody));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY, oldFunctionBody, newFunctionBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFunctionBody(Expression newFunctionBody)
+  {
+    if (newFunctionBody != functionBody)
+    {
+      NotificationChain msgs = null;
+      if (functionBody != null)
+        msgs = ((InternalEObject)functionBody).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY, null, msgs);
+      if (newFunctionBody != null)
+        msgs = ((InternalEObject)newFunctionBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY, null, msgs);
+      msgs = basicSetFunctionBody(newFunctionBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY, newFunctionBody, newFunctionBody));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY:
+        return basicSetFunctionBody(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -121,7 +155,7 @@ public class AbstractPropertyImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY:
-        setFunctionBody((String)newValue);
+        setFunctionBody((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,7 +172,7 @@ public class AbstractPropertyImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY:
-        setFunctionBody(FUNCTION_BODY_EDEFAULT);
+        setFunctionBody((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -155,26 +189,9 @@ public class AbstractPropertyImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case Inform6Package.ABSTRACT_PROPERTY__FUNCTION_BODY:
-        return FUNCTION_BODY_EDEFAULT == null ? functionBody != null : !FUNCTION_BODY_EDEFAULT.equals(functionBody);
+        return functionBody != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (functionBody: ");
-    result.append(functionBody);
-    result.append(')');
-    return result.toString();
   }
 
 } //AbstractPropertyImpl
