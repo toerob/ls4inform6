@@ -26,7 +26,7 @@ The language server jar can be placed
 
 ## Disclaimer
 
-This language server is by no means feature complete yet. It will need tons of improvement but it may already serve useful and is therefore released as beta at an unfinished state.
+This language server is by no means feature complete yet. It will need tons of improvement but it may already be useful to someone and is therefore released in an unfinished state.
 
 # License and credit
 The language Server for Inform 6 is powered by the XText framework (https://www.eclipse.org/Xtext/index.html) licensed under the EPL 2.0 license (https://www.eclipse.org/legal/epl-2.0/). 
