@@ -11,8 +11,7 @@ NOTE: Library folders (or any unexplicit include directive) will need to be refe
 
 !% +include_path=../../lib/,/usr/local/share/inform/lib/
 
-As seen above, the paths can both be relative (to the current file) or absolute.
-
+As seen above, the paths can both be relative to the current file or absolute and separated by commas. (No spacing allowed though)
 
 
 ## Usage
