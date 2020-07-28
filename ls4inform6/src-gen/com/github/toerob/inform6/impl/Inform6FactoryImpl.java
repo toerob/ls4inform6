@@ -5,6 +5,7 @@ package com.github.toerob.inform6.impl;
 
 import com.github.toerob.inform6.AbstractArray;
 import com.github.toerob.inform6.AbstractProperty;
+import com.github.toerob.inform6.AnyToken;
 import com.github.toerob.inform6.ArrayDeclaration;
 import com.github.toerob.inform6.ArrayType;
 import com.github.toerob.inform6.Attribute;
@@ -16,6 +17,9 @@ import com.github.toerob.inform6.ClassSection;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionBody;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -134,7 +138,6 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
       case Inform6Package.VERB_ASSIGNMENT: return createVerbAssignment();
       case Inform6Package.ARRAY_DECLARATION: return createArrayDeclaration();
       case Inform6Package.ARRAY_TYPE: return createArrayType();
-      case Inform6Package.PRIMARY_EXPRESSION: return createPrimaryExpression();
       case Inform6Package.CLASS_SECTION: return createClassSection();
       case Inform6Package.PROPERTY_SECTION: return createPropertySection();
       case Inform6Package.ATTRIBUTE_SECTION: return createAttributeSection();
@@ -142,6 +145,11 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
       case Inform6Package.ABSTRACT_ARRAY: return createAbstractArray();
       case Inform6Package.ABSTRACT_PROPERTY: return createAbstractProperty();
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION: return createGlobalFunctionDefinition();
+      case Inform6Package.EXPRESSION: return createExpression();
+      case Inform6Package.FUNCTION_HEADER: return createFunctionHeader();
+      case Inform6Package.PRIMARY_EXPRESSION: return createPrimaryExpression();
+      case Inform6Package.FUNCTION_BODY: return createFunctionBody();
+      case Inform6Package.ANY_TOKEN: return createAnyToken();
       case Inform6Package.PRIMARY: return createPrimary();
       case Inform6Package.NUMBER: return createNumber();
       case Inform6Package.ATTRIBUTE: return createAttribute();
@@ -484,18 +492,6 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
    * @generated
    */
   @Override
-  public PrimaryExpression createPrimaryExpression()
-  {
-    PrimaryExpressionImpl primaryExpression = new PrimaryExpressionImpl();
-    return primaryExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public ClassSection createClassSection()
   {
     ClassSectionImpl classSection = new ClassSectionImpl();
@@ -572,6 +568,66 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
   {
     GlobalFunctionDefinitionImpl globalFunctionDefinition = new GlobalFunctionDefinitionImpl();
     return globalFunctionDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionHeader createFunctionHeader()
+  {
+    FunctionHeaderImpl functionHeader = new FunctionHeaderImpl();
+    return functionHeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PrimaryExpression createPrimaryExpression()
+  {
+    PrimaryExpressionImpl primaryExpression = new PrimaryExpressionImpl();
+    return primaryExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionBody createFunctionBody()
+  {
+    FunctionBodyImpl functionBody = new FunctionBodyImpl();
+    return functionBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnyToken createAnyToken()
+  {
+    AnyTokenImpl anyToken = new AnyTokenImpl();
+    return anyToken;
   }
 
   /**

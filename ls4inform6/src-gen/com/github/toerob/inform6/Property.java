@@ -17,11 +17,13 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.github.toerob.inform6.Property#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.Property#getObject <em>Object</em>}</li>
  *   <li>{@link com.github.toerob.inform6.Property#getMethod <em>Method</em>}</li>
  *   <li>{@link com.github.toerob.inform6.Property#getArray <em>Array</em>}</li>
  *   <li>{@link com.github.toerob.inform6.Property#getObjectReference <em>Object Reference</em>}</li>
  *   <li>{@link com.github.toerob.inform6.Property#getValue <em>Value</em>}</li>
  *   <li>{@link com.github.toerob.inform6.Property#getObjectReferences <em>Object References</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.Property#getVal <em>Val</em>}</li>
  * </ul>
  *
  * @see com.github.toerob.inform6.Inform6Package#getProperty()
@@ -51,6 +53,28 @@ public interface Property extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Object</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Object</em>' reference.
+   * @see #setObject(ObjectDeclaration)
+   * @see com.github.toerob.inform6.Inform6Package#getProperty_Object()
+   * @model
+   * @generated
+   */
+  ObjectDeclaration getObject();
+
+  /**
+   * Sets the value of the '{@link com.github.toerob.inform6.Property#getObject <em>Object</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Object</em>' reference.
+   * @see #getObject()
+   * @generated
+   */
+  void setObject(ObjectDeclaration value);
 
   /**
    * Returns the value of the '<em><b>Method</b></em>' containment reference.
@@ -151,5 +175,27 @@ public interface Property extends EObject
    * @generated
    */
   EList<ObjectDeclaration> getObjectReferences();
+
+  /**
+   * Returns the value of the '<em><b>Val</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Val</em>' containment reference.
+   * @see #setVal(Primary)
+   * @see com.github.toerob.inform6.Inform6Package#getProperty_Val()
+   * @model containment="true"
+   * @generated
+   */
+  Primary getVal();
+
+  /**
+   * Sets the value of the '{@link com.github.toerob.inform6.Property#getVal <em>Val</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Val</em>' containment reference.
+   * @see #getVal()
+   * @generated
+   */
+  void setVal(Primary value);
 
 } // Property

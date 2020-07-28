@@ -185,18 +185,10 @@ ArrayDeclaration:
 ArrayType:
 	{BYTE_ARRAY} type=BYTE_ARROW content+=PrimaryExpression* 
 	| {WORD_ARRAY} type=WORD_ARROW content+=PrimaryExpression*
-	| {TABLE_ARRAY} type=('table'|'buffer') size=Primary? content+=Primary?
+	| {TABLE_ARRAY} type=('table'|'buffer') size=Primary? content+=Primary*
 	| {STRING_ARRAY} type='string' size=Primary? content+=STRING?
 ;
 
-// NOTE: Just enough to make statements such as
-// PARSE_BUFFER_LEN/WORDSIZE pass. This needs more work
-
-PrimaryExpression returns PrimaryExpression:
-	left=Primary ('/'|'*'|'+'|'-') right=Primary
-	| '(' left=Primary ')'
-	| left=Primary
-;
 
 ClassSection:
 	({PropertySection} name='class' (classProperty=Property))	
@@ -215,12 +207,14 @@ AttributeSection:
 //FIXME: DIRECTIONS here should be able to cross reference the same way as attributes, 
 // so it should be removed and be replaced with something either as [PropertyDirective|ID] or
 // ID if not declared before
+//FIXME: remove found_in and replace with a more general approach
 
 Property:
+	{Property} name=ID (object=[ObjectDeclaration|ID]) 
+	| 
 	{Property} name=ID (method=Method | array=AbstractArray) 
 	| 
-	{Property}
-		(name=DIRECTIONS) 
+	{Property} (name=DIRECTIONS) 
 			(objectReference=[ObjectDeclaration|ID]
 			|value=Primary
 			|method=Method
@@ -229,7 +223,8 @@ Property:
 			objectReferences+=[ObjectDeclaration|ID]*
 			|method=Method
 			|value=Primary
-		)
+	)
+	name=ID val=Primary 
 ;
 
 AbstractArray:
@@ -241,43 +236,130 @@ Method returns AbstractProperty:
 ;
 
 GlobalFunctionDefinition:
-	'[' functionBody=FunctionBody ']'
+	'[' 
+	 	functionHeader=FunctionHeader?
+		functionBody=FunctionBody 
+	']'
 	';'
 ;
 
-FunctionBody:
-	(	
-		Expression
-		|';'|':'|'('|')'|'/'|'-'|'--'|'+'|'~'|'='|'!'|'*'|','|'#'|'##'
-		|'string'
-		|'reverse'
-		|'meta'
-		|'buffer'
-		|'table'
-		|'has'
-		|'hasnt'
-		|'Class'
-		|'class'
-		|'Object'
-		|'last'
-		|'first'
-		|'only'
+FunctionBody returns Expression:
+	{Expression} expressions+=(	
+		// TODO: Each statement needs to be handling primary expressions 
+		// (since these can be a function call or a member of an object 
+		// besides being regular primaries.
+		 
+		//  MoveStatement
+		//| GiveStatement
+		//| PlayerToStatement
+		//| InStatement
+		//| HasHasntStatement
+		//| PrintStatement
+		//| ReturnStatement
+		//|
+		
+		/* Fuzzy parse the rest below this */
+		Expression 
 	)*
+;
+
+FunctionHeader:
+	{FunctionHeader} variables+=ID* ';'
+;
+
+
+/* 
+ReturnStatement:
+	('return' (rvalueObj=[ObjectDeclaration|ID]|rvalue=Primary))
+	|rboolean='rtrue'
+	|rboolean='rfalse' 
+	';'
+;
+
+PrintStatement returns Expression:
+	{Expression} ('print'|'print_ret')? text=STRING ';'
+;
+
+HasHasntStatement:
+	('has'|'hasnt') attribute=[AttributeDeclaration|ID]
+;
+
+InStatement:
+	( first=([ObjectDeclaration|ID]) 'in' second=([ObjectDeclaration|ID]) )
+	| firstID=Primary 'in' secondID=Primary
+;
+
+NotInStatement:
+	( first=([ObjectDeclaration|ID]) 'notin' second=([ObjectDeclaration|ID]) )
+	| firstID=Primary 'notin' secondID=Primary
+;
+
+PlayerToStatement returns FunctionBody:
+	'PlayerTo' '(' (location=[ObjectDeclaration|ID]|primary=Primary) ')' ';'
+;
+
+GiveStatement returns FunctionBody:
+	'give' (first=[ObjectDeclaration|ID]|expr=Expression)  attribute=[AttributeDeclaration|ID] ';'
+;
+
+MoveStatement returns FunctionBody:
+	{FunctionBody} 'move' object1=[ObjectDeclaration|ID] 'to' object2=[ObjectDeclaration|ID] ';'
+;*/
+
+
+
+// NOTE: Just enough to make statements such as
+// PARSE_BUFFER_LEN/WORDSIZE pass. Needs to be handled recursively
+PrimaryExpression returns PrimaryExpression:
+	left=Primary ('/'|'*'|'+'|'-') right=Primary
+	| '(' left=Primary ')'
+	| left=Primary ('(' params+=Expression* ')')?
 ;
 
 /* Encapsulates all possibly combinations into one abstract function body 
  * TODO: this should be broken up into real expression and statements, so real 
  * analysis can be made
  */
-Expression:	
-	(ANY_OTHER|STRING|INT|ID|ML_COMMENT|SL_COMMENT|WS
+Expression returns FunctionBody:	
+	(anyToken=AnyToken|semicolon=';') ';'?	
+;
+
+/* Any token besides ';' */
+AnyToken:
+	{FunctionBody} (unparsed=UnparsedToken|ANY_OTHER|STRING|INT|ID|ML_COMMENT|SL_COMMENT|WS
 		|PREPROCESSORDIR
 		|BYTE_ARROW
 		|WORD_ARROW
 		|DIRECTIONS
 		|HEX
 		|BINARY
-	) ';'?	
+	) 
+;
+
+UnparsedToken returns FunctionBody:
+	token=(':'|'('|')'|'/'|'-'|'--'|'+'|'~'|'='|'!'|'*'|','|'#'|'##'
+	|'string'
+	|'reverse'
+	|'meta'
+	|'buffer'
+	|'table'
+	|'has'
+	|'hasnt'
+	|'Class'
+	|'class'
+	|'Object'
+	|'last'
+	|'move'
+	|'to'
+	|'in'
+	|'first'
+	|'print'
+	|'print_ret'
+	|'self'
+	|'true'
+	|'false'
+	|'only'
+	)
 ;
 
 Primary:
@@ -287,6 +369,9 @@ Primary:
 	| {Primary} direction=DIRECTIONS
 	| {Primary} hex=HEX
 	| {Primary} binary=BINARY
+	| {Primary} 'self'
+	| {Primary} 'true'
+	| {Primary} 'false'
 	;
 	
 
@@ -331,7 +416,7 @@ terminal STRING:
 terminal PREPROCESSORDIR :
 		'#'
 		(
-			(I F D E F)
+			/*(I F D E F)
 			| (I F N D E F)
 			| (E N D I F)
 			| (I F T R U E)
@@ -339,10 +424,12 @@ terminal PREPROCESSORDIR :
 			| (I F N O T )
 			| (D E F I N E)
 			| (I F V ('3'|'5'|'8') )
-			| ID // Catch all else with this, in case it gets mixed up with addresses 
+			|*/ 
+			ID // Catch all else with this, in case it gets mixed up with addresses 
 		)
 		!(';')* ';';
 
+/*
 terminal fragment A: 'A'|'a';
 terminal fragment B: 'B'|'b';
 terminal fragment C: 'C'|'c';
@@ -369,3 +456,4 @@ terminal fragment W: 'W'|'w';
 terminal fragment X: 'X'|'x';
 terminal fragment Y: 'Y'|'y';
 terminal fragment Z: 'Z'|'z';
+*/

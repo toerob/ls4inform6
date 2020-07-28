@@ -22,10 +22,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected Inform6GrammarAccess grammarAccess;
+	protected AbstractElementAlias match_AnyToken_ANY_OTHERTerminalRuleCall_1_1_or_BINARYTerminalRuleCall_1_13_or_BYTE_ARROWTerminalRuleCall_1_9_or_DIRECTIONSTerminalRuleCall_1_11_or_HEXTerminalRuleCall_1_12_or_IDTerminalRuleCall_1_4_or_INTTerminalRuleCall_1_3_or_ML_COMMENTTerminalRuleCall_1_5_or_PREPROCESSORDIRTerminalRuleCall_1_8_or_SL_COMMENTTerminalRuleCall_1_6_or_STRINGTerminalRuleCall_1_2_or_WORD_ARROWTerminalRuleCall_1_10_or_WSTerminalRuleCall_1_7;
 	protected AbstractElementAlias match_Attribute_TildeKeyword_1_q;
 	protected AbstractElementAlias match_ClassDeclaration_ClassKeyword_1_0_or_ClassKeyword_1_1;
 	protected AbstractElementAlias match_ClassDeclaration_CommaKeyword_5_0_q;
 	protected AbstractElementAlias match_Directive_EndDirectiveParserRuleCall_20_1_or_FakeActionDirectiveParserRuleCall_23_1_or_LowStringDirectiveParserRuleCall_21_1_or_PREPROCESSORDIRTerminalRuleCall_22_1_or_SystemFileDirectiveParserRuleCall_24_1;
+	protected AbstractElementAlias match_Expression_SemicolonKeyword_1_q;
 	protected AbstractElementAlias match_GlobalConstantDeclaration_EqualsSignKeyword_2_q;
 	protected AbstractElementAlias match_GlobalDefaultDeclaration_EqualsSignKeyword_2_q;
 	protected AbstractElementAlias match_IdlessObjectDeclaration_CommaKeyword_6_0_q;
@@ -33,6 +35,8 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_NearbyDeclaration_CommaKeyword_6_0_q;
 	protected AbstractElementAlias match_ObjectDeclaration_CommaKeyword_0_7_0_q;
 	protected AbstractElementAlias match_PrimaryExpression_AsteriskKeyword_0_1_1_or_HyphenMinusKeyword_0_1_3_or_PlusSignKeyword_0_1_2_or_SolidusKeyword_0_1_0;
+	protected AbstractElementAlias match_PrimaryExpression___LeftParenthesisKeyword_2_1_0_RightParenthesisKeyword_2_1_2__q;
+	protected AbstractElementAlias match_Primary_FalseKeyword_8_1_or_SelfKeyword_6_1_or_TrueKeyword_7_1;
 	protected AbstractElementAlias match_PropertySection_CommaKeyword_1_q;
 	protected AbstractElementAlias match_VerbAssignment___IDTerminalRuleCall_1_0_EqualsSignKeyword_1_1__q;
 	protected AbstractElementAlias match_VerbAssignment___SolidusKeyword_2_2_0_STRINGTerminalRuleCall_2_2_1__p;
@@ -41,10 +45,12 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (Inform6GrammarAccess) access;
+		match_AnyToken_ANY_OTHERTerminalRuleCall_1_1_or_BINARYTerminalRuleCall_1_13_or_BYTE_ARROWTerminalRuleCall_1_9_or_DIRECTIONSTerminalRuleCall_1_11_or_HEXTerminalRuleCall_1_12_or_IDTerminalRuleCall_1_4_or_INTTerminalRuleCall_1_3_or_ML_COMMENTTerminalRuleCall_1_5_or_PREPROCESSORDIRTerminalRuleCall_1_8_or_SL_COMMENTTerminalRuleCall_1_6_or_STRINGTerminalRuleCall_1_2_or_WORD_ARROWTerminalRuleCall_1_10_or_WSTerminalRuleCall_1_7 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getANY_OTHERTerminalRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getBINARYTerminalRuleCall_1_13()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getBYTE_ARROWTerminalRuleCall_1_9()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getDIRECTIONSTerminalRuleCall_1_11()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getHEXTerminalRuleCall_1_12()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getIDTerminalRuleCall_1_4()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getINTTerminalRuleCall_1_3()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getML_COMMENTTerminalRuleCall_1_5()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getPREPROCESSORDIRTerminalRuleCall_1_8()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getSL_COMMENTTerminalRuleCall_1_6()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getSTRINGTerminalRuleCall_1_2()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getWORD_ARROWTerminalRuleCall_1_10()), new TokenAlias(false, false, grammarAccess.getAnyTokenAccess().getWSTerminalRuleCall_1_7()));
 		match_Attribute_TildeKeyword_1_q = new TokenAlias(false, true, grammarAccess.getAttributeAccess().getTildeKeyword_1());
 		match_ClassDeclaration_ClassKeyword_1_0_or_ClassKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassDeclarationAccess().getClassKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getClassDeclarationAccess().getClassKeyword_1_1()));
 		match_ClassDeclaration_CommaKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getClassDeclarationAccess().getCommaKeyword_5_0());
 		match_Directive_EndDirectiveParserRuleCall_20_1_or_FakeActionDirectiveParserRuleCall_23_1_or_LowStringDirectiveParserRuleCall_21_1_or_PREPROCESSORDIRTerminalRuleCall_22_1_or_SystemFileDirectiveParserRuleCall_24_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDirectiveAccess().getEndDirectiveParserRuleCall_20_1()), new TokenAlias(false, false, grammarAccess.getDirectiveAccess().getFakeActionDirectiveParserRuleCall_23_1()), new TokenAlias(false, false, grammarAccess.getDirectiveAccess().getLowStringDirectiveParserRuleCall_21_1()), new TokenAlias(false, false, grammarAccess.getDirectiveAccess().getPREPROCESSORDIRTerminalRuleCall_22_1()), new TokenAlias(false, false, grammarAccess.getDirectiveAccess().getSystemFileDirectiveParserRuleCall_24_1()));
+		match_Expression_SemicolonKeyword_1_q = new TokenAlias(false, true, grammarAccess.getExpressionAccess().getSemicolonKeyword_1());
 		match_GlobalConstantDeclaration_EqualsSignKeyword_2_q = new TokenAlias(false, true, grammarAccess.getGlobalConstantDeclarationAccess().getEqualsSignKeyword_2());
 		match_GlobalDefaultDeclaration_EqualsSignKeyword_2_q = new TokenAlias(false, true, grammarAccess.getGlobalDefaultDeclarationAccess().getEqualsSignKeyword_2());
 		match_IdlessObjectDeclaration_CommaKeyword_6_0_q = new TokenAlias(false, true, grammarAccess.getIdlessObjectDeclarationAccess().getCommaKeyword_6_0());
@@ -52,6 +58,8 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 		match_NearbyDeclaration_CommaKeyword_6_0_q = new TokenAlias(false, true, grammarAccess.getNearbyDeclarationAccess().getCommaKeyword_6_0());
 		match_ObjectDeclaration_CommaKeyword_0_7_0_q = new TokenAlias(false, true, grammarAccess.getObjectDeclarationAccess().getCommaKeyword_0_7_0());
 		match_PrimaryExpression_AsteriskKeyword_0_1_1_or_HyphenMinusKeyword_0_1_3_or_PlusSignKeyword_0_1_2_or_SolidusKeyword_0_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrimaryExpressionAccess().getAsteriskKeyword_0_1_1()), new TokenAlias(false, false, grammarAccess.getPrimaryExpressionAccess().getHyphenMinusKeyword_0_1_3()), new TokenAlias(false, false, grammarAccess.getPrimaryExpressionAccess().getPlusSignKeyword_0_1_2()), new TokenAlias(false, false, grammarAccess.getPrimaryExpressionAccess().getSolidusKeyword_0_1_0()));
+		match_PrimaryExpression___LeftParenthesisKeyword_2_1_0_RightParenthesisKeyword_2_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_2_1_2()));
+		match_Primary_FalseKeyword_8_1_or_SelfKeyword_6_1_or_TrueKeyword_7_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getFalseKeyword_8_1()), new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getSelfKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getPrimaryAccess().getTrueKeyword_7_1()));
 		match_PropertySection_CommaKeyword_1_q = new TokenAlias(false, true, grammarAccess.getPropertySectionAccess().getCommaKeyword_1());
 		match_VerbAssignment___IDTerminalRuleCall_1_0_EqualsSignKeyword_1_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getVerbAssignmentAccess().getIDTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getVerbAssignmentAccess().getEqualsSignKeyword_1_1()));
 		match_VerbAssignment___SolidusKeyword_2_2_0_STRINGTerminalRuleCall_2_2_1__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getVerbAssignmentAccess().getSolidusKeyword_2_2_0()), new TokenAlias(false, false, grammarAccess.getVerbAssignmentAccess().getSTRINGTerminalRuleCall_2_2_1()));
@@ -60,16 +68,28 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getBYTE_ARROWRule())
+		if (ruleCall.getRule() == grammarAccess.getANY_OTHERRule())
+			return getANY_OTHERToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getBINARYRule())
+			return getBINARYToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getBYTE_ARROWRule())
 			return getBYTE_ARROWToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getDIRECTIONSRule())
+			return getDIRECTIONSToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndDirectiveRule())
 			return getEndDirectiveToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getFakeActionDirectiveRule())
 			return getFakeActionDirectiveToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getHEXRule())
+			return getHEXToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getINTRule())
+			return getINTToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getLowStringDirectiveRule())
 			return getLowStringDirectiveToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getML_COMMENTRule())
+			return getML_COMMENTToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getPREPROCESSORDIRRule())
 			return getPREPROCESSORDIRToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getSL_COMMENTRule())
@@ -78,7 +98,30 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 			return getSTRINGToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getSystemFileDirectiveRule())
 			return getSystemFileDirectiveToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getWORD_ARROWRule())
+			return getWORD_ARROWToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getWSRule())
+			return getWSToken(semanticObject, ruleCall, node);
 		return "";
+	}
+	
+	/**
+	 * terminal ANY_OTHER: .;
+	 */
+	protected String getANY_OTHERToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * terminal BINARY:
+	 * 	'$' '$' ('0'|'1')*;
+	 */
+	protected String getBINARYToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "$$";
 	}
 	
 	/**
@@ -88,6 +131,17 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "->";
+	}
+	
+	/**
+	 * terminal DIRECTIONS:
+	 * 	'e_to'|'w_to'|'n_to'|'s_to'|'u_to'|'d_to'|'se_to'|'sw_to'|'nw_to'|'ne_to'|'in_to'|'out_to'
+	 * ;
+	 */
+	protected String getDIRECTIONSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "e_to";
 	}
 	
 	/**
@@ -113,9 +167,30 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * terminal HEX:
+	 * 	'$'  ('0'..'9'|'a'..'f'|'A'..'F')*;
+	 */
+	protected String getHEXToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "$";
+	}
+	
+	/**
 	 * terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	 */
 	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
+	
+	/**
+	 * @Override	
+	 * terminal INT returns ecore::EInt:
+	 * 	('0'..'9')* ('.' ('0'..'9')+)?;
+	 */
+	protected String getINTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "";
@@ -133,24 +208,26 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * terminal ML_COMMENT : '/*' -> '*&#47;';
+	 */
+	protected String getML_COMMENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "/*";
+	}
+	
+	/**
 	 * terminal PREPROCESSORDIR :
 	 * 		'#'
 	 * 		(
-	 * 			(I F D E F)
-	 * 			| (I F N D E F)
-	 * 			| (E N D I F)
-	 * 			| (I F T R U E)
-	 * 			| (I F F A L S E)
-	 * 			| (I F N O T )
-	 * 			| (D E F I N E)
-	 * 			| (I F V ('3'|'5'|'8') )
-	 * 			| ID 		)
+	 * 			 
+	 * 			ID 		)
 	 * 		!(';')* ';';
 	 */
 	protected String getPREPROCESSORDIRToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "#IFDE;";
+		return "#;";
 	}
 	
 	/**
@@ -187,13 +264,33 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 		return "System_file ;";
 	}
 	
+	/**
+	 * terminal WORD_ARROW: '-->';
+	 */
+	protected String getWORD_ARROWToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "-->";
+	}
+	
+	/**
+	 * terminal WS         : (' '|'\t'|'\r'|'\n')+;
+	 */
+	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return " ";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Attribute_TildeKeyword_1_q.equals(syntax))
+			if (match_AnyToken_ANY_OTHERTerminalRuleCall_1_1_or_BINARYTerminalRuleCall_1_13_or_BYTE_ARROWTerminalRuleCall_1_9_or_DIRECTIONSTerminalRuleCall_1_11_or_HEXTerminalRuleCall_1_12_or_IDTerminalRuleCall_1_4_or_INTTerminalRuleCall_1_3_or_ML_COMMENTTerminalRuleCall_1_5_or_PREPROCESSORDIRTerminalRuleCall_1_8_or_SL_COMMENTTerminalRuleCall_1_6_or_STRINGTerminalRuleCall_1_2_or_WORD_ARROWTerminalRuleCall_1_10_or_WSTerminalRuleCall_1_7.equals(syntax))
+				emit_AnyToken_ANY_OTHERTerminalRuleCall_1_1_or_BINARYTerminalRuleCall_1_13_or_BYTE_ARROWTerminalRuleCall_1_9_or_DIRECTIONSTerminalRuleCall_1_11_or_HEXTerminalRuleCall_1_12_or_IDTerminalRuleCall_1_4_or_INTTerminalRuleCall_1_3_or_ML_COMMENTTerminalRuleCall_1_5_or_PREPROCESSORDIRTerminalRuleCall_1_8_or_SL_COMMENTTerminalRuleCall_1_6_or_STRINGTerminalRuleCall_1_2_or_WORD_ARROWTerminalRuleCall_1_10_or_WSTerminalRuleCall_1_7(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Attribute_TildeKeyword_1_q.equals(syntax))
 				emit_Attribute_TildeKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ClassDeclaration_ClassKeyword_1_0_or_ClassKeyword_1_1.equals(syntax))
 				emit_ClassDeclaration_ClassKeyword_1_0_or_ClassKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -201,6 +298,8 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ClassDeclaration_CommaKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Directive_EndDirectiveParserRuleCall_20_1_or_FakeActionDirectiveParserRuleCall_23_1_or_LowStringDirectiveParserRuleCall_21_1_or_PREPROCESSORDIRTerminalRuleCall_22_1_or_SystemFileDirectiveParserRuleCall_24_1.equals(syntax))
 				emit_Directive_EndDirectiveParserRuleCall_20_1_or_FakeActionDirectiveParserRuleCall_23_1_or_LowStringDirectiveParserRuleCall_21_1_or_PREPROCESSORDIRTerminalRuleCall_22_1_or_SystemFileDirectiveParserRuleCall_24_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Expression_SemicolonKeyword_1_q.equals(syntax))
+				emit_Expression_SemicolonKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_GlobalConstantDeclaration_EqualsSignKeyword_2_q.equals(syntax))
 				emit_GlobalConstantDeclaration_EqualsSignKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_GlobalDefaultDeclaration_EqualsSignKeyword_2_q.equals(syntax))
@@ -215,6 +314,10 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ObjectDeclaration_CommaKeyword_0_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PrimaryExpression_AsteriskKeyword_0_1_1_or_HyphenMinusKeyword_0_1_3_or_PlusSignKeyword_0_1_2_or_SolidusKeyword_0_1_0.equals(syntax))
 				emit_PrimaryExpression_AsteriskKeyword_0_1_1_or_HyphenMinusKeyword_0_1_3_or_PlusSignKeyword_0_1_2_or_SolidusKeyword_0_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PrimaryExpression___LeftParenthesisKeyword_2_1_0_RightParenthesisKeyword_2_1_2__q.equals(syntax))
+				emit_PrimaryExpression___LeftParenthesisKeyword_2_1_0_RightParenthesisKeyword_2_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Primary_FalseKeyword_8_1_or_SelfKeyword_6_1_or_TrueKeyword_7_1.equals(syntax))
+				emit_Primary_FalseKeyword_8_1_or_SelfKeyword_6_1_or_TrueKeyword_7_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PropertySection_CommaKeyword_1_q.equals(syntax))
 				emit_PropertySection_CommaKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_VerbAssignment___IDTerminalRuleCall_1_0_EqualsSignKeyword_1_1__q.equals(syntax))
@@ -227,6 +330,31 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     (
+	  *         ANY_OTHER | 
+	  *         STRING | 
+	  *         INT | 
+	  *         ID | 
+	  *         ML_COMMENT | 
+	  *         SL_COMMENT | 
+	  *         WS | 
+	  *         PREPROCESSORDIR | 
+	  *         BYTE_ARROW | 
+	  *         WORD_ARROW | 
+	  *         DIRECTIONS | 
+	  *         HEX | 
+	  *         BINARY
+	  *     )
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_AnyToken_ANY_OTHERTerminalRuleCall_1_1_or_BINARYTerminalRuleCall_1_13_or_BYTE_ARROWTerminalRuleCall_1_9_or_DIRECTIONSTerminalRuleCall_1_11_or_HEXTerminalRuleCall_1_12_or_IDTerminalRuleCall_1_4_or_INTTerminalRuleCall_1_3_or_ML_COMMENTTerminalRuleCall_1_5_or_PREPROCESSORDIRTerminalRuleCall_1_8_or_SL_COMMENTTerminalRuleCall_1_6_or_STRINGTerminalRuleCall_1_2_or_WORD_ARROWTerminalRuleCall_1_10_or_WSTerminalRuleCall_1_7(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     '~'?
@@ -282,6 +410,18 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) (rule start)
 	 */
 	protected void emit_Directive_EndDirectiveParserRuleCall_20_1_or_FakeActionDirectiveParserRuleCall_23_1_or_LowStringDirectiveParserRuleCall_21_1_or_PREPROCESSORDIRTerminalRuleCall_22_1_or_SystemFileDirectiveParserRuleCall_24_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ';'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     anyToken=AnyToken (ambiguity) (rule end)
+	 *     semicolon=';' (ambiguity) (rule end)
+	 */
+	protected void emit_Expression_SemicolonKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -420,6 +560,29 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     left=Primary (ambiguity) (rule end)
+	 */
+	protected void emit_PrimaryExpression___LeftParenthesisKeyword_2_1_0_RightParenthesisKeyword_2_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'self' | 'true' | 'false'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ID '=')? (ambiguity) (rule start)
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_Primary_FalseKeyword_8_1_or_SelfKeyword_6_1_or_TrueKeyword_7_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -437,6 +600,7 @@ public class Inform6SyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (ID '=')?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) ('self' | 'true' | 'false') (rule start)
 	 *     (rule start) (ambiguity) binary=BINARY
 	 *     (rule start) (ambiguity) direction=DIRECTIONS
 	 *     (rule start) (ambiguity) hex=HEX

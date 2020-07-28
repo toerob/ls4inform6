@@ -10,7 +10,7 @@ import org.eclipse.xtext.ui.editor.hyperlinking.DefaultHyperlinkDetector;
 
 public class Inform6IHyperlinkDetector extends DefaultHyperlinkDetector {
 	private static final String INCLUDE = "Include";
-	private static final String PLAYER_TO = "PlayerTo";
+	//private static final String PLAYER_TO = "PlayerTo";
 
 	public Inform6IHyperlinkDetector() {
 		super();
@@ -41,6 +41,7 @@ public class Inform6IHyperlinkDetector extends DefaultHyperlinkDetector {
 
 		} else {
 			
+			/*
 			int playerToStartIndex = candidate.indexOf(PLAYER_TO);
 			int playerToStopIndex = candidate.indexOf(';', playerToStartIndex);
 			if (playerToStartIndex != -1) {
@@ -49,7 +50,7 @@ public class Inform6IHyperlinkDetector extends DefaultHyperlinkDetector {
 						&& ((targetRegion.getOffset() + targetRegion.getLength()) > offset))
 					return new IHyperlink[] {
 							new Inform6LocationHyperlink(targetRegion, candidate.substring(playerToStartIndex+PLAYER_TO.length()+1, playerToStopIndex-1)) };
-			}
+			}*/
 		}
 		
 		return super.detectHyperlinks(textViewer, region, canShowMultipleHyperlinks);
