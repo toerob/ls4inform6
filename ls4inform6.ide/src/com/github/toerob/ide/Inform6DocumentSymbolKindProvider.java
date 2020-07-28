@@ -1,9 +1,17 @@
 package com.github.toerob.ide;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.lsp4j.SymbolKind;
 import org.eclipse.xtext.ide.server.symbol.DocumentSymbolMapper.DocumentSymbolKindProvider;
 
+import com.github.toerob.inform6.ClassDeclaration;
+import com.github.toerob.inform6.GlobalFunctionDefinition;
+import com.github.toerob.inform6.ObjectDeclaration;
+import com.github.toerob.inform6.Property;
+import com.github.toerob.inform6.PropertySection;
+
 public class Inform6DocumentSymbolKindProvider extends DocumentSymbolKindProvider {
-	/*
+	
 	@Override
 	public SymbolKind getSymbolKind(EObject object) {
 		if (object instanceof ClassDeclaration) {
@@ -18,5 +26,5 @@ public class Inform6DocumentSymbolKindProvider extends DocumentSymbolKindProvide
 			return SymbolKind.Struct;
 		}
 		return super.getSymbolKind(object);
-	}*/
+	}
 }
