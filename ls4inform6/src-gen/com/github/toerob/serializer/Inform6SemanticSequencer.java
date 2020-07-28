@@ -341,7 +341,8 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=ID 
 	 *         (cardinality='(' max=Primary)? 
 	 *         (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *         (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
+	 *         properties+=ClassSection? 
+	 *         ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
 	 *     )
 	 */
 	protected void sequence_ClassDeclaration(ISerializationContext context, ClassDeclaration semanticObject) {
@@ -520,8 +521,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             headline=STRING 
 	 *             in=[ObjectDeclaration|ID]? 
 	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=ClassSection? 
-	 *             ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
+	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
 	 *         )
 	 *     )
 	 */
