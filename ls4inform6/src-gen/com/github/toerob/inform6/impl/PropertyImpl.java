@@ -34,13 +34,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getObject <em>Object</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getArray <em>Array</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getObjectReference <em>Object Reference</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getObjectReferences <em>Object References</em>}</li>
- *   <li>{@link com.github.toerob.inform6.impl.PropertyImpl#getVal <em>Val</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,16 +64,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getObject() <em>Object</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getObject()
-   * @generated
-   * @ordered
-   */
-  protected ObjectDeclaration object;
 
   /**
    * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference.
@@ -128,16 +116,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   protected EList<ObjectDeclaration> objectReferences;
 
   /**
-   * The cached value of the '{@link #getVal() <em>Val</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVal()
-   * @generated
-   * @ordered
-   */
-  protected Primary val;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -181,51 +159,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ObjectDeclaration getObject()
-  {
-    if (object != null && object.eIsProxy())
-    {
-      InternalEObject oldObject = (InternalEObject)object;
-      object = (ObjectDeclaration)eResolveProxy(oldObject);
-      if (object != oldObject)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Inform6Package.PROPERTY__OBJECT, oldObject, object));
-      }
-    }
-    return object;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ObjectDeclaration basicGetObject()
-  {
-    return object;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setObject(ObjectDeclaration newObject)
-  {
-    ObjectDeclaration oldObject = object;
-    object = newObject;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY__OBJECT, oldObject, object));
   }
 
   /**
@@ -444,56 +377,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * @generated
    */
   @Override
-  public Primary getVal()
-  {
-    return val;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVal(Primary newVal, NotificationChain msgs)
-  {
-    Primary oldVal = val;
-    val = newVal;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY__VAL, oldVal, newVal);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVal(Primary newVal)
-  {
-    if (newVal != val)
-    {
-      NotificationChain msgs = null;
-      if (val != null)
-        msgs = ((InternalEObject)val).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.PROPERTY__VAL, null, msgs);
-      if (newVal != null)
-        msgs = ((InternalEObject)newVal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.PROPERTY__VAL, null, msgs);
-      msgs = basicSetVal(newVal, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY__VAL, newVal, newVal));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -504,8 +387,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
         return basicSetArray(null, msgs);
       case Inform6Package.PROPERTY__VALUE:
         return basicSetValue(null, msgs);
-      case Inform6Package.PROPERTY__VAL:
-        return basicSetVal(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -522,9 +403,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     {
       case Inform6Package.PROPERTY__NAME:
         return getName();
-      case Inform6Package.PROPERTY__OBJECT:
-        if (resolve) return getObject();
-        return basicGetObject();
       case Inform6Package.PROPERTY__METHOD:
         return getMethod();
       case Inform6Package.PROPERTY__ARRAY:
@@ -536,8 +414,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
         return getValue();
       case Inform6Package.PROPERTY__OBJECT_REFERENCES:
         return getObjectReferences();
-      case Inform6Package.PROPERTY__VAL:
-        return getVal();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -556,9 +432,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
       case Inform6Package.PROPERTY__NAME:
         setName((String)newValue);
         return;
-      case Inform6Package.PROPERTY__OBJECT:
-        setObject((ObjectDeclaration)newValue);
-        return;
       case Inform6Package.PROPERTY__METHOD:
         setMethod((AbstractProperty)newValue);
         return;
@@ -574,9 +447,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
       case Inform6Package.PROPERTY__OBJECT_REFERENCES:
         getObjectReferences().clear();
         getObjectReferences().addAll((Collection<? extends ObjectDeclaration>)newValue);
-        return;
-      case Inform6Package.PROPERTY__VAL:
-        setVal((Primary)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -595,9 +465,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
       case Inform6Package.PROPERTY__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case Inform6Package.PROPERTY__OBJECT:
-        setObject((ObjectDeclaration)null);
-        return;
       case Inform6Package.PROPERTY__METHOD:
         setMethod((AbstractProperty)null);
         return;
@@ -612,9 +479,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
         return;
       case Inform6Package.PROPERTY__OBJECT_REFERENCES:
         getObjectReferences().clear();
-        return;
-      case Inform6Package.PROPERTY__VAL:
-        setVal((Primary)null);
         return;
     }
     super.eUnset(featureID);
@@ -632,8 +496,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     {
       case Inform6Package.PROPERTY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Inform6Package.PROPERTY__OBJECT:
-        return object != null;
       case Inform6Package.PROPERTY__METHOD:
         return method != null;
       case Inform6Package.PROPERTY__ARRAY:
@@ -644,8 +506,6 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
         return value != null;
       case Inform6Package.PROPERTY__OBJECT_REFERENCES:
         return objectReferences != null && !objectReferences.isEmpty();
-      case Inform6Package.PROPERTY__VAL:
-        return val != null;
     }
     return super.eIsSet(featureID);
   }

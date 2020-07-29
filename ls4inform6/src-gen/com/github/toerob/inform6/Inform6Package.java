@@ -1021,6 +1021,43 @@ public interface Inform6Package extends EPackage
   int ARRAY_TYPE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.github.toerob.inform6.impl.PrimaryExpressionImpl
+   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimaryExpression()
+   * @generated
+   */
+  int PRIMARY_EXPRESSION = 27;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPRESSION__LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPRESSION__RIGHT = 1;
+
+  /**
+   * The number of structural features of the '<em>Primary Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPRESSION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.ClassSectionImpl <em>Class Section</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1028,7 +1065,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getClassSection()
    * @generated
    */
-  int CLASS_SECTION = 27;
+  int CLASS_SECTION = 28;
 
   /**
    * The number of structural features of the '<em>Class Section</em>' class.
@@ -1047,7 +1084,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertySection()
    * @generated
    */
-  int PROPERTY_SECTION = 28;
+  int PROPERTY_SECTION = 29;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1093,7 +1130,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAttributeSection()
    * @generated
    */
-  int ATTRIBUTE_SECTION = 29;
+  int ATTRIBUTE_SECTION = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1130,7 +1167,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 30;
+  int PROPERTY = 31;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1142,22 +1179,13 @@ public interface Inform6Package extends EPackage
   int PROPERTY__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Object</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY__OBJECT = 1;
-
-  /**
    * The feature id for the '<em><b>Method</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY__METHOD = 2;
+  int PROPERTY__METHOD = 1;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
@@ -1166,7 +1194,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY__ARRAY = 3;
+  int PROPERTY__ARRAY = 2;
 
   /**
    * The feature id for the '<em><b>Object Reference</b></em>' reference.
@@ -1175,7 +1203,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY__OBJECT_REFERENCE = 4;
+  int PROPERTY__OBJECT_REFERENCE = 3;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1184,7 +1212,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY__VALUE = 5;
+  int PROPERTY__VALUE = 4;
 
   /**
    * The feature id for the '<em><b>Object References</b></em>' reference list.
@@ -1193,16 +1221,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY__OBJECT_REFERENCES = 6;
-
-  /**
-   * The feature id for the '<em><b>Val</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY__VAL = 7;
+  int PROPERTY__OBJECT_REFERENCES = 5;
 
   /**
    * The number of structural features of the '<em>Property</em>' class.
@@ -1211,7 +1230,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_FEATURE_COUNT = 8;
+  int PROPERTY_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.AbstractArrayImpl <em>Abstract Array</em>}' class.
@@ -1221,7 +1240,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAbstractArray()
    * @generated
    */
-  int ABSTRACT_ARRAY = 31;
+  int ABSTRACT_ARRAY = 32;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference list.
@@ -1249,10 +1268,10 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAbstractProperty()
    * @generated
    */
-  int ABSTRACT_PROPERTY = 32;
+  int ABSTRACT_PROPERTY = 33;
 
   /**
-   * The feature id for the '<em><b>Function Body</b></em>' containment reference.
+   * The feature id for the '<em><b>Function Body</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1277,25 +1296,16 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getGlobalFunctionDefinition()
    * @generated
    */
-  int GLOBAL_FUNCTION_DEFINITION = 33;
+  int GLOBAL_FUNCTION_DEFINITION = 34;
 
   /**
-   * The feature id for the '<em><b>Function Header</b></em>' containment reference.
+   * The feature id for the '<em><b>Function Body</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER = DIRECTIVE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Function Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = DIRECTIVE_FEATURE_COUNT + 1;
+  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = DIRECTIVE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Global Function Definition</em>' class.
@@ -1304,183 +1314,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.ExpressionImpl <em>Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.ExpressionImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getExpression()
-   * @generated
-   */
-  int EXPRESSION = 34;
-
-  /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__EXPRESSIONS = 0;
-
-  /**
-   * The number of structural features of the '<em>Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.FunctionHeaderImpl <em>Function Header</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.FunctionHeaderImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionHeader()
-   * @generated
-   */
-  int FUNCTION_HEADER = 35;
-
-  /**
-   * The feature id for the '<em><b>Variables</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_HEADER__VARIABLES = 0;
-
-  /**
-   * The number of structural features of the '<em>Function Header</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_HEADER_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.PrimaryExpressionImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimaryExpression()
-   * @generated
-   */
-  int PRIMARY_EXPRESSION = 36;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_EXPRESSION__LEFT = 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_EXPRESSION__RIGHT = 1;
-
-  /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_EXPRESSION__PARAMS = 2;
-
-  /**
-   * The number of structural features of the '<em>Primary Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_EXPRESSION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.AnyTokenImpl <em>Any Token</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.AnyTokenImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAnyToken()
-   * @generated
-   */
-  int ANY_TOKEN = 38;
-
-  /**
-   * The number of structural features of the '<em>Any Token</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANY_TOKEN_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.FunctionBodyImpl <em>Function Body</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.FunctionBodyImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionBody()
-   * @generated
-   */
-  int FUNCTION_BODY = 37;
-
-  /**
-   * The feature id for the '<em><b>Any Token</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BODY__ANY_TOKEN = ANY_TOKEN_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Semicolon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BODY__SEMICOLON = ANY_TOKEN_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Unparsed</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BODY__UNPARSED = ANY_TOKEN_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Token</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BODY__TOKEN = ANY_TOKEN_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Function Body</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_BODY_FEATURE_COUNT = ANY_TOKEN_FEATURE_COUNT + 4;
+  int GLOBAL_FUNCTION_DEFINITION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.PrimaryImpl <em>Primary</em>}' class.
@@ -1490,7 +1324,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimary()
    * @generated
    */
-  int PRIMARY = 39;
+  int PRIMARY = 35;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1563,7 +1397,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getNumber()
    * @generated
    */
-  int NUMBER = 40;
+  int NUMBER = 36;
 
   /**
    * The feature id for the '<em><b>Negative</b></em>' attribute.
@@ -1600,7 +1434,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 41;
+  int ATTRIBUTE = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1628,7 +1462,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getBYTE_ARRAY()
    * @generated
    */
-  int BYTE_ARRAY = 42;
+  int BYTE_ARRAY = 38;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1665,7 +1499,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getWORD_ARRAY()
    * @generated
    */
-  int WORD_ARRAY = 43;
+  int WORD_ARRAY = 39;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1702,7 +1536,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getTABLE_ARRAY()
    * @generated
    */
-  int TABLE_ARRAY = 44;
+  int TABLE_ARRAY = 40;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1748,7 +1582,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getSTRING_ARRAY()
    * @generated
    */
-  int STRING_ARRAY = 45;
+  int STRING_ARRAY = 41;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -2608,6 +2442,38 @@ public interface Inform6Package extends EPackage
   EAttribute getArrayType_Type();
 
   /**
+   * Returns the meta object for class '{@link com.github.toerob.inform6.PrimaryExpression <em>Primary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primary Expression</em>'.
+   * @see com.github.toerob.inform6.PrimaryExpression
+   * @generated
+   */
+  EClass getPrimaryExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PrimaryExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.github.toerob.inform6.PrimaryExpression#getLeft()
+   * @see #getPrimaryExpression()
+   * @generated
+   */
+  EReference getPrimaryExpression_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PrimaryExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.github.toerob.inform6.PrimaryExpression#getRight()
+   * @see #getPrimaryExpression()
+   * @generated
+   */
+  EReference getPrimaryExpression_Right();
+
+  /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.ClassSection <em>Class Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2714,17 +2580,6 @@ public interface Inform6Package extends EPackage
   EAttribute getProperty_Name();
 
   /**
-   * Returns the meta object for the reference '{@link com.github.toerob.inform6.Property#getObject <em>Object</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Object</em>'.
-   * @see com.github.toerob.inform6.Property#getObject()
-   * @see #getProperty()
-   * @generated
-   */
-  EReference getProperty_Object();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.Property#getMethod <em>Method</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2780,17 +2635,6 @@ public interface Inform6Package extends EPackage
   EReference getProperty_ObjectReferences();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.Property#getVal <em>Val</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Val</em>'.
-   * @see com.github.toerob.inform6.Property#getVal()
-   * @see #getProperty()
-   * @generated
-   */
-  EReference getProperty_Val();
-
-  /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.AbstractArray <em>Abstract Array</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2822,15 +2666,15 @@ public interface Inform6Package extends EPackage
   EClass getAbstractProperty();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.AbstractProperty#getFunctionBody <em>Function Body</em>}'.
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.AbstractProperty#getFunctionBody <em>Function Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Function Body</em>'.
+   * @return the meta object for the attribute '<em>Function Body</em>'.
    * @see com.github.toerob.inform6.AbstractProperty#getFunctionBody()
    * @see #getAbstractProperty()
    * @generated
    */
-  EReference getAbstractProperty_FunctionBody();
+  EAttribute getAbstractProperty_FunctionBody();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.GlobalFunctionDefinition <em>Global Function Definition</em>}'.
@@ -2843,175 +2687,15 @@ public interface Inform6Package extends EPackage
   EClass getGlobalFunctionDefinition();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionHeader <em>Function Header</em>}'.
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody <em>Function Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Function Header</em>'.
-   * @see com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionHeader()
-   * @see #getGlobalFunctionDefinition()
-   * @generated
-   */
-  EReference getGlobalFunctionDefinition_FunctionHeader();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody <em>Function Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Function Body</em>'.
+   * @return the meta object for the attribute '<em>Function Body</em>'.
    * @see com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody()
    * @see #getGlobalFunctionDefinition()
    * @generated
    */
-  EReference getGlobalFunctionDefinition_FunctionBody();
-
-  /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression</em>'.
-   * @see com.github.toerob.inform6.Expression
-   * @generated
-   */
-  EClass getExpression();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Expression#getExpressions <em>Expressions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see com.github.toerob.inform6.Expression#getExpressions()
-   * @see #getExpression()
-   * @generated
-   */
-  EReference getExpression_Expressions();
-
-  /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.FunctionHeader <em>Function Header</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Header</em>'.
-   * @see com.github.toerob.inform6.FunctionHeader
-   * @generated
-   */
-  EClass getFunctionHeader();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.github.toerob.inform6.FunctionHeader#getVariables <em>Variables</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Variables</em>'.
-   * @see com.github.toerob.inform6.FunctionHeader#getVariables()
-   * @see #getFunctionHeader()
-   * @generated
-   */
-  EAttribute getFunctionHeader_Variables();
-
-  /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.PrimaryExpression <em>Primary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Primary Expression</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression
-   * @generated
-   */
-  EClass getPrimaryExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PrimaryExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression#getLeft()
-   * @see #getPrimaryExpression()
-   * @generated
-   */
-  EReference getPrimaryExpression_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PrimaryExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression#getRight()
-   * @see #getPrimaryExpression()
-   * @generated
-   */
-  EReference getPrimaryExpression_Right();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.PrimaryExpression#getParams <em>Params</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression#getParams()
-   * @see #getPrimaryExpression()
-   * @generated
-   */
-  EReference getPrimaryExpression_Params();
-
-  /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.FunctionBody <em>Function Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Body</em>'.
-   * @see com.github.toerob.inform6.FunctionBody
-   * @generated
-   */
-  EClass getFunctionBody();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.FunctionBody#getAnyToken <em>Any Token</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Any Token</em>'.
-   * @see com.github.toerob.inform6.FunctionBody#getAnyToken()
-   * @see #getFunctionBody()
-   * @generated
-   */
-  EReference getFunctionBody_AnyToken();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.FunctionBody#getSemicolon <em>Semicolon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Semicolon</em>'.
-   * @see com.github.toerob.inform6.FunctionBody#getSemicolon()
-   * @see #getFunctionBody()
-   * @generated
-   */
-  EAttribute getFunctionBody_Semicolon();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.FunctionBody#getUnparsed <em>Unparsed</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Unparsed</em>'.
-   * @see com.github.toerob.inform6.FunctionBody#getUnparsed()
-   * @see #getFunctionBody()
-   * @generated
-   */
-  EReference getFunctionBody_Unparsed();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.FunctionBody#getToken <em>Token</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Token</em>'.
-   * @see com.github.toerob.inform6.FunctionBody#getToken()
-   * @see #getFunctionBody()
-   * @generated
-   */
-  EAttribute getFunctionBody_Token();
-
-  /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.AnyToken <em>Any Token</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Any Token</em>'.
-   * @see com.github.toerob.inform6.AnyToken
-   * @generated
-   */
-  EClass getAnyToken();
+  EAttribute getGlobalFunctionDefinition_FunctionBody();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.Primary <em>Primary</em>}'.
@@ -3942,6 +3626,32 @@ public interface Inform6Package extends EPackage
     EAttribute ARRAY_TYPE__TYPE = eINSTANCE.getArrayType_Type();
 
     /**
+     * The meta object literal for the '{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.github.toerob.inform6.impl.PrimaryExpressionImpl
+     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimaryExpression()
+     * @generated
+     */
+    EClass PRIMARY_EXPRESSION = eINSTANCE.getPrimaryExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPRESSION__LEFT = eINSTANCE.getPrimaryExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPRESSION__RIGHT = eINSTANCE.getPrimaryExpression_Right();
+
+    /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.ClassSectionImpl <em>Class Section</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4030,14 +3740,6 @@ public interface Inform6Package extends EPackage
     EAttribute PROPERTY__NAME = eINSTANCE.getProperty_Name();
 
     /**
-     * The meta object literal for the '<em><b>Object</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROPERTY__OBJECT = eINSTANCE.getProperty_Object();
-
-    /**
      * The meta object literal for the '<em><b>Method</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4078,14 +3780,6 @@ public interface Inform6Package extends EPackage
     EReference PROPERTY__OBJECT_REFERENCES = eINSTANCE.getProperty_ObjectReferences();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROPERTY__VAL = eINSTANCE.getProperty_Val();
-
-    /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.AbstractArrayImpl <em>Abstract Array</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4114,12 +3808,12 @@ public interface Inform6Package extends EPackage
     EClass ABSTRACT_PROPERTY = eINSTANCE.getAbstractProperty();
 
     /**
-     * The meta object literal for the '<em><b>Function Body</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Function Body</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ABSTRACT_PROPERTY__FUNCTION_BODY = eINSTANCE.getAbstractProperty_FunctionBody();
+    EAttribute ABSTRACT_PROPERTY__FUNCTION_BODY = eINSTANCE.getAbstractProperty_FunctionBody();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.GlobalFunctionDefinitionImpl <em>Global Function Definition</em>}' class.
@@ -4132,142 +3826,12 @@ public interface Inform6Package extends EPackage
     EClass GLOBAL_FUNCTION_DEFINITION = eINSTANCE.getGlobalFunctionDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Function Header</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Function Body</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER = eINSTANCE.getGlobalFunctionDefinition_FunctionHeader();
-
-    /**
-     * The meta object literal for the '<em><b>Function Body</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = eINSTANCE.getGlobalFunctionDefinition_FunctionBody();
-
-    /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.ExpressionImpl <em>Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.ExpressionImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getExpression()
-     * @generated
-     */
-    EClass EXPRESSION = eINSTANCE.getExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRESSION__EXPRESSIONS = eINSTANCE.getExpression_Expressions();
-
-    /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.FunctionHeaderImpl <em>Function Header</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.FunctionHeaderImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionHeader()
-     * @generated
-     */
-    EClass FUNCTION_HEADER = eINSTANCE.getFunctionHeader();
-
-    /**
-     * The meta object literal for the '<em><b>Variables</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_HEADER__VARIABLES = eINSTANCE.getFunctionHeader_Variables();
-
-    /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.PrimaryExpressionImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimaryExpression()
-     * @generated
-     */
-    EClass PRIMARY_EXPRESSION = eINSTANCE.getPrimaryExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_EXPRESSION__LEFT = eINSTANCE.getPrimaryExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_EXPRESSION__RIGHT = eINSTANCE.getPrimaryExpression_Right();
-
-    /**
-     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_EXPRESSION__PARAMS = eINSTANCE.getPrimaryExpression_Params();
-
-    /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.FunctionBodyImpl <em>Function Body</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.FunctionBodyImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionBody()
-     * @generated
-     */
-    EClass FUNCTION_BODY = eINSTANCE.getFunctionBody();
-
-    /**
-     * The meta object literal for the '<em><b>Any Token</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BODY__ANY_TOKEN = eINSTANCE.getFunctionBody_AnyToken();
-
-    /**
-     * The meta object literal for the '<em><b>Semicolon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_BODY__SEMICOLON = eINSTANCE.getFunctionBody_Semicolon();
-
-    /**
-     * The meta object literal for the '<em><b>Unparsed</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_BODY__UNPARSED = eINSTANCE.getFunctionBody_Unparsed();
-
-    /**
-     * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_BODY__TOKEN = eINSTANCE.getFunctionBody_Token();
-
-    /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.AnyTokenImpl <em>Any Token</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.AnyTokenImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAnyToken()
-     * @generated
-     */
-    EClass ANY_TOKEN = eINSTANCE.getAnyToken();
+    EAttribute GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = eINSTANCE.getGlobalFunctionDefinition_FunctionBody();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.PrimaryImpl <em>Primary</em>}' class.

@@ -5,7 +5,6 @@ package com.github.toerob.inform6.impl;
 
 import com.github.toerob.inform6.AbstractArray;
 import com.github.toerob.inform6.AbstractProperty;
-import com.github.toerob.inform6.AnyToken;
 import com.github.toerob.inform6.ArrayDeclaration;
 import com.github.toerob.inform6.ArrayType;
 import com.github.toerob.inform6.Attribute;
@@ -16,9 +15,6 @@ import com.github.toerob.inform6.ClassSection;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
-import com.github.toerob.inform6.Expression;
-import com.github.toerob.inform6.FunctionBody;
-import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -256,6 +252,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass primaryExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass classSectionEClass = null;
 
   /**
@@ -299,41 +302,6 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   private EClass globalFunctionDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass expressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionHeaderEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass primaryExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionBodyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass anyTokenEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1300,6 +1268,39 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
+  public EClass getPrimaryExpression()
+  {
+    return primaryExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPrimaryExpression_Left()
+  {
+    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPrimaryExpression_Right()
+  {
+    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getClassSection()
   {
     return classSectionEClass;
@@ -1410,7 +1411,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getProperty_Object()
+  public EReference getProperty_Method()
   {
     return (EReference)propertyEClass.getEStructuralFeatures().get(1);
   }
@@ -1421,7 +1422,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getProperty_Method()
+  public EReference getProperty_Array()
   {
     return (EReference)propertyEClass.getEStructuralFeatures().get(2);
   }
@@ -1432,7 +1433,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getProperty_Array()
+  public EReference getProperty_ObjectReference()
   {
     return (EReference)propertyEClass.getEStructuralFeatures().get(3);
   }
@@ -1443,7 +1444,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getProperty_ObjectReference()
+  public EReference getProperty_Value()
   {
     return (EReference)propertyEClass.getEStructuralFeatures().get(4);
   }
@@ -1454,31 +1455,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getProperty_Value()
-  {
-    return (EReference)propertyEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getProperty_ObjectReferences()
   {
-    return (EReference)propertyEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getProperty_Val()
-  {
-    return (EReference)propertyEClass.getEStructuralFeatures().get(7);
+    return (EReference)propertyEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1520,9 +1499,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getAbstractProperty_FunctionBody()
+  public EAttribute getAbstractProperty_FunctionBody()
   {
-    return (EReference)abstractPropertyEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1542,174 +1521,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getGlobalFunctionDefinition_FunctionHeader()
+  public EAttribute getGlobalFunctionDefinition_FunctionBody()
   {
-    return (EReference)globalFunctionDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getGlobalFunctionDefinition_FunctionBody()
-  {
-    return (EReference)globalFunctionDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getExpression()
-  {
-    return expressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getExpression_Expressions()
-  {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getFunctionHeader()
-  {
-    return functionHeaderEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFunctionHeader_Variables()
-  {
-    return (EAttribute)functionHeaderEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPrimaryExpression()
-  {
-    return primaryExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPrimaryExpression_Left()
-  {
-    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPrimaryExpression_Right()
-  {
-    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPrimaryExpression_Params()
-  {
-    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getFunctionBody()
-  {
-    return functionBodyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getFunctionBody_AnyToken()
-  {
-    return (EReference)functionBodyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFunctionBody_Semicolon()
-  {
-    return (EAttribute)functionBodyEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getFunctionBody_Unparsed()
-  {
-    return (EReference)functionBodyEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFunctionBody_Token()
-  {
-    return (EAttribute)functionBodyEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAnyToken()
-  {
-    return anyTokenEClass;
+    return (EAttribute)globalFunctionDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2089,6 +1903,10 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     arrayTypeEClass = createEClass(ARRAY_TYPE);
     createEAttribute(arrayTypeEClass, ARRAY_TYPE__TYPE);
 
+    primaryExpressionEClass = createEClass(PRIMARY_EXPRESSION);
+    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__LEFT);
+    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__RIGHT);
+
     classSectionEClass = createEClass(CLASS_SECTION);
 
     propertySectionEClass = createEClass(PROPERTY_SECTION);
@@ -2102,42 +1920,20 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     propertyEClass = createEClass(PROPERTY);
     createEAttribute(propertyEClass, PROPERTY__NAME);
-    createEReference(propertyEClass, PROPERTY__OBJECT);
     createEReference(propertyEClass, PROPERTY__METHOD);
     createEReference(propertyEClass, PROPERTY__ARRAY);
     createEReference(propertyEClass, PROPERTY__OBJECT_REFERENCE);
     createEReference(propertyEClass, PROPERTY__VALUE);
     createEReference(propertyEClass, PROPERTY__OBJECT_REFERENCES);
-    createEReference(propertyEClass, PROPERTY__VAL);
 
     abstractArrayEClass = createEClass(ABSTRACT_ARRAY);
     createEReference(abstractArrayEClass, ABSTRACT_ARRAY__ARRAY);
 
     abstractPropertyEClass = createEClass(ABSTRACT_PROPERTY);
-    createEReference(abstractPropertyEClass, ABSTRACT_PROPERTY__FUNCTION_BODY);
+    createEAttribute(abstractPropertyEClass, ABSTRACT_PROPERTY__FUNCTION_BODY);
 
     globalFunctionDefinitionEClass = createEClass(GLOBAL_FUNCTION_DEFINITION);
-    createEReference(globalFunctionDefinitionEClass, GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER);
-    createEReference(globalFunctionDefinitionEClass, GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY);
-
-    expressionEClass = createEClass(EXPRESSION);
-    createEReference(expressionEClass, EXPRESSION__EXPRESSIONS);
-
-    functionHeaderEClass = createEClass(FUNCTION_HEADER);
-    createEAttribute(functionHeaderEClass, FUNCTION_HEADER__VARIABLES);
-
-    primaryExpressionEClass = createEClass(PRIMARY_EXPRESSION);
-    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__LEFT);
-    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__RIGHT);
-    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__PARAMS);
-
-    functionBodyEClass = createEClass(FUNCTION_BODY);
-    createEReference(functionBodyEClass, FUNCTION_BODY__ANY_TOKEN);
-    createEAttribute(functionBodyEClass, FUNCTION_BODY__SEMICOLON);
-    createEReference(functionBodyEClass, FUNCTION_BODY__UNPARSED);
-    createEAttribute(functionBodyEClass, FUNCTION_BODY__TOKEN);
-
-    anyTokenEClass = createEClass(ANY_TOKEN);
+    createEAttribute(globalFunctionDefinitionEClass, GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY);
 
     primaryEClass = createEClass(PRIMARY);
     createEAttribute(primaryEClass, PRIMARY__ID);
@@ -2222,7 +2018,6 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     arrayDeclarationEClass.getESuperTypes().add(this.getDirective());
     propertySectionEClass.getESuperTypes().add(this.getClassSection());
     globalFunctionDefinitionEClass.getESuperTypes().add(this.getDirective());
-    functionBodyEClass.getESuperTypes().add(this.getAnyToken());
     primaryEClass.getESuperTypes().add(this.getVerbAssignment());
     bytE_ARRAYEClass.getESuperTypes().add(this.getArrayType());
     worD_ARRAYEClass.getESuperTypes().add(this.getArrayType());
@@ -2334,6 +2129,10 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getArrayType_Type(), ecorePackage.getEString(), "type", null, 0, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(primaryExpressionEClass, PrimaryExpression.class, "PrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrimaryExpression_Left(), this.getPrimary(), null, "left", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrimaryExpression_Right(), this.getPrimary(), null, "right", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(classSectionEClass, ClassSection.class, "ClassSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(propertySectionEClass, PropertySection.class, "PropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2347,42 +2146,20 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProperty_Object(), this.getObjectDeclaration(), null, "object", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_Method(), this.getAbstractProperty(), null, "method", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_Array(), this.getAbstractArray(), null, "array", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_ObjectReference(), this.getObjectDeclaration(), null, "objectReference", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_Value(), this.getPrimary(), null, "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_ObjectReferences(), this.getObjectDeclaration(), null, "objectReferences", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProperty_Val(), this.getPrimary(), null, "val", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractArrayEClass, AbstractArray.class, "AbstractArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAbstractArray_Array(), this.getPrimary(), null, "array", null, 0, -1, AbstractArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractPropertyEClass, AbstractProperty.class, "AbstractProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAbstractProperty_FunctionBody(), this.getExpression(), null, "functionBody", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAbstractProperty_FunctionBody(), ecorePackage.getEString(), "functionBody", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalFunctionDefinitionEClass, GlobalFunctionDefinition.class, "GlobalFunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGlobalFunctionDefinition_FunctionHeader(), this.getFunctionHeader(), null, "functionHeader", null, 0, 1, GlobalFunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGlobalFunctionDefinition_FunctionBody(), this.getExpression(), null, "functionBody", null, 0, 1, GlobalFunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpression_Expressions(), this.getFunctionBody(), null, "expressions", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionHeaderEClass, FunctionHeader.class, "FunctionHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunctionHeader_Variables(), ecorePackage.getEString(), "variables", null, 0, -1, FunctionHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(primaryExpressionEClass, PrimaryExpression.class, "PrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrimaryExpression_Left(), this.getPrimary(), null, "left", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPrimaryExpression_Right(), this.getPrimary(), null, "right", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPrimaryExpression_Params(), this.getFunctionBody(), null, "params", null, 0, -1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionBodyEClass, FunctionBody.class, "FunctionBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionBody_AnyToken(), this.getAnyToken(), null, "anyToken", null, 0, 1, FunctionBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionBody_Semicolon(), ecorePackage.getEString(), "semicolon", null, 0, 1, FunctionBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionBody_Unparsed(), this.getFunctionBody(), null, "unparsed", null, 0, 1, FunctionBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionBody_Token(), ecorePackage.getEString(), "token", null, 0, 1, FunctionBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(anyTokenEClass, AnyToken.class, "AnyToken", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGlobalFunctionDefinition_FunctionBody(), ecorePackage.getEString(), "functionBody", null, 0, 1, GlobalFunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primaryEClass, Primary.class, "Primary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPrimary_Id(), ecorePackage.getEString(), "id", null, 0, 1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

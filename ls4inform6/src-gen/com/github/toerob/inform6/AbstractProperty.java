@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface AbstractProperty extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Function Body</b></em>' containment reference.
+   * Returns the value of the '<em><b>Function Body</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Function Body</em>' containment reference.
-   * @see #setFunctionBody(Expression)
+   * @return the value of the '<em>Function Body</em>' attribute.
+   * @see #setFunctionBody(String)
    * @see com.github.toerob.inform6.Inform6Package#getAbstractProperty_FunctionBody()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Expression getFunctionBody();
+  String getFunctionBody();
 
   /**
-   * Sets the value of the '{@link com.github.toerob.inform6.AbstractProperty#getFunctionBody <em>Function Body</em>}' containment reference.
+   * Sets the value of the '{@link com.github.toerob.inform6.AbstractProperty#getFunctionBody <em>Function Body</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function Body</em>' containment reference.
+   * @param value the new value of the '<em>Function Body</em>' attribute.
    * @see #getFunctionBody()
    * @generated
    */
-  void setFunctionBody(Expression value);
+  void setFunctionBody(String value);
 
 } // AbstractProperty

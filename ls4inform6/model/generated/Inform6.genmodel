@@ -105,6 +105,10 @@
     <genClasses ecoreClass="Inform6.ecore#//ArrayType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//ArrayType/type"/>
     </genClasses>
+    <genClasses ecoreClass="Inform6.ecore#//PrimaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/right"/>
+    </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ClassSection"/>
     <genClasses ecoreClass="Inform6.ecore#//PropertySection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertySection/name"/>
@@ -117,42 +121,21 @@
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//Property">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//Property/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/object"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/method"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/array"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/objectReference"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/objectReferences"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Property/val"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//AbstractArray">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//AbstractArray/array"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//AbstractProperty">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//AbstractProperty/functionBody"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//AbstractProperty/functionBody"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//GlobalFunctionDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//GlobalFunctionDefinition/functionHeader"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//GlobalFunctionDefinition/functionBody"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//GlobalFunctionDefinition/functionBody"/>
     </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//Expression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Expression/expressions"/>
-    </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//FunctionHeader">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//FunctionHeader/variables"/>
-    </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//PrimaryExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/right"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/params"/>
-    </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//FunctionBody">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//FunctionBody/anyToken"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//FunctionBody/semicolon"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//FunctionBody/unparsed"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//FunctionBody/token"/>
-    </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//AnyToken"/>
     <genClasses ecoreClass="Inform6.ecore#//Primary">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//Primary/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Primary/number"/>

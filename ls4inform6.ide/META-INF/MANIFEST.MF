@@ -9,8 +9,7 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: ls4inform6,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- org.eclipse.lsp4j
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: com.github.toerob.ide.contentassist.antlr,
  com.github.toerob.ide.contentassist.antlr.internal
