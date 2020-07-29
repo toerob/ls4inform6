@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -16,10 +17,17 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.scoping.impl.ImportUriGlobalScopeProvider;
+import org.eclipse.xtext.scoping.impl.ImportUriResolver;
+import org.eclipse.xtext.scoping.impl.LoadOnDemandResourceDescriptions;
+import org.eclipse.xtext.util.IAcceptor;
+import org.eclipse.xtext.util.IResourceScopeCache;
 
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.IncludeDeclaration;
+import com.google.inject.Inject;
+import com.google.inject.Provider;
 
 /**
  * Inform6GlobalScopeProvider is responsible for including resources that are
@@ -37,13 +45,51 @@ public class Inform6GlobalScopeProvider extends ImportUriGlobalScopeProvider {
 			);
 
 	private GlobalInformLibraryContext gilManager = GlobalInformLibraryContext.getInstance();
-
-	private static Logger LOGGER = Logger.getLogger(Inform6GlobalScopeProvider.class);
-
+	
+	@Inject
+	private ImportUriResolver importResolver;
+	
+	@Inject
+	private IResourceScopeCache cache;
+	
 	@Override
-	protected LinkedHashSet<URI> getImportedUris(Resource resource) {
+	protected LinkedHashSet<URI> getImportedUris(final Resource resource) {
+		return cache.get(ImportUriGlobalScopeProvider.class.getName(), resource, new Provider<LinkedHashSet<URI>>(){
+			@Override
+			public LinkedHashSet<URI> get() {
+				final LinkedHashSet<URI> uniqueImportURIs = new LinkedHashSet<URI>(5);
+				IAcceptor<String> collector = createURICollector(resource, uniqueImportURIs);
+				TreeIterator<EObject> iterator = resource.getAllContents();
+				while (iterator.hasNext()) {
+					EObject object = iterator.next();
+					collector.accept(importResolver.apply(object));
+				}
+
+				Iterator<URI> uriIter = uniqueImportURIs.iterator();
+				while(uriIter.hasNext()) {
+					if (!EcoreUtil2.isValidUri(resource, uriIter.next()))
+						uriIter.remove();
+				}
+
+				analyzeAndPopulateImports(resource);
+				for (File uri : gilManager.getLibraryFilePaths().values()) {
+					URI createdURI = URI.createURI(uri.toURI().toString());
+					if (!uniqueImportURIs.contains(createdURI)) {
+						uniqueImportURIs.add(createdURI);
+					}
+				}
+				
+				return uniqueImportURIs;
+			}
+		});
+	}
+	
+	
+	
+	private void analyzeAndPopulateImports(Resource resource) {
 		List<String> includePaths = new ArrayList<>();
 		TreeIterator<EObject> iterator = resource.getAllContents();
+		
 		while (iterator.hasNext()) {
 			EObject object = iterator.next();
 			if (object instanceof CompilerDirective) {
@@ -56,7 +102,6 @@ public class Inform6GlobalScopeProvider extends ImportUriGlobalScopeProvider {
 					int indexOfEqualSign = cd.getValue().indexOf('=', indexOfIncludePath);
 					if (indexOfEqualSign != -1 && cd.getValue().length() > indexOfEqualSign + 1) {
 						String pathsAsString = cd.getValue().substring(indexOfEqualSign + 1);
-						// System.out.println("include path value: ");
 						String[] splittedPaths = pathsAsString.split(",");
 						List<String> paths = Arrays.asList(splittedPaths);
 						for (String path : paths) {
@@ -111,16 +156,6 @@ public class Inform6GlobalScopeProvider extends ImportUriGlobalScopeProvider {
 				}
 			}
 		});
-
-		LinkedHashSet<URI> importedUris = super.getImportedUris(resource);
-
-		for (File uri : gilManager.getLibraryFilePaths().values()) {
-			URI createdURI = URI.createURI(uri.toURI().toString());
-			if (!importedUris.contains(createdURI)) {
-				importedUris.add(createdURI);
-			}
-		}
-		return importedUris;
 	}
 
 	private List<URI> appendBaseURIToPaths(List<String> includePaths, URI openedFileURI) {

@@ -4,8 +4,8 @@
 package com.github.toerob.inform6.impl;
 
 import com.github.toerob.inform6.BYTE_ARRAY;
+import com.github.toerob.inform6.Expression;
 import com.github.toerob.inform6.Inform6Package;
-import com.github.toerob.inform6.PrimaryExpression;
 
 import java.util.Collection;
 
@@ -42,7 +42,7 @@ public class BYTE_ARRAYImpl extends ArrayTypeImpl implements BYTE_ARRAY
    * @generated
    * @ordered
    */
-  protected EList<PrimaryExpression> content;
+  protected EList<Expression> content;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class BYTE_ARRAYImpl extends ArrayTypeImpl implements BYTE_ARRAY
    * @generated
    */
   @Override
-  public EList<PrimaryExpression> getContent()
+  public EList<Expression> getContent()
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<PrimaryExpression>(PrimaryExpression.class, this, Inform6Package.BYTE_ARRAY__CONTENT);
+      content = new EObjectContainmentEList<Expression>(Expression.class, this, Inform6Package.BYTE_ARRAY__CONTENT);
     }
     return content;
   }
@@ -125,7 +125,7 @@ public class BYTE_ARRAYImpl extends ArrayTypeImpl implements BYTE_ARRAY
     {
       case Inform6Package.BYTE_ARRAY__CONTENT:
         getContent().clear();
-        getContent().addAll((Collection<? extends PrimaryExpression>)newValue);
+        getContent().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

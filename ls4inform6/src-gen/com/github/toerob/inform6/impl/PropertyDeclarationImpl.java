@@ -24,7 +24,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl#getAdditive <em>Additive</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl#getAliasedProperty <em>Aliased Property</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +54,26 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getAdditive() <em>Additive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdditive()
+   * @generated
+   * @ordered
+   */
+  protected static final String ADDITIVE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAdditive() <em>Additive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdditive()
+   * @generated
+   * @ordered
+   */
+  protected String additive = ADDITIVE_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,6 +82,16 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
    * @ordered
    */
   protected Primary value;
+
+  /**
+   * The cached value of the '{@link #getAliasedProperty() <em>Aliased Property</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAliasedProperty()
+   * @generated
+   * @ordered
+   */
+  protected Primary aliasedProperty;
 
   /**
    * <!-- begin-user-doc -->
@@ -105,6 +137,31 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DECLARATION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getAdditive()
+  {
+    return additive;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAdditive(String newAdditive)
+  {
+    String oldAdditive = additive;
+    additive = newAdditive;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DECLARATION__ADDITIVE, oldAdditive, additive));
   }
 
   /**
@@ -163,12 +220,64 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
    * @generated
    */
   @Override
+  public Primary getAliasedProperty()
+  {
+    return aliasedProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAliasedProperty(Primary newAliasedProperty, NotificationChain msgs)
+  {
+    Primary oldAliasedProperty = aliasedProperty;
+    aliasedProperty = newAliasedProperty;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY, oldAliasedProperty, newAliasedProperty);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAliasedProperty(Primary newAliasedProperty)
+  {
+    if (newAliasedProperty != aliasedProperty)
+    {
+      NotificationChain msgs = null;
+      if (aliasedProperty != null)
+        msgs = ((InternalEObject)aliasedProperty).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY, null, msgs);
+      if (newAliasedProperty != null)
+        msgs = ((InternalEObject)newAliasedProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY, null, msgs);
+      msgs = basicSetAliasedProperty(newAliasedProperty, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY, newAliasedProperty, newAliasedProperty));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case Inform6Package.PROPERTY_DECLARATION__VALUE:
         return basicSetValue(null, msgs);
+      case Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY:
+        return basicSetAliasedProperty(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -185,8 +294,12 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
     {
       case Inform6Package.PROPERTY_DECLARATION__NAME:
         return getName();
+      case Inform6Package.PROPERTY_DECLARATION__ADDITIVE:
+        return getAdditive();
       case Inform6Package.PROPERTY_DECLARATION__VALUE:
         return getValue();
+      case Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY:
+        return getAliasedProperty();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -204,8 +317,14 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
       case Inform6Package.PROPERTY_DECLARATION__NAME:
         setName((String)newValue);
         return;
+      case Inform6Package.PROPERTY_DECLARATION__ADDITIVE:
+        setAdditive((String)newValue);
+        return;
       case Inform6Package.PROPERTY_DECLARATION__VALUE:
         setValue((Primary)newValue);
+        return;
+      case Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY:
+        setAliasedProperty((Primary)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -224,8 +343,14 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
       case Inform6Package.PROPERTY_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case Inform6Package.PROPERTY_DECLARATION__ADDITIVE:
+        setAdditive(ADDITIVE_EDEFAULT);
+        return;
       case Inform6Package.PROPERTY_DECLARATION__VALUE:
         setValue((Primary)null);
+        return;
+      case Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY:
+        setAliasedProperty((Primary)null);
         return;
     }
     super.eUnset(featureID);
@@ -243,8 +368,12 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
     {
       case Inform6Package.PROPERTY_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case Inform6Package.PROPERTY_DECLARATION__ADDITIVE:
+        return ADDITIVE_EDEFAULT == null ? additive != null : !ADDITIVE_EDEFAULT.equals(additive);
       case Inform6Package.PROPERTY_DECLARATION__VALUE:
         return value != null;
+      case Inform6Package.PROPERTY_DECLARATION__ALIASED_PROPERTY:
+        return aliasedProperty != null;
     }
     return super.eIsSet(featureID);
   }
@@ -262,6 +391,8 @@ public class PropertyDeclarationImpl extends DirectiveImpl implements PropertyDe
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", additive: ");
+    result.append(additive);
     result.append(')');
     return result.toString();
   }

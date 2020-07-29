@@ -14,7 +14,9 @@ package com.github.toerob.inform6;
  * </p>
  * <ul>
  *   <li>{@link com.github.toerob.inform6.PropertyDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.PropertyDeclaration#getAdditive <em>Additive</em>}</li>
  *   <li>{@link com.github.toerob.inform6.PropertyDeclaration#getValue <em>Value</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.PropertyDeclaration#getAliasedProperty <em>Aliased Property</em>}</li>
  * </ul>
  *
  * @see com.github.toerob.inform6.Inform6Package#getPropertyDeclaration()
@@ -46,6 +48,28 @@ public interface PropertyDeclaration extends Directive
   void setName(String value);
 
   /**
+   * Returns the value of the '<em><b>Additive</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Additive</em>' attribute.
+   * @see #setAdditive(String)
+   * @see com.github.toerob.inform6.Inform6Package#getPropertyDeclaration_Additive()
+   * @model
+   * @generated
+   */
+  String getAdditive();
+
+  /**
+   * Sets the value of the '{@link com.github.toerob.inform6.PropertyDeclaration#getAdditive <em>Additive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Additive</em>' attribute.
+   * @see #getAdditive()
+   * @generated
+   */
+  void setAdditive(String value);
+
+  /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,5 +90,27 @@ public interface PropertyDeclaration extends Directive
    * @generated
    */
   void setValue(Primary value);
+
+  /**
+   * Returns the value of the '<em><b>Aliased Property</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Aliased Property</em>' containment reference.
+   * @see #setAliasedProperty(Primary)
+   * @see com.github.toerob.inform6.Inform6Package#getPropertyDeclaration_AliasedProperty()
+   * @model containment="true"
+   * @generated
+   */
+  Primary getAliasedProperty();
+
+  /**
+   * Sets the value of the '{@link com.github.toerob.inform6.PropertyDeclaration#getAliasedProperty <em>Aliased Property</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Aliased Property</em>' containment reference.
+   * @see #getAliasedProperty()
+   * @generated
+   */
+  void setAliasedProperty(Primary value);
 
 } // PropertyDeclaration

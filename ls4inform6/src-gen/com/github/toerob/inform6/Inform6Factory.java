@@ -267,13 +267,13 @@ public interface Inform6Factory extends EFactory
   ArrayType createArrayType();
 
   /**
-   * Returns a new object of class '<em>Primary Expression</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Primary Expression</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  PrimaryExpression createPrimaryExpression();
+  Expression createExpression();
 
   /**
    * Returns a new object of class '<em>Class Section</em>'.
@@ -337,6 +337,15 @@ public interface Inform6Factory extends EFactory
    * @generated
    */
   GlobalFunctionDefinition createGlobalFunctionDefinition();
+
+  /**
+   * Returns a new object of class '<em>Function Header</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Header</em>'.
+   * @generated
+   */
+  FunctionHeader createFunctionHeader();
 
   /**
    * Returns a new object of class '<em>Primary</em>'.

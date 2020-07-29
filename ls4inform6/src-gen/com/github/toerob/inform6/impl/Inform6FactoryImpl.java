@@ -16,6 +16,8 @@ import com.github.toerob.inform6.ClassSection;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -29,7 +31,6 @@ import com.github.toerob.inform6.MessageDirective;
 import com.github.toerob.inform6.NearbyDeclaration;
 import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
-import com.github.toerob.inform6.PrimaryExpression;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
 import com.github.toerob.inform6.PropertyDeclaration;
@@ -134,7 +135,7 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
       case Inform6Package.VERB_ASSIGNMENT: return createVerbAssignment();
       case Inform6Package.ARRAY_DECLARATION: return createArrayDeclaration();
       case Inform6Package.ARRAY_TYPE: return createArrayType();
-      case Inform6Package.PRIMARY_EXPRESSION: return createPrimaryExpression();
+      case Inform6Package.EXPRESSION: return createExpression();
       case Inform6Package.CLASS_SECTION: return createClassSection();
       case Inform6Package.PROPERTY_SECTION: return createPropertySection();
       case Inform6Package.ATTRIBUTE_SECTION: return createAttributeSection();
@@ -142,6 +143,7 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
       case Inform6Package.ABSTRACT_ARRAY: return createAbstractArray();
       case Inform6Package.ABSTRACT_PROPERTY: return createAbstractProperty();
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION: return createGlobalFunctionDefinition();
+      case Inform6Package.FUNCTION_HEADER: return createFunctionHeader();
       case Inform6Package.PRIMARY: return createPrimary();
       case Inform6Package.NUMBER: return createNumber();
       case Inform6Package.ATTRIBUTE: return createAttribute();
@@ -484,10 +486,10 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
    * @generated
    */
   @Override
-  public PrimaryExpression createPrimaryExpression()
+  public Expression createExpression()
   {
-    PrimaryExpressionImpl primaryExpression = new PrimaryExpressionImpl();
-    return primaryExpression;
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -572,6 +574,18 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
   {
     GlobalFunctionDefinitionImpl globalFunctionDefinition = new GlobalFunctionDefinitionImpl();
     return globalFunctionDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionHeader createFunctionHeader()
+  {
+    FunctionHeaderImpl functionHeader = new FunctionHeaderImpl();
+    return functionHeader;
   }
 
   /**

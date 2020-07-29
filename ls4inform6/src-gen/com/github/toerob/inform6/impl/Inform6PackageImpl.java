@@ -15,6 +15,8 @@ import com.github.toerob.inform6.ClassSection;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -28,7 +30,6 @@ import com.github.toerob.inform6.MessageDirective;
 import com.github.toerob.inform6.NearbyDeclaration;
 import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
-import com.github.toerob.inform6.PrimaryExpression;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
 import com.github.toerob.inform6.PropertyDeclaration;
@@ -252,7 +253,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass primaryExpressionEClass = null;
+  private EClass expressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -302,6 +303,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   private EClass globalFunctionDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionHeaderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -608,9 +616,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EAttribute getPropertyDirective_Value()
+  public EReference getPropertyDirective_Value()
   {
-    return (EAttribute)propertyDirectiveEClass.getEStructuralFeatures().get(2);
+    return (EReference)propertyDirectiveEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -894,6 +902,17 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
+  public EAttribute getAttributeDeclaration_AliasedAttribute()
+  {
+    return (EAttribute)attributeDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getPropertyDeclaration()
   {
     return propertyDeclarationEClass;
@@ -916,9 +935,31 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
+  public EAttribute getPropertyDeclaration_Additive()
+  {
+    return (EAttribute)propertyDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getPropertyDeclaration_Value()
   {
-    return (EReference)propertyDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)propertyDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPropertyDeclaration_AliasedProperty()
+  {
+    return (EReference)propertyDeclarationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1268,9 +1309,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EClass getPrimaryExpression()
+  public EReference getArrayType_Size()
   {
-    return primaryExpressionEClass;
+    return (EReference)arrayTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1279,9 +1320,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getPrimaryExpression_Left()
+  public EClass getExpression()
   {
-    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(0);
+    return expressionEClass;
   }
 
   /**
@@ -1290,9 +1331,42 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getPrimaryExpression_Right()
+  public EReference getExpression_Left()
   {
-    return (EReference)primaryExpressionEClass.getEStructuralFeatures().get(1);
+    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getExpression_Operator()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getExpression_Right()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getExpression_UnparsedTokens()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1521,9 +1595,42 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
+  public EReference getGlobalFunctionDefinition_FunctionHeader()
+  {
+    return (EReference)globalFunctionDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getGlobalFunctionDefinition_FunctionBody()
   {
-    return (EAttribute)globalFunctionDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)globalFunctionDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFunctionHeader()
+  {
+    return functionHeaderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFunctionHeader_Variables()
+  {
+    return (EAttribute)functionHeaderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1719,20 +1826,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getTABLE_ARRAY_Size()
-  {
-    return (EReference)tablE_ARRAYEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getTABLE_ARRAY_Content()
   {
-    return (EReference)tablE_ARRAYEClass.getEStructuralFeatures().get(1);
+    return (EReference)tablE_ARRAYEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1752,20 +1848,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getSTRING_ARRAY_Size()
-  {
-    return (EReference)strinG_ARRAYEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getSTRING_ARRAY_Content()
   {
-    return (EAttribute)strinG_ARRAYEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)strinG_ARRAYEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1823,7 +1908,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     propertyDirectiveEClass = createEClass(PROPERTY_DIRECTIVE);
     createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__ADDITIVE);
     createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__NAME);
-    createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__VALUE);
+    createEReference(propertyDirectiveEClass, PROPERTY_DIRECTIVE__VALUE);
 
     releaseDirectiveEClass = createEClass(RELEASE_DIRECTIVE);
     createEAttribute(releaseDirectiveEClass, RELEASE_DIRECTIVE__NAME);
@@ -1858,10 +1943,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     attributeDeclarationEClass = createEClass(ATTRIBUTE_DECLARATION);
     createEAttribute(attributeDeclarationEClass, ATTRIBUTE_DECLARATION__NAME);
+    createEAttribute(attributeDeclarationEClass, ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE);
 
     propertyDeclarationEClass = createEClass(PROPERTY_DECLARATION);
     createEAttribute(propertyDeclarationEClass, PROPERTY_DECLARATION__NAME);
+    createEAttribute(propertyDeclarationEClass, PROPERTY_DECLARATION__ADDITIVE);
     createEReference(propertyDeclarationEClass, PROPERTY_DECLARATION__VALUE);
+    createEReference(propertyDeclarationEClass, PROPERTY_DECLARATION__ALIASED_PROPERTY);
 
     classDeclarationEClass = createEClass(CLASS_DECLARATION);
     createEAttribute(classDeclarationEClass, CLASS_DECLARATION__NAME);
@@ -1902,10 +1990,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     arrayTypeEClass = createEClass(ARRAY_TYPE);
     createEAttribute(arrayTypeEClass, ARRAY_TYPE__TYPE);
+    createEReference(arrayTypeEClass, ARRAY_TYPE__SIZE);
 
-    primaryExpressionEClass = createEClass(PRIMARY_EXPRESSION);
-    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__LEFT);
-    createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__RIGHT);
+    expressionEClass = createEClass(EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__LEFT);
+    createEAttribute(expressionEClass, EXPRESSION__OPERATOR);
+    createEReference(expressionEClass, EXPRESSION__RIGHT);
+    createEAttribute(expressionEClass, EXPRESSION__UNPARSED_TOKENS);
 
     classSectionEClass = createEClass(CLASS_SECTION);
 
@@ -1933,7 +2024,11 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     createEAttribute(abstractPropertyEClass, ABSTRACT_PROPERTY__FUNCTION_BODY);
 
     globalFunctionDefinitionEClass = createEClass(GLOBAL_FUNCTION_DEFINITION);
+    createEReference(globalFunctionDefinitionEClass, GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER);
     createEAttribute(globalFunctionDefinitionEClass, GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY);
+
+    functionHeaderEClass = createEClass(FUNCTION_HEADER);
+    createEAttribute(functionHeaderEClass, FUNCTION_HEADER__VARIABLES);
 
     primaryEClass = createEClass(PRIMARY);
     createEAttribute(primaryEClass, PRIMARY__ID);
@@ -1957,11 +2052,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     createEReference(worD_ARRAYEClass, WORD_ARRAY__CONTENT);
 
     tablE_ARRAYEClass = createEClass(TABLE_ARRAY);
-    createEReference(tablE_ARRAYEClass, TABLE_ARRAY__SIZE);
     createEReference(tablE_ARRAYEClass, TABLE_ARRAY__CONTENT);
 
     strinG_ARRAYEClass = createEClass(STRING_ARRAY);
-    createEReference(strinG_ARRAYEClass, STRING_ARRAY__SIZE);
     createEAttribute(strinG_ARRAYEClass, STRING_ARRAY__CONTENT);
   }
 
@@ -2049,7 +2142,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     initEClass(propertyDirectiveEClass, PropertyDirective.class, "PropertyDirective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPropertyDirective_Additive(), ecorePackage.getEString(), "additive", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPropertyDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPropertyDirective_Value(), ecorePackage.getEString(), "value", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPropertyDirective_Value(), this.getPrimary(), null, "value", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(releaseDirectiveEClass, ReleaseDirective.class, "ReleaseDirective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReleaseDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReleaseDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2084,10 +2177,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     initEClass(attributeDeclarationEClass, AttributeDeclaration.class, "AttributeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttributeDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeDeclaration_AliasedAttribute(), ecorePackage.getEString(), "aliasedAttribute", null, 0, 1, AttributeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertyDeclarationEClass, PropertyDeclaration.class, "PropertyDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPropertyDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPropertyDeclaration_Additive(), ecorePackage.getEString(), "additive", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPropertyDeclaration_Value(), this.getPrimary(), null, "value", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPropertyDeclaration_AliasedProperty(), this.getPrimary(), null, "aliasedProperty", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classDeclarationEClass, ClassDeclaration.class, "ClassDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2128,10 +2224,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     initEClass(arrayTypeEClass, ArrayType.class, "ArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getArrayType_Type(), ecorePackage.getEString(), "type", null, 0, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArrayType_Size(), this.getExpression(), null, "size", null, 0, 1, ArrayType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(primaryExpressionEClass, PrimaryExpression.class, "PrimaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPrimaryExpression_Left(), this.getPrimary(), null, "left", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPrimaryExpression_Right(), this.getPrimary(), null, "right", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpression_Left(), this.getPrimary(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Right(), this.getPrimary(), null, "right", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_UnparsedTokens(), ecorePackage.getEString(), "unparsedTokens", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classSectionEClass, ClassSection.class, "ClassSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2159,7 +2258,11 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     initEAttribute(getAbstractProperty_FunctionBody(), ecorePackage.getEString(), "functionBody", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalFunctionDefinitionEClass, GlobalFunctionDefinition.class, "GlobalFunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGlobalFunctionDefinition_FunctionHeader(), this.getFunctionHeader(), null, "functionHeader", null, 0, 1, GlobalFunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGlobalFunctionDefinition_FunctionBody(), ecorePackage.getEString(), "functionBody", null, 0, 1, GlobalFunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionHeaderEClass, FunctionHeader.class, "FunctionHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFunctionHeader_Variables(), ecorePackage.getEString(), "variables", null, 0, -1, FunctionHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primaryEClass, Primary.class, "Primary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPrimary_Id(), ecorePackage.getEString(), "id", null, 0, 1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2177,17 +2280,15 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     initEReference(getAttribute_Name(), this.getAttributeDeclaration(), null, "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bytE_ARRAYEClass, com.github.toerob.inform6.BYTE_ARRAY.class, "BYTE_ARRAY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBYTE_ARRAY_Content(), this.getPrimaryExpression(), null, "content", null, 0, -1, com.github.toerob.inform6.BYTE_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBYTE_ARRAY_Content(), this.getExpression(), null, "content", null, 0, -1, com.github.toerob.inform6.BYTE_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(worD_ARRAYEClass, com.github.toerob.inform6.WORD_ARRAY.class, "WORD_ARRAY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWORD_ARRAY_Content(), this.getPrimaryExpression(), null, "content", null, 0, -1, com.github.toerob.inform6.WORD_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWORD_ARRAY_Content(), this.getExpression(), null, "content", null, 0, -1, com.github.toerob.inform6.WORD_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tablE_ARRAYEClass, com.github.toerob.inform6.TABLE_ARRAY.class, "TABLE_ARRAY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTABLE_ARRAY_Size(), this.getPrimary(), null, "size", null, 0, 1, com.github.toerob.inform6.TABLE_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTABLE_ARRAY_Content(), this.getPrimary(), null, "content", null, 0, -1, com.github.toerob.inform6.TABLE_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTABLE_ARRAY_Content(), this.getExpression(), null, "content", null, 0, -1, com.github.toerob.inform6.TABLE_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(strinG_ARRAYEClass, com.github.toerob.inform6.STRING_ARRAY.class, "STRING_ARRAY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSTRING_ARRAY_Size(), this.getPrimary(), null, "size", null, 0, 1, com.github.toerob.inform6.STRING_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSTRING_ARRAY_Content(), ecorePackage.getEString(), "content", null, 0, -1, com.github.toerob.inform6.STRING_ARRAY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

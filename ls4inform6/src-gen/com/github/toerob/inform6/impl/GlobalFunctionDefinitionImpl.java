@@ -3,12 +3,15 @@
  */
 package com.github.toerob.inform6.impl;
 
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalFunctionDefinition;
 import com.github.toerob.inform6.Inform6Package;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -20,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.github.toerob.inform6.impl.GlobalFunctionDefinitionImpl#getFunctionHeader <em>Function Header</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.GlobalFunctionDefinitionImpl#getFunctionBody <em>Function Body</em>}</li>
  * </ul>
  *
@@ -27,6 +31,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements GlobalFunctionDefinition
 {
+  /**
+   * The cached value of the '{@link #getFunctionHeader() <em>Function Header</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunctionHeader()
+   * @generated
+   * @ordered
+   */
+  protected FunctionHeader functionHeader;
+
   /**
    * The default value of the '{@link #getFunctionBody() <em>Function Body</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +88,56 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
    * @generated
    */
   @Override
+  public FunctionHeader getFunctionHeader()
+  {
+    return functionHeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFunctionHeader(FunctionHeader newFunctionHeader, NotificationChain msgs)
+  {
+    FunctionHeader oldFunctionHeader = functionHeader;
+    functionHeader = newFunctionHeader;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, oldFunctionHeader, newFunctionHeader);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFunctionHeader(FunctionHeader newFunctionHeader)
+  {
+    if (newFunctionHeader != functionHeader)
+    {
+      NotificationChain msgs = null;
+      if (functionHeader != null)
+        msgs = ((InternalEObject)functionHeader).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, null, msgs);
+      if (newFunctionHeader != null)
+        msgs = ((InternalEObject)newFunctionHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, null, msgs);
+      msgs = basicSetFunctionHeader(newFunctionHeader, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER, newFunctionHeader, newFunctionHeader));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getFunctionBody()
   {
     return functionBody;
@@ -99,10 +163,28 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        return basicSetFunctionHeader(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        return getFunctionHeader();
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
         return getFunctionBody();
     }
@@ -119,6 +201,9 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        setFunctionHeader((FunctionHeader)newValue);
+        return;
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
         setFunctionBody((String)newValue);
         return;
@@ -136,6 +221,9 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        setFunctionHeader((FunctionHeader)null);
+        return;
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
         setFunctionBody(FUNCTION_BODY_EDEFAULT);
         return;
@@ -153,6 +241,8 @@ public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements Globa
   {
     switch (featureID)
     {
+      case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER:
+        return functionHeader != null;
       case Inform6Package.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY:
         return FUNCTION_BODY_EDEFAULT == null ? functionBody != null : !FUNCTION_BODY_EDEFAULT.equals(functionBody);
     }
