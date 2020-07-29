@@ -267,6 +267,15 @@ public interface Inform6Factory extends EFactory
   ArrayType createArrayType();
 
   /**
+   * Returns a new object of class '<em>Primary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary Expression</em>'.
+   * @generated
+   */
+  PrimaryExpression createPrimaryExpression();
+
+  /**
    * Returns a new object of class '<em>Class Section</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -328,51 +337,6 @@ public interface Inform6Factory extends EFactory
    * @generated
    */
   GlobalFunctionDefinition createGlobalFunctionDefinition();
-
-  /**
-   * Returns a new object of class '<em>Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
-   * @generated
-   */
-  Expression createExpression();
-
-  /**
-   * Returns a new object of class '<em>Function Header</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Header</em>'.
-   * @generated
-   */
-  FunctionHeader createFunctionHeader();
-
-  /**
-   * Returns a new object of class '<em>Primary Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Primary Expression</em>'.
-   * @generated
-   */
-  PrimaryExpression createPrimaryExpression();
-
-  /**
-   * Returns a new object of class '<em>Function Body</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Body</em>'.
-   * @generated
-   */
-  FunctionBody createFunctionBody();
-
-  /**
-   * Returns a new object of class '<em>Any Token</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Any Token</em>'.
-   * @generated
-   */
-  AnyToken createAnyToken();
 
   /**
    * Returns a new object of class '<em>Primary</em>'.

@@ -3,26 +3,18 @@
  */
 package com.github.toerob.inform6.impl;
 
-import com.github.toerob.inform6.FunctionBody;
 import com.github.toerob.inform6.Inform6Package;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.PrimaryExpression;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +26,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl#getRight <em>Right</em>}</li>
- *   <li>{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl#getParams <em>Params</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,16 +51,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected Primary right;
-
-  /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParams()
-   * @generated
-   * @ordered
-   */
-  protected EList<FunctionBody> params;
 
   /**
    * <!-- begin-user-doc -->
@@ -198,21 +179,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public EList<FunctionBody> getParams()
-  {
-    if (params == null)
-    {
-      params = new EObjectContainmentEList<FunctionBody>(FunctionBody.class, this, Inform6Package.PRIMARY_EXPRESSION__PARAMS);
-    }
-    return params;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -221,8 +187,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
         return basicSetLeft(null, msgs);
       case Inform6Package.PRIMARY_EXPRESSION__RIGHT:
         return basicSetRight(null, msgs);
-      case Inform6Package.PRIMARY_EXPRESSION__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -241,8 +205,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
         return getLeft();
       case Inform6Package.PRIMARY_EXPRESSION__RIGHT:
         return getRight();
-      case Inform6Package.PRIMARY_EXPRESSION__PARAMS:
-        return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -252,7 +214,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -263,10 +224,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
         return;
       case Inform6Package.PRIMARY_EXPRESSION__RIGHT:
         setRight((Primary)newValue);
-        return;
-      case Inform6Package.PRIMARY_EXPRESSION__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends FunctionBody>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -288,9 +245,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
       case Inform6Package.PRIMARY_EXPRESSION__RIGHT:
         setRight((Primary)null);
         return;
-      case Inform6Package.PRIMARY_EXPRESSION__PARAMS:
-        getParams().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -309,8 +263,6 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
         return left != null;
       case Inform6Package.PRIMARY_EXPRESSION__RIGHT:
         return right != null;
-      case Inform6Package.PRIMARY_EXPRESSION__PARAMS:
-        return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
   }

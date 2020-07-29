@@ -5,7 +5,6 @@ package com.github.toerob.inform6.util;
 
 import com.github.toerob.inform6.AbstractArray;
 import com.github.toerob.inform6.AbstractProperty;
-import com.github.toerob.inform6.AnyToken;
 import com.github.toerob.inform6.ArrayDeclaration;
 import com.github.toerob.inform6.ArrayType;
 import com.github.toerob.inform6.Attribute;
@@ -17,9 +16,6 @@ import com.github.toerob.inform6.ClassSection;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
-import com.github.toerob.inform6.Expression;
-import com.github.toerob.inform6.FunctionBody;
-import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -256,6 +252,11 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
         return createArrayTypeAdapter();
       }
       @Override
+      public Adapter casePrimaryExpression(PrimaryExpression object)
+      {
+        return createPrimaryExpressionAdapter();
+      }
+      @Override
       public Adapter caseClassSection(ClassSection object)
       {
         return createClassSectionAdapter();
@@ -289,31 +290,6 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
       public Adapter caseGlobalFunctionDefinition(GlobalFunctionDefinition object)
       {
         return createGlobalFunctionDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseExpression(Expression object)
-      {
-        return createExpressionAdapter();
-      }
-      @Override
-      public Adapter caseFunctionHeader(FunctionHeader object)
-      {
-        return createFunctionHeaderAdapter();
-      }
-      @Override
-      public Adapter casePrimaryExpression(PrimaryExpression object)
-      {
-        return createPrimaryExpressionAdapter();
-      }
-      @Override
-      public Adapter caseFunctionBody(FunctionBody object)
-      {
-        return createFunctionBodyAdapter();
-      }
-      @Override
-      public Adapter caseAnyToken(AnyToken object)
-      {
-        return createAnyTokenAdapter();
       }
       @Override
       public Adapter casePrimary(Primary object)
@@ -778,6 +754,21 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.PrimaryExpression <em>Primary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.github.toerob.inform6.PrimaryExpression
+   * @generated
+   */
+  public Adapter createPrimaryExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.ClassSection <em>Class Section</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -878,81 +869,6 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGlobalFunctionDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.github.toerob.inform6.Expression
-   * @generated
-   */
-  public Adapter createExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.FunctionHeader <em>Function Header</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.github.toerob.inform6.FunctionHeader
-   * @generated
-   */
-  public Adapter createFunctionHeaderAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.PrimaryExpression <em>Primary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.github.toerob.inform6.PrimaryExpression
-   * @generated
-   */
-  public Adapter createPrimaryExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.FunctionBody <em>Function Body</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.github.toerob.inform6.FunctionBody
-   * @generated
-   */
-  public Adapter createFunctionBodyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.AnyToken <em>Any Token</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.github.toerob.inform6.AnyToken
-   * @generated
-   */
-  public Adapter createAnyTokenAdapter()
   {
     return null;
   }

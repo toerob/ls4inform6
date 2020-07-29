@@ -117,6 +117,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ArrayType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Primary"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Primary"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassSection"/>
   <eClassifiers xsi:type="ecore:EClass" name="PropertySection" eSuperTypes="#//ClassSection">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -132,7 +138,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//ObjectDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//AbstractProperty"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="array" eType="#//AbstractArray"
@@ -142,48 +147,17 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectReferences" unique="false"
         upperBound="-1" eType="#//ObjectDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Primary"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractArray">
     <eStructuralFeatures xsi:type="ecore:EReference" name="array" upperBound="-1"
         eType="#//Primary" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractProperty">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionBody" eType="#//Expression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionBody" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GlobalFunctionDefinition" eSuperTypes="#//Directive">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionHeader" eType="#//FunctionHeader"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionBody" eType="#//Expression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionBody" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
-        eType="#//FunctionBody" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FunctionHeader">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variables" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimaryExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Primary"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Primary"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//FunctionBody" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FunctionBody" eSuperTypes="#//AnyToken">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="anyToken" eType="#//AnyToken"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semicolon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unparsed" eType="#//FunctionBody"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnyToken"/>
   <eClassifiers xsi:type="ecore:EClass" name="Primary" eSuperTypes="#//VerbAssignment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="number" eType="#//Number"

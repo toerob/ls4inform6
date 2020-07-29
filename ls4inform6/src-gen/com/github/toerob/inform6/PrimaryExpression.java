@@ -3,8 +3,6 @@
  */
 package com.github.toerob.inform6;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.github.toerob.inform6.PrimaryExpression#getLeft <em>Left</em>}</li>
  *   <li>{@link com.github.toerob.inform6.PrimaryExpression#getRight <em>Right</em>}</li>
- *   <li>{@link com.github.toerob.inform6.PrimaryExpression#getParams <em>Params</em>}</li>
  * </ul>
  *
  * @see com.github.toerob.inform6.Inform6Package#getPrimaryExpression()
@@ -70,17 +67,5 @@ public interface PrimaryExpression extends EObject
    * @generated
    */
   void setRight(Primary value);
-
-  /**
-   * Returns the value of the '<em><b>Params</b></em>' containment reference list.
-   * The list contents are of type {@link com.github.toerob.inform6.FunctionBody}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Params</em>' containment reference list.
-   * @see com.github.toerob.inform6.Inform6Package#getPrimaryExpression_Params()
-   * @model containment="true"
-   * @generated
-   */
-  EList<FunctionBody> getParams();
 
 } // PrimaryExpression

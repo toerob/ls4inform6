@@ -8,6 +8,7 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.SimpleNameProvider;
 
 import com.google.inject.Binder;
+
 /**
  * Use this class to register ide components.
  */

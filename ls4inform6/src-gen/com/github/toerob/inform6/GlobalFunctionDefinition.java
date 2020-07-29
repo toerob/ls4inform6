@@ -13,7 +13,6 @@ package com.github.toerob.inform6;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionHeader <em>Function Header</em>}</li>
  *   <li>{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody <em>Function Body</em>}</li>
  * </ul>
  *
@@ -24,47 +23,25 @@ package com.github.toerob.inform6;
 public interface GlobalFunctionDefinition extends Directive
 {
   /**
-   * Returns the value of the '<em><b>Function Header</b></em>' containment reference.
+   * Returns the value of the '<em><b>Function Body</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Function Header</em>' containment reference.
-   * @see #setFunctionHeader(FunctionHeader)
-   * @see com.github.toerob.inform6.Inform6Package#getGlobalFunctionDefinition_FunctionHeader()
-   * @model containment="true"
-   * @generated
-   */
-  FunctionHeader getFunctionHeader();
-
-  /**
-   * Sets the value of the '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionHeader <em>Function Header</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function Header</em>' containment reference.
-   * @see #getFunctionHeader()
-   * @generated
-   */
-  void setFunctionHeader(FunctionHeader value);
-
-  /**
-   * Returns the value of the '<em><b>Function Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Function Body</em>' containment reference.
-   * @see #setFunctionBody(Expression)
+   * @return the value of the '<em>Function Body</em>' attribute.
+   * @see #setFunctionBody(String)
    * @see com.github.toerob.inform6.Inform6Package#getGlobalFunctionDefinition_FunctionBody()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Expression getFunctionBody();
+  String getFunctionBody();
 
   /**
-   * Sets the value of the '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody <em>Function Body</em>}' containment reference.
+   * Sets the value of the '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody <em>Function Body</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Function Body</em>' containment reference.
+   * @param value the new value of the '<em>Function Body</em>' attribute.
    * @see #getFunctionBody()
    * @generated
    */
-  void setFunctionBody(Expression value);
+  void setFunctionBody(String value);
 
 } // GlobalFunctionDefinition
