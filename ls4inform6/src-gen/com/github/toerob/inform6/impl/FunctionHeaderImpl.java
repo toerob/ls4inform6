@@ -3,8 +3,8 @@
  */
 package com.github.toerob.inform6.impl;
 
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.Inform6Package;
-import com.github.toerob.inform6.STRING_ARRAY;
 
 import java.util.Collection;
 
@@ -12,39 +12,41 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>STRING ARRAY</b></em>'.
+ * An implementation of the model object '<em><b>Function Header</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.github.toerob.inform6.impl.STRING_ARRAYImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.FunctionHeaderImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
+public class FunctionHeaderImpl extends MinimalEObjectImpl.Container implements FunctionHeader
 {
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute list.
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContent()
+   * @see #getVariables()
    * @generated
    * @ordered
    */
-  protected EList<String> content;
+  protected EList<String> variables;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected STRING_ARRAYImpl()
+  protected FunctionHeaderImpl()
   {
     super();
   }
@@ -57,7 +59,7 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
   @Override
   protected EClass eStaticClass()
   {
-    return Inform6Package.Literals.STRING_ARRAY;
+    return Inform6Package.Literals.FUNCTION_HEADER;
   }
 
   /**
@@ -66,13 +68,13 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
    * @generated
    */
   @Override
-  public EList<String> getContent()
+  public EList<String> getVariables()
   {
-    if (content == null)
+    if (variables == null)
     {
-      content = new EDataTypeEList<String>(String.class, this, Inform6Package.STRING_ARRAY__CONTENT);
+      variables = new EDataTypeEList<String>(String.class, this, Inform6Package.FUNCTION_HEADER__VARIABLES);
     }
-    return content;
+    return variables;
   }
 
   /**
@@ -85,8 +87,8 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.STRING_ARRAY__CONTENT:
-        return getContent();
+      case Inform6Package.FUNCTION_HEADER__VARIABLES:
+        return getVariables();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -102,9 +104,9 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.STRING_ARRAY__CONTENT:
-        getContent().clear();
-        getContent().addAll((Collection<? extends String>)newValue);
+      case Inform6Package.FUNCTION_HEADER__VARIABLES:
+        getVariables().clear();
+        getVariables().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -120,8 +122,8 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.STRING_ARRAY__CONTENT:
-        getContent().clear();
+      case Inform6Package.FUNCTION_HEADER__VARIABLES:
+        getVariables().clear();
         return;
     }
     super.eUnset(featureID);
@@ -137,8 +139,8 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.STRING_ARRAY__CONTENT:
-        return content != null && !content.isEmpty();
+      case Inform6Package.FUNCTION_HEADER__VARIABLES:
+        return variables != null && !variables.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -154,10 +156,10 @@ public class STRING_ARRAYImpl extends ArrayTypeImpl implements STRING_ARRAY
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (content: ");
-    result.append(content);
+    result.append(" (variables: ");
+    result.append(variables);
     result.append(')');
     return result.toString();
   }
 
-} //STRING_ARRAYImpl
+} //FunctionHeaderImpl

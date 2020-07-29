@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.github.toerob.inform6.STRING_ARRAY#getSize <em>Size</em>}</li>
  *   <li>{@link com.github.toerob.inform6.STRING_ARRAY#getContent <em>Content</em>}</li>
  * </ul>
  *
@@ -24,28 +23,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface STRING_ARRAY extends ArrayType
 {
-  /**
-   * Returns the value of the '<em><b>Size</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Size</em>' containment reference.
-   * @see #setSize(Primary)
-   * @see com.github.toerob.inform6.Inform6Package#getSTRING_ARRAY_Size()
-   * @model containment="true"
-   * @generated
-   */
-  Primary getSize();
-
-  /**
-   * Sets the value of the '{@link com.github.toerob.inform6.STRING_ARRAY#getSize <em>Size</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Size</em>' containment reference.
-   * @see #getSize()
-   * @generated
-   */
-  void setSize(Primary value);
-
   /**
    * Returns the value of the '<em><b>Content</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.

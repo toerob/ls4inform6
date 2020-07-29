@@ -28,7 +28,7 @@
     <genClasses ecoreClass="Inform6.ecore#//PropertyDirective">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/additive"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDirective/value"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ReleaseDirective">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//ReleaseDirective/name"/>
@@ -63,10 +63,13 @@
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//AttributeDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//AttributeDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//AttributeDeclaration/aliasedAttribute"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//PropertyDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDeclaration/additive"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDeclaration/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDeclaration/aliasedProperty"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ClassDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//ClassDeclaration/name"/>
@@ -104,10 +107,13 @@
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ArrayType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//ArrayType/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//ArrayType/size"/>
     </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//PrimaryExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PrimaryExpression/right"/>
+    <genClasses ecoreClass="Inform6.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Expression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//Expression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Expression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//Expression/unparsedTokens"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ClassSection"/>
     <genClasses ecoreClass="Inform6.ecore#//PropertySection">
@@ -134,7 +140,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//AbstractProperty/functionBody"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//GlobalFunctionDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//GlobalFunctionDefinition/functionHeader"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//GlobalFunctionDefinition/functionBody"/>
+    </genClasses>
+    <genClasses ecoreClass="Inform6.ecore#//FunctionHeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//FunctionHeader/variables"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//Primary">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//Primary/id"/>
@@ -158,11 +168,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//WORD_ARRAY/content"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//TABLE_ARRAY">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//TABLE_ARRAY/size"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//TABLE_ARRAY/content"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//STRING_ARRAY">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//STRING_ARRAY/size"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//STRING_ARRAY/content"/>
     </genClasses>
   </genPackages>

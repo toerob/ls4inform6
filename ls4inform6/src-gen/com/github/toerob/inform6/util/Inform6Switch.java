@@ -16,6 +16,8 @@ import com.github.toerob.inform6.ClassSection;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -28,7 +30,6 @@ import com.github.toerob.inform6.MessageDirective;
 import com.github.toerob.inform6.NearbyDeclaration;
 import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
-import com.github.toerob.inform6.PrimaryExpression;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
 import com.github.toerob.inform6.PropertyDeclaration;
@@ -326,10 +327,10 @@ public class Inform6Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Inform6Package.PRIMARY_EXPRESSION:
+      case Inform6Package.EXPRESSION:
       {
-        PrimaryExpression primaryExpression = (PrimaryExpression)theEObject;
-        T result = casePrimaryExpression(primaryExpression);
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -381,6 +382,13 @@ public class Inform6Switch<T> extends Switch<T>
         GlobalFunctionDefinition globalFunctionDefinition = (GlobalFunctionDefinition)theEObject;
         T result = caseGlobalFunctionDefinition(globalFunctionDefinition);
         if (result == null) result = caseDirective(globalFunctionDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Inform6Package.FUNCTION_HEADER:
+      {
+        FunctionHeader functionHeader = (FunctionHeader)theEObject;
+        T result = caseFunctionHeader(functionHeader);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -875,17 +883,17 @@ public class Inform6Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Primary Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Primary Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrimaryExpression(PrimaryExpression object)
+  public T caseExpression(Expression object)
   {
     return null;
   }
@@ -998,6 +1006,22 @@ public class Inform6Switch<T> extends Switch<T>
    * @generated
    */
   public T caseGlobalFunctionDefinition(GlobalFunctionDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Header</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Header</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionHeader(FunctionHeader object)
   {
     return null;
   }

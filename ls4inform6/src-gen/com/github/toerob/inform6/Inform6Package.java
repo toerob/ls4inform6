@@ -282,7 +282,7 @@ public interface Inform6Package extends EPackage
   int PROPERTY_DIRECTIVE__NAME = DIRECTIVE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -606,13 +606,22 @@ public interface Inform6Package extends EPackage
   int ATTRIBUTE_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Aliased Attribute</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE = DIRECTIVE_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Attribute Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 1;
+  int ATTRIBUTE_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl <em>Property Declaration</em>}' class.
@@ -634,13 +643,31 @@ public interface Inform6Package extends EPackage
   int PROPERTY_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Additive</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_DECLARATION__ADDITIVE = DIRECTIVE_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_DECLARATION__VALUE = DIRECTIVE_FEATURE_COUNT + 1;
+  int PROPERTY_DECLARATION__VALUE = DIRECTIVE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Aliased Property</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_DECLARATION__ALIASED_PROPERTY = DIRECTIVE_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Property Declaration</em>' class.
@@ -649,7 +676,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int PROPERTY_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.ClassDeclarationImpl <em>Class Declaration</em>}' class.
@@ -1012,23 +1039,32 @@ public interface Inform6Package extends EPackage
   int ARRAY_TYPE__TYPE = 0;
 
   /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_TYPE__SIZE = 1;
+
+  /**
    * The number of structural features of the '<em>Array Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARRAY_TYPE_FEATURE_COUNT = 1;
+  int ARRAY_TYPE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
+   * The meta object id for the '{@link com.github.toerob.inform6.impl.ExpressionImpl <em>Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.PrimaryExpressionImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimaryExpression()
+   * @see com.github.toerob.inform6.impl.ExpressionImpl
+   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getExpression()
    * @generated
    */
-  int PRIMARY_EXPRESSION = 27;
+  int EXPRESSION = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1037,7 +1073,16 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPRESSION__LEFT = 0;
+  int EXPRESSION__LEFT = 0;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__OPERATOR = 1;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1046,16 +1091,25 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPRESSION__RIGHT = 1;
+  int EXPRESSION__RIGHT = 2;
 
   /**
-   * The number of structural features of the '<em>Primary Expression</em>' class.
+   * The feature id for the '<em><b>Unparsed Tokens</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPRESSION_FEATURE_COUNT = 2;
+  int EXPRESSION__UNPARSED_TOKENS = 3;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.ClassSectionImpl <em>Class Section</em>}' class.
@@ -1299,13 +1353,22 @@ public interface Inform6Package extends EPackage
   int GLOBAL_FUNCTION_DEFINITION = 34;
 
   /**
+   * The feature id for the '<em><b>Function Header</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER = DIRECTIVE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Function Body</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = DIRECTIVE_FEATURE_COUNT + 0;
+  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = DIRECTIVE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Global Function Definition</em>' class.
@@ -1314,7 +1377,35 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 1;
+  int GLOBAL_FUNCTION_DEFINITION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.github.toerob.inform6.impl.FunctionHeaderImpl <em>Function Header</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.github.toerob.inform6.impl.FunctionHeaderImpl
+   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionHeader()
+   * @generated
+   */
+  int FUNCTION_HEADER = 35;
+
+  /**
+   * The feature id for the '<em><b>Variables</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_HEADER__VARIABLES = 0;
+
+  /**
+   * The number of structural features of the '<em>Function Header</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_HEADER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.PrimaryImpl <em>Primary</em>}' class.
@@ -1324,7 +1415,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimary()
    * @generated
    */
-  int PRIMARY = 35;
+  int PRIMARY = 36;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1397,7 +1488,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getNumber()
    * @generated
    */
-  int NUMBER = 36;
+  int NUMBER = 37;
 
   /**
    * The feature id for the '<em><b>Negative</b></em>' attribute.
@@ -1434,7 +1525,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 37;
+  int ATTRIBUTE = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1462,7 +1553,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getBYTE_ARRAY()
    * @generated
    */
-  int BYTE_ARRAY = 38;
+  int BYTE_ARRAY = 39;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1472,6 +1563,15 @@ public interface Inform6Package extends EPackage
    * @ordered
    */
   int BYTE_ARRAY__TYPE = ARRAY_TYPE__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BYTE_ARRAY__SIZE = ARRAY_TYPE__SIZE;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -1499,7 +1599,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getWORD_ARRAY()
    * @generated
    */
-  int WORD_ARRAY = 39;
+  int WORD_ARRAY = 40;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1509,6 +1609,15 @@ public interface Inform6Package extends EPackage
    * @ordered
    */
   int WORD_ARRAY__TYPE = ARRAY_TYPE__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD_ARRAY__SIZE = ARRAY_TYPE__SIZE;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -1536,7 +1645,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getTABLE_ARRAY()
    * @generated
    */
-  int TABLE_ARRAY = 40;
+  int TABLE_ARRAY = 41;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1554,7 +1663,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int TABLE_ARRAY__SIZE = ARRAY_TYPE_FEATURE_COUNT + 0;
+  int TABLE_ARRAY__SIZE = ARRAY_TYPE__SIZE;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -1563,7 +1672,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int TABLE_ARRAY__CONTENT = ARRAY_TYPE_FEATURE_COUNT + 1;
+  int TABLE_ARRAY__CONTENT = ARRAY_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>TABLE ARRAY</em>' class.
@@ -1572,7 +1681,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int TABLE_ARRAY_FEATURE_COUNT = ARRAY_TYPE_FEATURE_COUNT + 2;
+  int TABLE_ARRAY_FEATURE_COUNT = ARRAY_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.STRING_ARRAYImpl <em>STRING ARRAY</em>}' class.
@@ -1582,7 +1691,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getSTRING_ARRAY()
    * @generated
    */
-  int STRING_ARRAY = 41;
+  int STRING_ARRAY = 42;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1600,7 +1709,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_ARRAY__SIZE = ARRAY_TYPE_FEATURE_COUNT + 0;
+  int STRING_ARRAY__SIZE = ARRAY_TYPE__SIZE;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' attribute list.
@@ -1609,7 +1718,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_ARRAY__CONTENT = ARRAY_TYPE_FEATURE_COUNT + 1;
+  int STRING_ARRAY__CONTENT = ARRAY_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>STRING ARRAY</em>' class.
@@ -1618,7 +1727,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_ARRAY_FEATURE_COUNT = ARRAY_TYPE_FEATURE_COUNT + 2;
+  int STRING_ARRAY_FEATURE_COUNT = ARRAY_TYPE_FEATURE_COUNT + 1;
 
 
   /**
@@ -1801,15 +1910,15 @@ public interface Inform6Package extends EPackage
   EAttribute getPropertyDirective_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDirective#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDirective#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see com.github.toerob.inform6.PropertyDirective#getValue()
    * @see #getPropertyDirective()
    * @generated
    */
-  EAttribute getPropertyDirective_Value();
+  EReference getPropertyDirective_Value();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.ReleaseDirective <em>Release Directive</em>}'.
@@ -2078,6 +2187,17 @@ public interface Inform6Package extends EPackage
   EAttribute getAttributeDeclaration_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.AttributeDeclaration#getAliasedAttribute <em>Aliased Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Aliased Attribute</em>'.
+   * @see com.github.toerob.inform6.AttributeDeclaration#getAliasedAttribute()
+   * @see #getAttributeDeclaration()
+   * @generated
+   */
+  EAttribute getAttributeDeclaration_AliasedAttribute();
+
+  /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.PropertyDeclaration <em>Property Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2099,6 +2219,17 @@ public interface Inform6Package extends EPackage
   EAttribute getPropertyDeclaration_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDeclaration#getAdditive <em>Additive</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Additive</em>'.
+   * @see com.github.toerob.inform6.PropertyDeclaration#getAdditive()
+   * @see #getPropertyDeclaration()
+   * @generated
+   */
+  EAttribute getPropertyDeclaration_Additive();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDeclaration#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2108,6 +2239,17 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   EReference getPropertyDeclaration_Value();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDeclaration#getAliasedProperty <em>Aliased Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Aliased Property</em>'.
+   * @see com.github.toerob.inform6.PropertyDeclaration#getAliasedProperty()
+   * @see #getPropertyDeclaration()
+   * @generated
+   */
+  EReference getPropertyDeclaration_AliasedProperty();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.ClassDeclaration <em>Class Declaration</em>}'.
@@ -2442,36 +2584,69 @@ public interface Inform6Package extends EPackage
   EAttribute getArrayType_Type();
 
   /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.PrimaryExpression <em>Primary Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.ArrayType#getSize <em>Size</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Primary Expression</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression
+   * @return the meta object for the containment reference '<em>Size</em>'.
+   * @see com.github.toerob.inform6.ArrayType#getSize()
+   * @see #getArrayType()
    * @generated
    */
-  EClass getPrimaryExpression();
+  EReference getArrayType_Size();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PrimaryExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.github.toerob.inform6.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see com.github.toerob.inform6.Expression
+   * @generated
+   */
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.Expression#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression#getLeft()
-   * @see #getPrimaryExpression()
+   * @see com.github.toerob.inform6.Expression#getLeft()
+   * @see #getExpression()
    * @generated
    */
-  EReference getPrimaryExpression_Left();
+  EReference getExpression_Left();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PrimaryExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.Expression#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see com.github.toerob.inform6.Expression#getOperator()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Operator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.Expression#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.github.toerob.inform6.PrimaryExpression#getRight()
-   * @see #getPrimaryExpression()
+   * @see com.github.toerob.inform6.Expression#getRight()
+   * @see #getExpression()
    * @generated
    */
-  EReference getPrimaryExpression_Right();
+  EReference getExpression_Right();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.github.toerob.inform6.Expression#getUnparsedTokens <em>Unparsed Tokens</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Unparsed Tokens</em>'.
+   * @see com.github.toerob.inform6.Expression#getUnparsedTokens()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_UnparsedTokens();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.ClassSection <em>Class Section</em>}'.
@@ -2687,6 +2862,17 @@ public interface Inform6Package extends EPackage
   EClass getGlobalFunctionDefinition();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionHeader <em>Function Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Function Header</em>'.
+   * @see com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionHeader()
+   * @see #getGlobalFunctionDefinition()
+   * @generated
+   */
+  EReference getGlobalFunctionDefinition_FunctionHeader();
+
+  /**
    * Returns the meta object for the attribute '{@link com.github.toerob.inform6.GlobalFunctionDefinition#getFunctionBody <em>Function Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2696,6 +2882,27 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   EAttribute getGlobalFunctionDefinition_FunctionBody();
+
+  /**
+   * Returns the meta object for class '{@link com.github.toerob.inform6.FunctionHeader <em>Function Header</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Header</em>'.
+   * @see com.github.toerob.inform6.FunctionHeader
+   * @generated
+   */
+  EClass getFunctionHeader();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.github.toerob.inform6.FunctionHeader#getVariables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Variables</em>'.
+   * @see com.github.toerob.inform6.FunctionHeader#getVariables()
+   * @see #getFunctionHeader()
+   * @generated
+   */
+  EAttribute getFunctionHeader_Variables();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.Primary <em>Primary</em>}'.
@@ -2879,17 +3086,6 @@ public interface Inform6Package extends EPackage
   EClass getTABLE_ARRAY();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.TABLE_ARRAY#getSize <em>Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Size</em>'.
-   * @see com.github.toerob.inform6.TABLE_ARRAY#getSize()
-   * @see #getTABLE_ARRAY()
-   * @generated
-   */
-  EReference getTABLE_ARRAY_Size();
-
-  /**
    * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.TABLE_ARRAY#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2909,17 +3105,6 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   EClass getSTRING_ARRAY();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.STRING_ARRAY#getSize <em>Size</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Size</em>'.
-   * @see com.github.toerob.inform6.STRING_ARRAY#getSize()
-   * @see #getSTRING_ARRAY()
-   * @generated
-   */
-  EReference getSTRING_ARRAY_Size();
 
   /**
    * Returns the meta object for the attribute list '{@link com.github.toerob.inform6.STRING_ARRAY#getContent <em>Content</em>}'.
@@ -3108,12 +3293,12 @@ public interface Inform6Package extends EPackage
     EAttribute PROPERTY_DIRECTIVE__NAME = eINSTANCE.getPropertyDirective_Name();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROPERTY_DIRECTIVE__VALUE = eINSTANCE.getPropertyDirective_Value();
+    EReference PROPERTY_DIRECTIVE__VALUE = eINSTANCE.getPropertyDirective_Value();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.ReleaseDirectiveImpl <em>Release Directive</em>}' class.
@@ -3334,6 +3519,14 @@ public interface Inform6Package extends EPackage
     EAttribute ATTRIBUTE_DECLARATION__NAME = eINSTANCE.getAttributeDeclaration_Name();
 
     /**
+     * The meta object literal for the '<em><b>Aliased Attribute</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE = eINSTANCE.getAttributeDeclaration_AliasedAttribute();
+
+    /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl <em>Property Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3352,12 +3545,28 @@ public interface Inform6Package extends EPackage
     EAttribute PROPERTY_DECLARATION__NAME = eINSTANCE.getPropertyDeclaration_Name();
 
     /**
+     * The meta object literal for the '<em><b>Additive</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY_DECLARATION__ADDITIVE = eINSTANCE.getPropertyDeclaration_Additive();
+
+    /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PROPERTY_DECLARATION__VALUE = eINSTANCE.getPropertyDeclaration_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Aliased Property</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROPERTY_DECLARATION__ALIASED_PROPERTY = eINSTANCE.getPropertyDeclaration_AliasedProperty();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.ClassDeclarationImpl <em>Class Declaration</em>}' class.
@@ -3626,14 +3835,22 @@ public interface Inform6Package extends EPackage
     EAttribute ARRAY_TYPE__TYPE = eINSTANCE.getArrayType_Type();
 
     /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.PrimaryExpressionImpl <em>Primary Expression</em>}' class.
+     * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.PrimaryExpressionImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimaryExpression()
      * @generated
      */
-    EClass PRIMARY_EXPRESSION = eINSTANCE.getPrimaryExpression();
+    EReference ARRAY_TYPE__SIZE = eINSTANCE.getArrayType_Size();
+
+    /**
+     * The meta object literal for the '{@link com.github.toerob.inform6.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.github.toerob.inform6.impl.ExpressionImpl
+     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getExpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -3641,7 +3858,15 @@ public interface Inform6Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRIMARY_EXPRESSION__LEFT = eINSTANCE.getPrimaryExpression_Left();
+    EReference EXPRESSION__LEFT = eINSTANCE.getExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__OPERATOR = eINSTANCE.getExpression_Operator();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -3649,7 +3874,15 @@ public interface Inform6Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRIMARY_EXPRESSION__RIGHT = eINSTANCE.getPrimaryExpression_Right();
+    EReference EXPRESSION__RIGHT = eINSTANCE.getExpression_Right();
+
+    /**
+     * The meta object literal for the '<em><b>Unparsed Tokens</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__UNPARSED_TOKENS = eINSTANCE.getExpression_UnparsedTokens();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.ClassSectionImpl <em>Class Section</em>}' class.
@@ -3826,12 +4059,38 @@ public interface Inform6Package extends EPackage
     EClass GLOBAL_FUNCTION_DEFINITION = eINSTANCE.getGlobalFunctionDefinition();
 
     /**
+     * The meta object literal for the '<em><b>Function Header</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER = eINSTANCE.getGlobalFunctionDefinition_FunctionHeader();
+
+    /**
      * The meta object literal for the '<em><b>Function Body</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = eINSTANCE.getGlobalFunctionDefinition_FunctionBody();
+
+    /**
+     * The meta object literal for the '{@link com.github.toerob.inform6.impl.FunctionHeaderImpl <em>Function Header</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.github.toerob.inform6.impl.FunctionHeaderImpl
+     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionHeader()
+     * @generated
+     */
+    EClass FUNCTION_HEADER = eINSTANCE.getFunctionHeader();
+
+    /**
+     * The meta object literal for the '<em><b>Variables</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_HEADER__VARIABLES = eINSTANCE.getFunctionHeader_Variables();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.PrimaryImpl <em>Primary</em>}' class.
@@ -3982,14 +4241,6 @@ public interface Inform6Package extends EPackage
     EClass TABLE_ARRAY = eINSTANCE.getTABLE_ARRAY();
 
     /**
-     * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TABLE_ARRAY__SIZE = eINSTANCE.getTABLE_ARRAY_Size();
-
-    /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4006,14 +4257,6 @@ public interface Inform6Package extends EPackage
      * @generated
      */
     EClass STRING_ARRAY = eINSTANCE.getSTRING_ARRAY();
-
-    /**
-     * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STRING_ARRAY__SIZE = eINSTANCE.getSTRING_ARRAY_Size();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' attribute list feature.

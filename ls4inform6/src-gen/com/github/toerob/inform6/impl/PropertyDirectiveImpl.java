@@ -4,11 +4,14 @@
 package com.github.toerob.inform6.impl;
 
 import com.github.toerob.inform6.Inform6Package;
+import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.PropertyDirective;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -70,24 +73,14 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected Primary value;
 
   /**
    * <!-- begin-user-doc -->
@@ -166,7 +159,7 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
    * @generated
    */
   @Override
-  public String getValue()
+  public Primary getValue()
   {
     return value;
   }
@@ -176,13 +169,54 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setValue(String newValue)
+  public NotificationChain basicSetValue(Primary newValue, NotificationChain msgs)
   {
-    String oldValue = value;
+    Primary oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DIRECTIVE__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DIRECTIVE__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(Primary newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.PROPERTY_DIRECTIVE__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.PROPERTY_DIRECTIVE__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DIRECTIVE__VALUE, newValue, newValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
+        return basicSetValue(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -222,7 +256,7 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
         setName((String)newValue);
         return;
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
-        setValue((String)newValue);
+        setValue((Primary)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -245,7 +279,7 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
         setName(NAME_EDEFAULT);
         return;
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
-        setValue(VALUE_EDEFAULT);
+        setValue((Primary)null);
         return;
     }
     super.eUnset(featureID);
@@ -266,7 +300,7 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
       case Inform6Package.PROPERTY_DIRECTIVE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
@@ -286,8 +320,6 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
     result.append(additive);
     result.append(", name: ");
     result.append(name);
-    result.append(", value: ");
-    result.append(value);
     result.append(')');
     return result.toString();
   }

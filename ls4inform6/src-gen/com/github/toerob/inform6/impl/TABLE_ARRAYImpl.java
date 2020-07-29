@@ -3,21 +3,18 @@
  */
 package com.github.toerob.inform6.impl;
 
+import com.github.toerob.inform6.Expression;
 import com.github.toerob.inform6.Inform6Package;
-import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.TABLE_ARRAY;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.github.toerob.inform6.impl.TABLE_ARRAYImpl#getSize <em>Size</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.TABLE_ARRAYImpl#getContent <em>Content</em>}</li>
  * </ul>
  *
@@ -39,16 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
 {
   /**
-   * The cached value of the '{@link #getSize() <em>Size</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSize()
-   * @generated
-   * @ordered
-   */
-  protected Primary size;
-
-  /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -56,7 +42,7 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
    * @generated
    * @ordered
    */
-  protected EList<Primary> content;
+  protected EList<Expression> content;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,61 +71,11 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
    * @generated
    */
   @Override
-  public Primary getSize()
-  {
-    return size;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSize(Primary newSize, NotificationChain msgs)
-  {
-    Primary oldSize = size;
-    size = newSize;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Inform6Package.TABLE_ARRAY__SIZE, oldSize, newSize);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setSize(Primary newSize)
-  {
-    if (newSize != size)
-    {
-      NotificationChain msgs = null;
-      if (size != null)
-        msgs = ((InternalEObject)size).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Inform6Package.TABLE_ARRAY__SIZE, null, msgs);
-      if (newSize != null)
-        msgs = ((InternalEObject)newSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Inform6Package.TABLE_ARRAY__SIZE, null, msgs);
-      msgs = basicSetSize(newSize, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.TABLE_ARRAY__SIZE, newSize, newSize));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Primary> getContent()
+  public EList<Expression> getContent()
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<Primary>(Primary.class, this, Inform6Package.TABLE_ARRAY__CONTENT);
+      content = new EObjectContainmentEList<Expression>(Expression.class, this, Inform6Package.TABLE_ARRAY__CONTENT);
     }
     return content;
   }
@@ -154,8 +90,6 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.TABLE_ARRAY__SIZE:
-        return basicSetSize(null, msgs);
       case Inform6Package.TABLE_ARRAY__CONTENT:
         return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
@@ -172,8 +106,6 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.TABLE_ARRAY__SIZE:
-        return getSize();
       case Inform6Package.TABLE_ARRAY__CONTENT:
         return getContent();
     }
@@ -191,12 +123,9 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.TABLE_ARRAY__SIZE:
-        setSize((Primary)newValue);
-        return;
       case Inform6Package.TABLE_ARRAY__CONTENT:
         getContent().clear();
-        getContent().addAll((Collection<? extends Primary>)newValue);
+        getContent().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,9 +141,6 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.TABLE_ARRAY__SIZE:
-        setSize((Primary)null);
-        return;
       case Inform6Package.TABLE_ARRAY__CONTENT:
         getContent().clear();
         return;
@@ -232,8 +158,6 @@ public class TABLE_ARRAYImpl extends ArrayTypeImpl implements TABLE_ARRAY
   {
     switch (featureID)
     {
-      case Inform6Package.TABLE_ARRAY__SIZE:
-        return size != null;
       case Inform6Package.TABLE_ARRAY__CONTENT:
         return content != null && !content.isEmpty();
     }

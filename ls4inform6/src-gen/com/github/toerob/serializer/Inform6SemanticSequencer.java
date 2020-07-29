@@ -14,6 +14,8 @@ import com.github.toerob.inform6.ClassDeclaration;
 import com.github.toerob.inform6.CommentDeclaration;
 import com.github.toerob.inform6.CompilerDirective;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.Expression;
+import com.github.toerob.inform6.FunctionHeader;
 import com.github.toerob.inform6.GlobalConstantDeclaration;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
@@ -24,7 +26,6 @@ import com.github.toerob.inform6.Inform6Package;
 import com.github.toerob.inform6.MessageDirective;
 import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
-import com.github.toerob.inform6.PrimaryExpression;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
 import com.github.toerob.inform6.PropertyDeclaration;
@@ -101,6 +102,12 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 			case Inform6Package.DIRECTIVE:
 				sequence_Directive(context, (Directive) semanticObject); 
 				return; 
+			case Inform6Package.EXPRESSION:
+				sequence_PrimaryExpression(context, (Expression) semanticObject); 
+				return; 
+			case Inform6Package.FUNCTION_HEADER:
+				sequence_FunctionHeader(context, (FunctionHeader) semanticObject); 
+				return; 
 			case Inform6Package.GLOBAL_CONSTANT_DECLARATION:
 				sequence_GlobalConstantDeclaration(context, (GlobalConstantDeclaration) semanticObject); 
 				return; 
@@ -145,9 +152,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 				else break;
 			case Inform6Package.PRIMARY:
 				sequence_Primary(context, (Primary) semanticObject); 
-				return; 
-			case Inform6Package.PRIMARY_EXPRESSION:
-				sequence_PrimaryExpression(context, (PrimaryExpression) semanticObject); 
 				return; 
 			case Inform6Package.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
@@ -239,7 +243,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ArrayType returns BYTE_ARRAY
 	 *
 	 * Constraint:
-	 *     (type=BYTE_ARROW content+=PrimaryExpression*)
+	 *     (type=BYTE_ARROW size=PrimaryExpression? content+=PrimaryExpression*)
 	 */
 	protected void sequence_ArrayType(ISerializationContext context, BYTE_ARRAY semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -251,7 +255,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ArrayType returns STRING_ARRAY
 	 *
 	 * Constraint:
-	 *     (type='string' size=Primary? content+=STRING?)
+	 *     (type='string' size=PrimaryExpression? content+=STRING?)
 	 */
 	protected void sequence_ArrayType(ISerializationContext context, STRING_ARRAY semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -263,7 +267,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ArrayType returns TABLE_ARRAY
 	 *
 	 * Constraint:
-	 *     ((type='table' | type='buffer') size=Primary? content+=Primary?)
+	 *     ((type='table' | type='buffer') size=PrimaryExpression? content+=PrimaryExpression*)
 	 */
 	protected void sequence_ArrayType(ISerializationContext context, TABLE_ARRAY semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -275,7 +279,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ArrayType returns WORD_ARRAY
 	 *
 	 * Constraint:
-	 *     (type=WORD_ARROW content+=PrimaryExpression*)
+	 *     (type=WORD_ARROW size=PrimaryExpression? content+=PrimaryExpression*)
 	 */
 	protected void sequence_ArrayType(ISerializationContext context, WORD_ARRAY semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -288,16 +292,10 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AttributeDeclaration returns AttributeDeclaration
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     ((name=ID | name=STATIC) (aliasedAttribute=ID | aliasedAttribute=STATIC)?)
 	 */
 	protected void sequence_AttributeDeclaration(ISerializationContext context, AttributeDeclaration semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.ATTRIBUTE_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.ATTRIBUTE_DECLARATION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttributeDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -318,16 +316,10 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     name=[AttributeDeclaration|ID]
+	 *     (name=[AttributeDeclaration|ID] | name=[AttributeDeclaration|STATIC])
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.ATTRIBUTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.ATTRIBUTE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAttributeAccess().getNameAttributeDeclarationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(Inform6Package.Literals.ATTRIBUTE__NAME, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -417,6 +409,18 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     FunctionHeader returns FunctionHeader
+	 *
+	 * Constraint:
+	 *     variables+=ID*
+	 */
+	protected void sequence_FunctionHeader(ISerializationContext context, FunctionHeader semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Directive returns GlobalConstantDeclaration
 	 *     GlobalConstantDeclaration returns GlobalConstantDeclaration
 	 *
@@ -478,15 +482,18 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     GlobalFunctionDefinition returns GlobalFunctionDefinition
 	 *
 	 * Constraint:
-	 *     functionBody=FunctionBody
+	 *     (functionHeader=FunctionHeader functionBody=FunctionBody)
 	 */
 	protected void sequence_GlobalFunctionDefinition(ISerializationContext context, GlobalFunctionDefinition semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER));
 			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGlobalFunctionDefinitionAccess().getFunctionBodyFunctionBodyParserRuleCall_1_0(), semanticObject.getFunctionBody());
+		feeder.accept(grammarAccess.getGlobalFunctionDefinitionAccess().getFunctionHeaderFunctionHeaderParserRuleCall_1_0(), semanticObject.getFunctionHeader());
+		feeder.accept(grammarAccess.getGlobalFunctionDefinitionAccess().getFunctionBodyFunctionBodyParserRuleCall_2_0(), semanticObject.getFunctionBody());
 		feeder.finish();
 	}
 	
@@ -504,8 +511,8 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             headline=STRING? 
 	 *             in=[ObjectDeclaration|ID]? 
 	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=ClassSection? 
-	 *             ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
+	 *             properties+=AttributeSection? 
+	 *             ((properties+=ClassSection | properties+=PropertySection)? properties+=AttributeSection?)*
 	 *         ) | 
 	 *         (
 	 *             (object='Object' | superType=[ClassDeclaration|ID]) 
@@ -521,8 +528,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             headline=STRING 
 	 *             in=[ObjectDeclaration|ID]? 
 	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=ClassSection? 
-	 *             ((properties+=PropertySection | properties+=AttributeSection)? properties+=ClassSection?)*
+	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
 	 *         )
 	 *     )
 	 */
@@ -654,12 +660,18 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     PrimaryExpression returns PrimaryExpression
+	 *     PrimaryExpression returns Expression
 	 *
 	 * Constraint:
-	 *     ((left=Primary right=Primary) | left=Primary | left=Primary)
+	 *     (
+	 *         (left=Primary (operator='/' | operator='*' | operator='+' | operator='-') right=Primary) | 
+	 *         (left=Primary (operator='/' | operator='*' | operator='+' | operator='-') right=Primary) | 
+	 *         left=Primary | 
+	 *         left=Primary | 
+	 *         unparsedTokens+=FuzzyExpression+
+	 *     )?
 	 */
-	protected void sequence_PrimaryExpression(ISerializationContext context, PrimaryExpression semanticObject) {
+	protected void sequence_PrimaryExpression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -702,19 +714,10 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PropertyDeclaration returns PropertyDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID value=Primary)
+	 *     ((name=ID additive='additive'? value=Primary) | (name=ID aliasedProperty=Primary))
 	 */
 	protected void sequence_PropertyDeclaration(ISerializationContext context, PropertyDeclaration semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.PROPERTY_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.PROPERTY_DECLARATION__NAME));
-			if (transientValues.isValueTransient(semanticObject, Inform6Package.Literals.PROPERTY_DECLARATION__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Inform6Package.Literals.PROPERTY_DECLARATION__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPropertyDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPropertyDeclarationAccess().getValuePrimaryParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -724,7 +727,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PropertyDirective returns PropertyDirective
 	 *
 	 * Constraint:
-	 *     (additive='additive'? (name=ID | name=DIRECTIONS | name='found_in') value=ID?)
+	 *     (additive='additive'? (name=ID | name=DIRECTIONS | name='found_in') value=Primary?)
 	 */
 	protected void sequence_PropertyDirective(ISerializationContext context, PropertyDirective semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -14,6 +14,7 @@ package com.github.toerob.inform6;
  * </p>
  * <ul>
  *   <li>{@link com.github.toerob.inform6.AttributeDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.AttributeDeclaration#getAliasedAttribute <em>Aliased Attribute</em>}</li>
  * </ul>
  *
  * @see com.github.toerob.inform6.Inform6Package#getAttributeDeclaration()
@@ -43,5 +44,27 @@ public interface AttributeDeclaration extends Directive
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Aliased Attribute</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Aliased Attribute</em>' attribute.
+   * @see #setAliasedAttribute(String)
+   * @see com.github.toerob.inform6.Inform6Package#getAttributeDeclaration_AliasedAttribute()
+   * @model
+   * @generated
+   */
+  String getAliasedAttribute();
+
+  /**
+   * Sets the value of the '{@link com.github.toerob.inform6.AttributeDeclaration#getAliasedAttribute <em>Aliased Attribute</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Aliased Attribute</em>' attribute.
+   * @see #getAliasedAttribute()
+   * @generated
+   */
+  void setAliasedAttribute(String value);
 
 } // AttributeDeclaration

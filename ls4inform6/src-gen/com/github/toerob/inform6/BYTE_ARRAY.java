@@ -25,7 +25,7 @@ public interface BYTE_ARRAY extends ArrayType
 {
   /**
    * Returns the value of the '<em><b>Content</b></em>' containment reference list.
-   * The list contents are of type {@link com.github.toerob.inform6.PrimaryExpression}.
+   * The list contents are of type {@link com.github.toerob.inform6.Expression}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Content</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface BYTE_ARRAY extends ArrayType
    * @model containment="true"
    * @generated
    */
-  EList<PrimaryExpression> getContent();
+  EList<Expression> getContent();
 
 } // BYTE_ARRAY

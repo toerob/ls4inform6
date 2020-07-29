@@ -4,6 +4,7 @@
 package com.github.toerob.ui.labeling;
 
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
@@ -48,6 +49,8 @@ import com.google.inject.Inject;
  */
 public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 
+	private static final String GLOBAL_FUNCTION_STR = "Global function";
+
 	@Inject
 	public Inform6LabelProvider(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
@@ -61,17 +64,6 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	public String text(SwitchesDeclaration ele) {
-		/*
-		 * String strings = ele.getSwitches() .stream() .map(x->x.getString())
-		 * .collect(Collectors.joining(" "));
-		 * 
-		 * strings += ele.getSwitches() .stream() .map(x->x.getId())
-		 * .collect(Collectors.joining(" "));
-		 * 
-		 * strings += ele.getSwitches() .stream() .map(x->x.getAttribute().toString())
-		 * .collect(Collectors.joining(" "));
-		 */
-
 		return "Switches: " + ele.getName();
 	}
 
@@ -104,11 +96,7 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 		return null;
 	}
 
-	/*
-	 * public String text(ArrayDeclaration element) { ArrayType arrayBody =
-	 * element.getArrayBody(); String type = arrayBody.getType(); return type; }
-	 */
-
+	
 	public String text(ArrayType element) {
 		if ("->".equals(element.getType()) || "-->".equals(element.getType())) {
 			EList<EObject> eContents = element.eContents();
@@ -116,10 +104,8 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 					.collect(Collectors.joining(" "));
 			return collect;
 		}
-		// TODO: the other types
 		return element.getType();
 	}
-	
 	
 	public String text(GlobalDeclaration ele) {
 		return "Global " + ele.getName() + ": " + extractPrimaryAsString(ele.getValue());
@@ -152,19 +138,25 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	public String text(AttributeSection ele) {
-		return "Attributes";
+		return "Attributes: " + ele.getAttributes().stream().map(x->x.getName().getName()).collect(Collectors.joining(", "));
 	}
 
 	public String text(ClassSection ele) {
 		return "Superclasses";
 	}
-	
 
 	public String text(GlobalFunctionDefinition ele) {
-		int firstBracket = ele.getFunctionBody().indexOf("[");
-		int endOfVariableNames = ele.getFunctionBody().indexOf(";", firstBracket);
-		String functionName = ele.getFunctionBody().substring(firstBracket + 1, endOfVariableNames);
-		return functionName + ": Global function";
+		if (!ele.getFunctionHeader().getVariables().isEmpty()) {
+			String functionName = ele.getFunctionHeader().getVariables().get(0);
+			int size = ele.getFunctionHeader().getVariables().size();
+			if (size > 1) {
+				List<String> variableList = ele.getFunctionHeader().getVariables().subList(1, size);
+				String variables = variableList.stream().collect(Collectors.joining(", "));
+				return functionName + "(" + variables + ") ( " + GLOBAL_FUNCTION_STR + ")";
+			}
+			return functionName + "( " + GLOBAL_FUNCTION_STR + ")";
+		}
+		return GLOBAL_FUNCTION_STR;
 	}
 
 	// Constant, globals, attributes and imports

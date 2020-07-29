@@ -60,9 +60,11 @@ Directive:
 	| ArrayDeclaration
 	| PropertyDirective
 	| MessageDirective
+	| {Directive} AbbreviateDirective
+	| {Directive} AbortDirective
 	| {Directive} EndDirective
 	| {Directive} LowStringDirective
-	| {Directive} PREPROCESSORDIR
+	| {Directive} PreprocessorDirective
 	| {Directive} FakeActionDirective
 	| {Directive} SystemFileDirective
 ;
@@ -74,6 +76,14 @@ SystemFileDirective:
 
 FakeActionDirective:
 	'Fake_Action' ID ';'
+;
+
+AbbreviateDirective:
+	'Abbreviate' STRING ';'
+;
+
+AbortDirective:
+	'abort' ';'
 ;
 
 MessageDirective:
@@ -103,7 +113,7 @@ EndDirective:
 
 //FIXME: DIRECTIONS should be able to cross reference the same way as attributes
 PropertyDirective:
-	"Property" additive='additive'? name=(ID|DIRECTIONS|'found_in') value=ID? ';'
+	"Property" additive='additive'? name=(ID|DIRECTIONS|'found_in') value=Primary? ';'
 ;
 
 LowStringDirective:
@@ -120,7 +130,6 @@ GlobalConstantDeclaration:
 GlobalDefaultDeclaration:
 	'Default' name=ID '='? value=GlobalConstantValue? ';';
 
-
 SwitchesDeclaration:	name='Switches' (switches+=Primary*) ';';
 
 //FIXME: 'meta' here should be a global declaration, and instead used as a [GlobalDeclaration]
@@ -128,8 +137,21 @@ SwitchesDeclaration:	name='Switches' (switches+=Primary*) ';';
 GlobalDeclaration:		'Global' name=(ID|'meta') ('=' value=Primary)? ';';
 GlobalConstantValue:	name=Primary;
 
-AttributeDeclaration: 	'Attribute' name=ID ';';
-PropertyDeclaration: 	'Property' name=ID value=Primary ';';
+AttributeDeclaration: 	{AttributeDeclaration} 'Attribute' 
+	(
+		name=(ID|STATIC) ('alias' aliasedAttribute=(ID|STATIC))? 
+	)
+	';'
+;
+
+
+PropertyDeclaration: 	'Property' 
+	(
+		name=ID additive='additive'? value=Primary 
+		| name=ID 'alias' aliasedProperty=Primary
+	)  
+	';'
+;
 
 ClassDeclaration:
 	{ClassDeclaration} 
@@ -177,26 +199,53 @@ VerbAssignment:
 ;
 
 ArrayDeclaration:
-	'Array' name=(ID|'buffer') arrayBody=ArrayType
+	'Array' name=(ID|'buffer') STATIC? arrayBody=ArrayType
 	';'
 ;
 
 // TODO: See Swedish.h, arrays need to be further refined
 ArrayType:
-	{BYTE_ARRAY} type=BYTE_ARROW content+=PrimaryExpression* 
-	| {WORD_ARRAY} type=WORD_ARROW content+=PrimaryExpression*
-	| {TABLE_ARRAY} type=('table'|'buffer') size=Primary? content+=Primary?
-	| {STRING_ARRAY} type='string' size=Primary? content+=STRING?
+	{BYTE_ARRAY} type=BYTE_ARROW size=PrimaryExpression? content+=PrimaryExpression* 
+	| {WORD_ARRAY} type=WORD_ARROW size=PrimaryExpression? content+=PrimaryExpression*
+	| {TABLE_ARRAY} type=('table'|'buffer') size=PrimaryExpression? content+=PrimaryExpression*
+	| {STRING_ARRAY} type='string' size=PrimaryExpression? content+=STRING?
 ;
 
-// NOTE: Just enough to make statements such as
-// PARSE_BUFFER_LEN/WORDSIZE pass. This needs more work
-
-PrimaryExpression returns PrimaryExpression:
-	left=Primary ('/'|'*'|'+'|'-') right=Primary
+// FIXME: Just enough to make statements such as
+// PARSE_BUFFER_LEN/WORDSIZE pass. This needs more work 
+// so it can handle nested expressions etc
+PrimaryExpression returns Expression:
+	left=Primary operator=('/'|'*'|'+'|'-') right=Primary
+	| '(' left=Primary operator=('/'|'*'|'+'|'-') right=Primary ')'
 	| '(' left=Primary ')'
 	| left=Primary
+	| {Expression} '(' unparsedTokens+=FuzzyExpression* ')' //Fuzzy parse if too complex
+	//LogicalOr //TODO: This line shall replace all of the above in this rule when it is complete
 ;
+
+/*
+LogicalOr returns Expression:
+	BitwiseOr ({LogicalOr.left=current} ('||' | 'or') right=BitwiseOr)*;
+BitwiseOr returns Expression:
+	LogicalAnd ({BitwiseOr.left=current} '|' right=LogicalAnd)*;
+LogicalAnd returns Expression:
+	BitwiseAnd ({LogicalAnd.left=current} ('&&' | 'and') right=BitwiseAnd)*;
+BitwiseAnd returns Expression:
+	Equivalency ({BitwiseAnd.left=current} '&' right=Equivalency)*;
+Equivalency returns Expression:
+	Relational ({Equivalency.left=current} ('==' | '~=' | '=') right=Relational)*;
+Relational returns Expression:
+	Addition ({Relational.left=current} ('>=' | '<=' | '>' | '<') right=Addition)*;
+Addition returns Expression:
+	Multiplicity ({Addition.left=current} ('+' | '-') right=Multiplicity)*;
+Multiplicity returns Expression:
+	Unary ({Multiplicity.left=current} ('/' | '*') right=Unary)*;
+Unary returns Expression:
+	Grouped | ({Unary} type=('~') expr=Grouped);
+Grouped returns Expression:
+	Primary
+	//| '(' PrimaryExpression ')'  	
+;*/
 
 ClassSection:
 	({PropertySection} name='class' (classProperty=Property))	
@@ -205,7 +254,7 @@ ClassSection:
 PropertySection:
 	({PropertySection} name=('with'|'private') 
 		(properties+=Property)? (',' properties+=Property)*
-		| {PropertySection} PREPROCESSORDIR	
+		| {PropertySection} PreprocessorDirective	
 	) ','?
 ;
 
@@ -241,37 +290,52 @@ Method returns AbstractProperty:
 ;
 
 GlobalFunctionDefinition:
-	'[' functionBody=FunctionBody ']'
+	'[' 
+		functionHeader=FunctionHeader
+		functionBody=FunctionBody 
+	']'
 	';'
 ;
 
+FunctionHeader:
+	{FunctionHeader} variables+=ID* ';'
+;
+
 FunctionBody:
-	(	
-		Expression
-		|';'|':'|'('|')'|'/'|'-'|'--'|'+'|'~'|'='|'!'|'*'|','|'#'|'##'
-		|'string'
-		|'reverse'
-		|'meta'
-		|'buffer'
-		|'table'
-		|'has'
-		|'hasnt'
-		|'Class'
-		|'class'
-		|'Object'
-		|'last'
-		|'first'
-		|'only'
-	)*
+	(FuzzyExpression)*
 ;
 
 /* Encapsulates all possibly combinations into one abstract function body 
  * TODO: this should be broken up into real expression and statements, so real 
  * analysis can be made
  */
+FuzzyExpression:
+	Expression
+	|';'|':'|'('|')'|'/'|'-'|'--'|'+'|'~'|'='|'!'|'*'|','|'#'|'##'
+	|'string'
+	|'reverse'
+	|'meta'
+	|'buffer'
+	|'table'
+	|'has'
+	|'hasnt'
+	|'Class'
+	|'class'
+	|'Object'
+	|'last'
+	|'first'
+	|'only'
+	|'additive'
+	|'alias'
+	|'found_in'
+	|'remove'|'move'|'to'
+	|'give'
+	|'in'|'notin'
+;
+
 Expression:	
-	(ANY_OTHER|STRING|INT|ID|ML_COMMENT|SL_COMMENT|WS
-		|PREPROCESSORDIR
+	(ANY_OTHER|STRING|INT|ID|ML_COMMENT|SL_COMMENT|WS|STATIC
+		|PreprocessorDirective
 		|BYTE_ARROW
 		|WORD_ARROW
 		|DIRECTIONS
@@ -295,7 +359,7 @@ Number:
 	{Number} negative='-'? value=INT
 ;
 Attribute:
-	{Attribute} '~'? name=[AttributeDeclaration|ID]
+	{Attribute} '~'? (name=[AttributeDeclaration|ID]|name=[AttributeDeclaration|STATIC])
 ;
 
 terminal BYTE_ARROW: '->';
@@ -326,23 +390,34 @@ terminal STRING:
 			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
 		;
 
+terminal ^STATIC:
+	'static'
+;
 
-// For now, just skip preprocessor directives
-terminal PREPROCESSORDIR :
-		'#'
-		(
-			(I F D E F)
-			| (I F N D E F)
-			| (E N D I F)
-			| (I F T R U E)
-			| (I F F A L S E)
-			| (I F N O T )
-			| (D E F I N E)
-			| (I F V ('3'|'5'|'8') )
-			| ID // Catch all else with this, in case it gets mixed up with addresses 
-		)
-		!(';')* ';';
 
+PreprocessorDirective:
+	ANY_PREPROCESSORDIR
+;
+
+// For now, just skip preprocessor directives rows
+// Catch all tokens with this, in case it gets mixed up with addresses.
+// TODO: It won't mix very well intermingled with conditionally defined 
+// properties as it is now.
+terminal ANY_PREPROCESSORDIR :
+	'#'ID UNTIL_AND_WITH_SEMICOLON
+;
+
+terminal fragment UNTIL_AND_WITH_SEMICOLON:	!(';')* ';';
+
+/* 
+terminal IFDEF: '#'? I F D E F ;
+terminal IFNDEF: '#'? I F N D E F ;
+terminal ENDIF: '#'? E N D I F ;
+terminal IFTRUE: '#'? I F T R U E ;
+terminal IFFALSE: '#'? I F F A L S E ;
+terminal IFNOT: '#'? I F N O T ;
+terminal DEFINE: '#?' D E F I N E ;
+terminal IFV: '#'? I F V ('3'|'5'|'8') ;
 terminal fragment A: 'A'|'a';
 terminal fragment B: 'B'|'b';
 terminal fragment C: 'C'|'c';
@@ -369,3 +444,4 @@ terminal fragment W: 'W'|'w';
 terminal fragment X: 'X'|'x';
 terminal fragment Y: 'Y'|'y';
 terminal fragment Z: 'Z'|'z';
+*/
