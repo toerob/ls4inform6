@@ -14,14 +14,18 @@ NOTE: Library folders (or any unexplicit include directive) will need to be refe
 As seen above, the paths can both be relative to the current file or absolute and separated by commas. (No spacing allowed though)
 
 
-## Usage
+## Installation
 
-For use within _eclipse_, just go to the market place and search for Inform 6 Code assister and install the feature.
-
-For usage with _visual studio code_, the _inf6langtools_ extension is downloadable as an extension.  So to install it, just search for inf6langtools in the extension pane. To build it manually you need compile this repostiory first with 'mvn install'. This will create the artifact for the language server (served as a fat-jar) in the xtext4Inform6.ide/target folder (ending -ls.jar). This jar needs to be placed within the inf6langtools/launcher folder. Then clone the inf6langtools repo (https://github.com/toerob/inf6langtools) and add the jar in that folder and then run the extension from vscode. 
+* Download the file: ls4inform6.zip from the release page.
+* Extract the contents into your eclipse installation dropins folder, e.g: "/home//eclipse-java/eclipse/dropins/"
+* Start eclipse and open an inform file (extension .h or .inf)
+* Right click in the text area and select "Open with" and choose "Inform 6 Editor"
 
 For other editors supporting LSP (https://microsoft.github.io/language-server-protocol/implementors/tools/)
-The language server jar can be placed
+The language server jar can executed from any client extension. 
+
+At the present stage I provide only one extension available for _visual studio code_ at:
+https://github.com/toerob/inf6langtools
 
 
 ## Disclaimer
