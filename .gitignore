@@ -32,7 +32,7 @@ ls4Inform6.tests/target
 ls4Inform6.ui/target
 ls4Inform6.ui.tests/target
 
-ls4inform6.tests/src/com/github/toerob/tests/Inform6ParsingTest.xtend
-ls4inform6.tests/xtend-gen/com/github/toerob/tests/Inform6ParsingTest.java
-ls4inform6.tests/xtend-gen/com/github/toerob/tests/.Inform6ParsingTest.java._trace
-ls4inform6.tests/xtend-gen/com/github/toerob/tests/.Inform6ParsingTest.xtendbin
+#ls4inform6.tests/src/com/github/toerob/tests/Inform6ParsingTest.xtend
+#ls4inform6.tests/xtend-gen/com/github/toerob/tests/Inform6ParsingTest.java
+#ls4inform6.tests/xtend-gen/com/github/toerob/tests/.Inform6ParsingTest.java._trace
+#ls4inform6.tests/xtend-gen/com/github/toerob/tests/.Inform6ParsingTest.xtendbin
