@@ -31,3 +31,5 @@ ls4Inform6.target/target
 ls4Inform6.tests/target
 ls4Inform6.ui/target
 ls4Inform6.ui.tests/target
+
+ls4inform6.tests/src/com/github/toerob/tests/Inform6ParsingTest.xtend
