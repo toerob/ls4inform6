@@ -28,7 +28,6 @@ import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
-import com.github.toerob.inform6.PropertyDeclaration;
 import com.github.toerob.inform6.PropertyDirective;
 import com.github.toerob.inform6.PropertySection;
 import com.github.toerob.inform6.ReleaseDirective;
@@ -133,11 +132,7 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_Number(context, (com.github.toerob.inform6.Number) semanticObject); 
 				return; 
 			case Inform6Package.OBJECT_DECLARATION:
-				if (rule == grammarAccess.getDirectiveRule()) {
-					sequence_IdlessObjectDeclaration_NearbyDeclaration_ObjectDeclaration(context, (ObjectDeclaration) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getIdlessObjectDeclarationRule()) {
+				if (rule == grammarAccess.getIdlessObjectDeclarationRule()) {
 					sequence_IdlessObjectDeclaration(context, (ObjectDeclaration) semanticObject); 
 					return; 
 				}
@@ -158,9 +153,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case Inform6Package.PROPERTY:
 				sequence_Property(context, (Property) semanticObject); 
-				return; 
-			case Inform6Package.PROPERTY_DECLARATION:
-				sequence_PropertyDeclaration(context, (PropertyDeclaration) semanticObject); 
 				return; 
 			case Inform6Package.PROPERTY_DIRECTIVE:
 				sequence_PropertyDirective(context, (PropertyDirective) semanticObject); 
@@ -227,7 +219,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns ArrayDeclaration
 	 *     ArrayDeclaration returns ArrayDeclaration
 	 *
 	 * Constraint:
@@ -288,7 +279,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns AttributeDeclaration
 	 *     AttributeDeclaration returns AttributeDeclaration
 	 *
 	 * Constraint:
@@ -325,7 +315,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns ClassDeclaration
 	 *     ClassDeclaration returns ClassDeclaration
 	 *
 	 * Constraint:
@@ -401,7 +390,20 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Directive returns Directive
 	 *
 	 * Constraint:
-	 *     {Directive}
+	 *     (
+	 *         globals+=GlobalDeclaration | 
+	 *         defaults+=GlobalDefaultDeclaration | 
+	 *         constants+=GlobalConstantDeclaration | 
+	 *         globalFunctions+=GlobalFunctionDefinition | 
+	 *         attributes+=AttributeDeclaration | 
+	 *         properties+=PropertyDirective | 
+	 *         classes+=ClassDeclaration | 
+	 *         objects+=ObjectDeclaration | 
+	 *         idlessobjects+=IdlessObjectDeclaration | 
+	 *         nearbyObjects+=NearbyDeclaration | 
+	 *         verbs+=VerbDeclaration | 
+	 *         arrays+=ArrayDeclaration
+	 *     )?
 	 */
 	protected void sequence_Directive(ISerializationContext context, Directive semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -422,7 +424,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns GlobalConstantDeclaration
 	 *     GlobalConstantDeclaration returns GlobalConstantDeclaration
 	 *
 	 * Constraint:
@@ -453,7 +454,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns GlobalDeclaration
 	 *     GlobalDeclaration returns GlobalDeclaration
 	 *
 	 * Constraint:
@@ -466,7 +466,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns GlobalDefaultDeclaration
 	 *     GlobalDefaultDeclaration returns GlobalDefaultDeclaration
 	 *
 	 * Constraint:
@@ -479,7 +478,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns GlobalFunctionDefinition
 	 *     GlobalFunctionDefinition returns GlobalFunctionDefinition
 	 *
 	 * Constraint:
@@ -496,45 +494,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getGlobalFunctionDefinitionAccess().getFunctionHeaderFunctionHeaderParserRuleCall_1_0(), semanticObject.getFunctionHeader());
 		feeder.accept(grammarAccess.getGlobalFunctionDefinitionAccess().getFunctionBodyFunctionBodyParserRuleCall_2_0(), semanticObject.getFunctionBody());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Directive returns ObjectDeclaration
-	 *
-	 * Constraint:
-	 *     (
-	 *         (
-	 *             (object='Object' | superType=[ClassDeclaration|ID]) 
-	 *             level+=BYTE_ARROW* 
-	 *             name=ID 
-	 *             headline=STRING? 
-	 *             in=[ObjectDeclaration|ID]? 
-	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=AttributeSection? 
-	 *             ((properties+=ClassSection | properties+=PropertySection)? properties+=AttributeSection?)*
-	 *         ) | 
-	 *         (
-	 *             (object='Object' | superType=[ClassDeclaration|ID]) 
-	 *             level+=BYTE_ARROW* 
-	 *             name=STRING? 
-	 *             in=[ObjectDeclaration|ID]? 
-	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             properties+=PropertySection? 
-	 *             ((properties+=ClassSection | properties+=AttributeSection)? properties+=PropertySection?)*
-	 *         ) | 
-	 *         (
-	 *             name=ID? 
-	 *             headline=STRING 
-	 *             in=[ObjectDeclaration|ID]? 
-	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)? 
-	 *             (properties+=ClassSection | properties+=PropertySection | properties+=AttributeSection)*
-	 *         )
-	 *     )
-	 */
-	protected void sequence_IdlessObjectDeclaration_NearbyDeclaration_ObjectDeclaration(ISerializationContext context, ObjectDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -711,24 +670,10 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns PropertyDeclaration
-	 *     PropertyDeclaration returns PropertyDeclaration
-	 *
-	 * Constraint:
-	 *     ((name=ID additive='additive'? value=Primary) | (name=ID aliasedProperty=Primary))
-	 */
-	protected void sequence_PropertyDeclaration(ISerializationContext context, PropertyDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Directive returns PropertyDirective
 	 *     PropertyDirective returns PropertyDirective
 	 *
 	 * Constraint:
-	 *     (additive='additive'? (name=ID | name=DIRECTIONS | name='found_in') value=Primary?)
+	 *     (additive?='additive'? (name=ID | name=DIRECTIONS | name='found_in') alias?='alias'? value=Primary?)
 	 */
 	protected void sequence_PropertyDirective(ISerializationContext context, PropertyDirective semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -870,7 +815,6 @@ public class Inform6SemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Directive returns VerbDeclaration
 	 *     VerbDeclaration returns VerbDeclaration
 	 *
 	 * Constraint:

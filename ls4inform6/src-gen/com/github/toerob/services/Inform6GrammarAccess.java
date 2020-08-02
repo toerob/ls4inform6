@@ -86,41 +86,52 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cReplaceDirectiveParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cSerialDirectiveParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cSwitchesDeclarationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cGlobalDeclarationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cGlobalDefaultDeclarationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cGlobalConstantDeclarationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cGlobalFunctionDefinitionParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
-		private final RuleCall cAttributeDeclarationParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
-		private final RuleCall cPropertyDeclarationParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
-		private final RuleCall cClassDeclarationParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
-		private final RuleCall cObjectDeclarationParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
-		private final RuleCall cIdlessObjectDeclarationParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
-		private final RuleCall cNearbyDeclarationParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
-		private final RuleCall cVerbDeclarationParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
-		private final RuleCall cArrayDeclarationParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
-		private final RuleCall cPropertyDirectiveParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
-		private final RuleCall cMessageDirectiveParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
+		private final Assignment cGlobalsAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cGlobalsGlobalDeclarationParserRuleCall_6_0 = (RuleCall)cGlobalsAssignment_6.eContents().get(0);
+		private final Assignment cDefaultsAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cDefaultsGlobalDefaultDeclarationParserRuleCall_7_0 = (RuleCall)cDefaultsAssignment_7.eContents().get(0);
+		private final Assignment cConstantsAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final RuleCall cConstantsGlobalConstantDeclarationParserRuleCall_8_0 = (RuleCall)cConstantsAssignment_8.eContents().get(0);
+		private final Assignment cGlobalFunctionsAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final RuleCall cGlobalFunctionsGlobalFunctionDefinitionParserRuleCall_9_0 = (RuleCall)cGlobalFunctionsAssignment_9.eContents().get(0);
+		private final Assignment cAttributesAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final RuleCall cAttributesAttributeDeclarationParserRuleCall_10_0 = (RuleCall)cAttributesAssignment_10.eContents().get(0);
+		private final Assignment cPropertiesAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
+		private final RuleCall cPropertiesPropertyDirectiveParserRuleCall_11_0 = (RuleCall)cPropertiesAssignment_11.eContents().get(0);
+		private final Assignment cClassesAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final RuleCall cClassesClassDeclarationParserRuleCall_12_0 = (RuleCall)cClassesAssignment_12.eContents().get(0);
+		private final Assignment cObjectsAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final RuleCall cObjectsObjectDeclarationParserRuleCall_13_0 = (RuleCall)cObjectsAssignment_13.eContents().get(0);
+		private final Assignment cIdlessobjectsAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final RuleCall cIdlessobjectsIdlessObjectDeclarationParserRuleCall_14_0 = (RuleCall)cIdlessobjectsAssignment_14.eContents().get(0);
+		private final Assignment cNearbyObjectsAssignment_15 = (Assignment)cAlternatives.eContents().get(15);
+		private final RuleCall cNearbyObjectsNearbyDeclarationParserRuleCall_15_0 = (RuleCall)cNearbyObjectsAssignment_15.eContents().get(0);
+		private final Assignment cVerbsAssignment_16 = (Assignment)cAlternatives.eContents().get(16);
+		private final RuleCall cVerbsVerbDeclarationParserRuleCall_16_0 = (RuleCall)cVerbsAssignment_16.eContents().get(0);
+		private final Assignment cArraysAssignment_17 = (Assignment)cAlternatives.eContents().get(17);
+		private final RuleCall cArraysArrayDeclarationParserRuleCall_17_0 = (RuleCall)cArraysAssignment_17.eContents().get(0);
+		private final RuleCall cMessageDirectiveParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
+		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
+		private final Action cDirectiveAction_19_0 = (Action)cGroup_19.eContents().get(0);
+		private final RuleCall cAbbreviateDirectiveParserRuleCall_19_1 = (RuleCall)cGroup_19.eContents().get(1);
 		private final Group cGroup_20 = (Group)cAlternatives.eContents().get(20);
 		private final Action cDirectiveAction_20_0 = (Action)cGroup_20.eContents().get(0);
-		private final RuleCall cAbbreviateDirectiveParserRuleCall_20_1 = (RuleCall)cGroup_20.eContents().get(1);
+		private final RuleCall cAbortDirectiveParserRuleCall_20_1 = (RuleCall)cGroup_20.eContents().get(1);
 		private final Group cGroup_21 = (Group)cAlternatives.eContents().get(21);
 		private final Action cDirectiveAction_21_0 = (Action)cGroup_21.eContents().get(0);
-		private final RuleCall cAbortDirectiveParserRuleCall_21_1 = (RuleCall)cGroup_21.eContents().get(1);
+		private final RuleCall cEndDirectiveParserRuleCall_21_1 = (RuleCall)cGroup_21.eContents().get(1);
 		private final Group cGroup_22 = (Group)cAlternatives.eContents().get(22);
 		private final Action cDirectiveAction_22_0 = (Action)cGroup_22.eContents().get(0);
-		private final RuleCall cEndDirectiveParserRuleCall_22_1 = (RuleCall)cGroup_22.eContents().get(1);
+		private final RuleCall cLowStringDirectiveParserRuleCall_22_1 = (RuleCall)cGroup_22.eContents().get(1);
 		private final Group cGroup_23 = (Group)cAlternatives.eContents().get(23);
 		private final Action cDirectiveAction_23_0 = (Action)cGroup_23.eContents().get(0);
-		private final RuleCall cLowStringDirectiveParserRuleCall_23_1 = (RuleCall)cGroup_23.eContents().get(1);
+		private final RuleCall cPreprocessorDirectiveParserRuleCall_23_1 = (RuleCall)cGroup_23.eContents().get(1);
 		private final Group cGroup_24 = (Group)cAlternatives.eContents().get(24);
 		private final Action cDirectiveAction_24_0 = (Action)cGroup_24.eContents().get(0);
-		private final RuleCall cPreprocessorDirectiveParserRuleCall_24_1 = (RuleCall)cGroup_24.eContents().get(1);
+		private final RuleCall cFakeActionDirectiveParserRuleCall_24_1 = (RuleCall)cGroup_24.eContents().get(1);
 		private final Group cGroup_25 = (Group)cAlternatives.eContents().get(25);
 		private final Action cDirectiveAction_25_0 = (Action)cGroup_25.eContents().get(0);
-		private final RuleCall cFakeActionDirectiveParserRuleCall_25_1 = (RuleCall)cGroup_25.eContents().get(1);
-		private final Group cGroup_26 = (Group)cAlternatives.eContents().get(26);
-		private final Action cDirectiveAction_26_0 = (Action)cGroup_26.eContents().get(0);
-		private final RuleCall cSystemFileDirectiveParserRuleCall_26_1 = (RuleCall)cGroup_26.eContents().get(1);
+		private final RuleCall cSystemFileDirectiveParserRuleCall_25_1 = (RuleCall)cGroup_25.eContents().get(1);
 		
 		////=============================================================
 		//// D I R E C T I V E S 
@@ -132,19 +143,19 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//	| ReplaceDirective
 		//	| SerialDirective
 		//	| SwitchesDeclaration
-		//	| GlobalDeclaration
-		//	| GlobalDefaultDeclaration
-		//	| GlobalConstantDeclaration
-		//	| GlobalFunctionDefinition
-		//	| AttributeDeclaration
-		//	| PropertyDeclaration
-		//	| ClassDeclaration
-		//	| ObjectDeclaration
-		//	| IdlessObjectDeclaration
-		//	| NearbyDeclaration
-		//	| VerbDeclaration
-		//	| ArrayDeclaration
-		//	| PropertyDirective
+		//	| globals+=GlobalDeclaration
+		//	| defaults+=GlobalDefaultDeclaration
+		//	| constants+=GlobalConstantDeclaration
+		//	| globalFunctions+=GlobalFunctionDefinition
+		//	| attributes+=AttributeDeclaration
+		//	//| properties+=PropertyDeclaration
+		//	| properties+=PropertyDirective
+		//	| classes+=ClassDeclaration
+		//	| objects+=ObjectDeclaration
+		//	| idlessobjects+=IdlessObjectDeclaration
+		//	| nearbyObjects+=NearbyDeclaration
+		//	| verbs+=VerbDeclaration
+		//	| arrays+=ArrayDeclaration
 		//	| MessageDirective
 		//	| {Directive} AbbreviateDirective
 		//	| {Directive} AbortDirective
@@ -156,11 +167,13 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ReleaseDirective | ZcharacterDirective | CommentDeclaration | ReplaceDirective | SerialDirective | SwitchesDeclaration |
-		//GlobalDeclaration | GlobalDefaultDeclaration | GlobalConstantDeclaration | GlobalFunctionDefinition |
-		//AttributeDeclaration | PropertyDeclaration | ClassDeclaration | ObjectDeclaration | IdlessObjectDeclaration |
-		//NearbyDeclaration | VerbDeclaration | ArrayDeclaration | PropertyDirective | MessageDirective | {Directive}
-		//AbbreviateDirective | {Directive} AbortDirective | {Directive} EndDirective | {Directive} LowStringDirective |
-		//{Directive} PreprocessorDirective | {Directive} FakeActionDirective | {Directive} SystemFileDirective
+		//globals+=GlobalDeclaration | defaults+=GlobalDefaultDeclaration | constants+=GlobalConstantDeclaration |
+		//globalFunctions+=GlobalFunctionDefinition | attributes+=AttributeDeclaration //| properties+=PropertyDeclaration
+		//| properties+=PropertyDirective | classes+=ClassDeclaration | objects+=ObjectDeclaration |
+		//idlessobjects+=IdlessObjectDeclaration | nearbyObjects+=NearbyDeclaration | verbs+=VerbDeclaration |
+		//arrays+=ArrayDeclaration | MessageDirective | {Directive} AbbreviateDirective | {Directive} AbortDirective |
+		//{Directive} EndDirective | {Directive} LowStringDirective | {Directive} PreprocessorDirective | {Directive}
+		//FakeActionDirective | {Directive} SystemFileDirective
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ReleaseDirective
@@ -181,110 +194,143 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//SwitchesDeclaration
 		public RuleCall getSwitchesDeclarationParserRuleCall_5() { return cSwitchesDeclarationParserRuleCall_5; }
 		
+		//globals+=GlobalDeclaration
+		public Assignment getGlobalsAssignment_6() { return cGlobalsAssignment_6; }
+		
 		//GlobalDeclaration
-		public RuleCall getGlobalDeclarationParserRuleCall_6() { return cGlobalDeclarationParserRuleCall_6; }
+		public RuleCall getGlobalsGlobalDeclarationParserRuleCall_6_0() { return cGlobalsGlobalDeclarationParserRuleCall_6_0; }
+		
+		//defaults+=GlobalDefaultDeclaration
+		public Assignment getDefaultsAssignment_7() { return cDefaultsAssignment_7; }
 		
 		//GlobalDefaultDeclaration
-		public RuleCall getGlobalDefaultDeclarationParserRuleCall_7() { return cGlobalDefaultDeclarationParserRuleCall_7; }
+		public RuleCall getDefaultsGlobalDefaultDeclarationParserRuleCall_7_0() { return cDefaultsGlobalDefaultDeclarationParserRuleCall_7_0; }
+		
+		//constants+=GlobalConstantDeclaration
+		public Assignment getConstantsAssignment_8() { return cConstantsAssignment_8; }
 		
 		//GlobalConstantDeclaration
-		public RuleCall getGlobalConstantDeclarationParserRuleCall_8() { return cGlobalConstantDeclarationParserRuleCall_8; }
+		public RuleCall getConstantsGlobalConstantDeclarationParserRuleCall_8_0() { return cConstantsGlobalConstantDeclarationParserRuleCall_8_0; }
+		
+		//globalFunctions+=GlobalFunctionDefinition
+		public Assignment getGlobalFunctionsAssignment_9() { return cGlobalFunctionsAssignment_9; }
 		
 		//GlobalFunctionDefinition
-		public RuleCall getGlobalFunctionDefinitionParserRuleCall_9() { return cGlobalFunctionDefinitionParserRuleCall_9; }
+		public RuleCall getGlobalFunctionsGlobalFunctionDefinitionParserRuleCall_9_0() { return cGlobalFunctionsGlobalFunctionDefinitionParserRuleCall_9_0; }
+		
+		//attributes+=AttributeDeclaration
+		public Assignment getAttributesAssignment_10() { return cAttributesAssignment_10; }
 		
 		//AttributeDeclaration
-		public RuleCall getAttributeDeclarationParserRuleCall_10() { return cAttributeDeclarationParserRuleCall_10; }
+		public RuleCall getAttributesAttributeDeclarationParserRuleCall_10_0() { return cAttributesAttributeDeclarationParserRuleCall_10_0; }
 		
-		//PropertyDeclaration
-		public RuleCall getPropertyDeclarationParserRuleCall_11() { return cPropertyDeclarationParserRuleCall_11; }
-		
-		//ClassDeclaration
-		public RuleCall getClassDeclarationParserRuleCall_12() { return cClassDeclarationParserRuleCall_12; }
-		
-		//ObjectDeclaration
-		public RuleCall getObjectDeclarationParserRuleCall_13() { return cObjectDeclarationParserRuleCall_13; }
-		
-		//IdlessObjectDeclaration
-		public RuleCall getIdlessObjectDeclarationParserRuleCall_14() { return cIdlessObjectDeclarationParserRuleCall_14; }
-		
-		//NearbyDeclaration
-		public RuleCall getNearbyDeclarationParserRuleCall_15() { return cNearbyDeclarationParserRuleCall_15; }
-		
-		//VerbDeclaration
-		public RuleCall getVerbDeclarationParserRuleCall_16() { return cVerbDeclarationParserRuleCall_16; }
-		
-		//ArrayDeclaration
-		public RuleCall getArrayDeclarationParserRuleCall_17() { return cArrayDeclarationParserRuleCall_17; }
+		//properties+=PropertyDirective
+		public Assignment getPropertiesAssignment_11() { return cPropertiesAssignment_11; }
 		
 		//PropertyDirective
-		public RuleCall getPropertyDirectiveParserRuleCall_18() { return cPropertyDirectiveParserRuleCall_18; }
+		public RuleCall getPropertiesPropertyDirectiveParserRuleCall_11_0() { return cPropertiesPropertyDirectiveParserRuleCall_11_0; }
+		
+		//classes+=ClassDeclaration
+		public Assignment getClassesAssignment_12() { return cClassesAssignment_12; }
+		
+		//ClassDeclaration
+		public RuleCall getClassesClassDeclarationParserRuleCall_12_0() { return cClassesClassDeclarationParserRuleCall_12_0; }
+		
+		//objects+=ObjectDeclaration
+		public Assignment getObjectsAssignment_13() { return cObjectsAssignment_13; }
+		
+		//ObjectDeclaration
+		public RuleCall getObjectsObjectDeclarationParserRuleCall_13_0() { return cObjectsObjectDeclarationParserRuleCall_13_0; }
+		
+		//idlessobjects+=IdlessObjectDeclaration
+		public Assignment getIdlessobjectsAssignment_14() { return cIdlessobjectsAssignment_14; }
+		
+		//IdlessObjectDeclaration
+		public RuleCall getIdlessobjectsIdlessObjectDeclarationParserRuleCall_14_0() { return cIdlessobjectsIdlessObjectDeclarationParserRuleCall_14_0; }
+		
+		//nearbyObjects+=NearbyDeclaration
+		public Assignment getNearbyObjectsAssignment_15() { return cNearbyObjectsAssignment_15; }
+		
+		//NearbyDeclaration
+		public RuleCall getNearbyObjectsNearbyDeclarationParserRuleCall_15_0() { return cNearbyObjectsNearbyDeclarationParserRuleCall_15_0; }
+		
+		//verbs+=VerbDeclaration
+		public Assignment getVerbsAssignment_16() { return cVerbsAssignment_16; }
+		
+		//VerbDeclaration
+		public RuleCall getVerbsVerbDeclarationParserRuleCall_16_0() { return cVerbsVerbDeclarationParserRuleCall_16_0; }
+		
+		//arrays+=ArrayDeclaration
+		public Assignment getArraysAssignment_17() { return cArraysAssignment_17; }
+		
+		//ArrayDeclaration
+		public RuleCall getArraysArrayDeclarationParserRuleCall_17_0() { return cArraysArrayDeclarationParserRuleCall_17_0; }
 		
 		//MessageDirective
-		public RuleCall getMessageDirectiveParserRuleCall_19() { return cMessageDirectiveParserRuleCall_19; }
+		public RuleCall getMessageDirectiveParserRuleCall_18() { return cMessageDirectiveParserRuleCall_18; }
 		
 		//{Directive} AbbreviateDirective
+		public Group getGroup_19() { return cGroup_19; }
+		
+		//{Directive}
+		public Action getDirectiveAction_19_0() { return cDirectiveAction_19_0; }
+		
+		//AbbreviateDirective
+		public RuleCall getAbbreviateDirectiveParserRuleCall_19_1() { return cAbbreviateDirectiveParserRuleCall_19_1; }
+		
+		//{Directive} AbortDirective
 		public Group getGroup_20() { return cGroup_20; }
 		
 		//{Directive}
 		public Action getDirectiveAction_20_0() { return cDirectiveAction_20_0; }
 		
-		//AbbreviateDirective
-		public RuleCall getAbbreviateDirectiveParserRuleCall_20_1() { return cAbbreviateDirectiveParserRuleCall_20_1; }
+		//AbortDirective
+		public RuleCall getAbortDirectiveParserRuleCall_20_1() { return cAbortDirectiveParserRuleCall_20_1; }
 		
-		//{Directive} AbortDirective
+		//{Directive} EndDirective
 		public Group getGroup_21() { return cGroup_21; }
 		
 		//{Directive}
 		public Action getDirectiveAction_21_0() { return cDirectiveAction_21_0; }
 		
-		//AbortDirective
-		public RuleCall getAbortDirectiveParserRuleCall_21_1() { return cAbortDirectiveParserRuleCall_21_1; }
+		//EndDirective
+		public RuleCall getEndDirectiveParserRuleCall_21_1() { return cEndDirectiveParserRuleCall_21_1; }
 		
-		//{Directive} EndDirective
+		//{Directive} LowStringDirective
 		public Group getGroup_22() { return cGroup_22; }
 		
 		//{Directive}
 		public Action getDirectiveAction_22_0() { return cDirectiveAction_22_0; }
 		
-		//EndDirective
-		public RuleCall getEndDirectiveParserRuleCall_22_1() { return cEndDirectiveParserRuleCall_22_1; }
+		//LowStringDirective
+		public RuleCall getLowStringDirectiveParserRuleCall_22_1() { return cLowStringDirectiveParserRuleCall_22_1; }
 		
-		//{Directive} LowStringDirective
+		//{Directive} PreprocessorDirective
 		public Group getGroup_23() { return cGroup_23; }
 		
 		//{Directive}
 		public Action getDirectiveAction_23_0() { return cDirectiveAction_23_0; }
 		
-		//LowStringDirective
-		public RuleCall getLowStringDirectiveParserRuleCall_23_1() { return cLowStringDirectiveParserRuleCall_23_1; }
+		//PreprocessorDirective
+		public RuleCall getPreprocessorDirectiveParserRuleCall_23_1() { return cPreprocessorDirectiveParserRuleCall_23_1; }
 		
-		//{Directive} PreprocessorDirective
+		//{Directive} FakeActionDirective
 		public Group getGroup_24() { return cGroup_24; }
 		
 		//{Directive}
 		public Action getDirectiveAction_24_0() { return cDirectiveAction_24_0; }
 		
-		//PreprocessorDirective
-		public RuleCall getPreprocessorDirectiveParserRuleCall_24_1() { return cPreprocessorDirectiveParserRuleCall_24_1; }
+		//FakeActionDirective
+		public RuleCall getFakeActionDirectiveParserRuleCall_24_1() { return cFakeActionDirectiveParserRuleCall_24_1; }
 		
-		//{Directive} FakeActionDirective
+		//{Directive} SystemFileDirective
 		public Group getGroup_25() { return cGroup_25; }
 		
 		//{Directive}
 		public Action getDirectiveAction_25_0() { return cDirectiveAction_25_0; }
 		
-		//FakeActionDirective
-		public RuleCall getFakeActionDirectiveParserRuleCall_25_1() { return cFakeActionDirectiveParserRuleCall_25_1; }
-		
-		//{Directive} SystemFileDirective
-		public Group getGroup_26() { return cGroup_26; }
-		
-		//{Directive}
-		public Action getDirectiveAction_26_0() { return cDirectiveAction_26_0; }
-		
 		//SystemFileDirective
-		public RuleCall getSystemFileDirectiveParserRuleCall_26_1() { return cSystemFileDirectiveParserRuleCall_26_1; }
+		public RuleCall getSystemFileDirectiveParserRuleCall_25_1() { return cSystemFileDirectiveParserRuleCall_25_1; }
 	}
 	public class SystemFileDirectiveElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.github.toerob.Inform6.SystemFileDirective");
@@ -528,62 +574,6 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//';'
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
-	}
-	public class PropertyDirectiveElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.github.toerob.Inform6.PropertyDirective");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPropertyKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cAdditiveAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cAdditiveAdditiveKeyword_1_0 = (Keyword)cAdditiveAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
-		private final RuleCall cNameDIRECTIONSTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
-		private final Keyword cNameFound_inKeyword_2_0_2 = (Keyword)cNameAlternatives_2_0.eContents().get(2);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValuePrimaryParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		////FIXME: DIRECTIONS should be able to cross reference the same way as attributes
-		//PropertyDirective:
-		//	"Property" additive='additive'? name=(ID | DIRECTIONS | 'found_in') value=Primary? ';';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"Property" additive='additive'? name=(ID | DIRECTIONS | 'found_in') value=Primary? ';'
-		public Group getGroup() { return cGroup; }
-		
-		//"Property"
-		public Keyword getPropertyKeyword_0() { return cPropertyKeyword_0; }
-		
-		//additive='additive'?
-		public Assignment getAdditiveAssignment_1() { return cAdditiveAssignment_1; }
-		
-		//'additive'
-		public Keyword getAdditiveAdditiveKeyword_1_0() { return cAdditiveAdditiveKeyword_1_0; }
-		
-		//name=(ID | DIRECTIONS | 'found_in')
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//(ID | DIRECTIONS | 'found_in')
-		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0_0() { return cNameIDTerminalRuleCall_2_0_0; }
-		
-		//DIRECTIONS
-		public RuleCall getNameDIRECTIONSTerminalRuleCall_2_0_1() { return cNameDIRECTIONSTerminalRuleCall_2_0_1; }
-		
-		//'found_in'
-		public Keyword getNameFound_inKeyword_2_0_2() { return cNameFound_inKeyword_2_0_2; }
-		
-		//value=Primary?
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
-		
-		//Primary
-		public RuleCall getValuePrimaryParserRuleCall_3_0() { return cValuePrimaryParserRuleCall_3_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 	public class LowStringDirectiveElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.github.toerob.Inform6.LowStringDirective");
@@ -950,82 +940,72 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//';'
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
-	public class PropertyDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.github.toerob.Inform6.PropertyDeclaration");
+	public class PropertyDirectiveElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.github.toerob.Inform6.PropertyDirective");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPropertyKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Assignment cNameAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_1_0_0_0 = (RuleCall)cNameAssignment_1_0_0.eContents().get(0);
-		private final Assignment cAdditiveAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cAdditiveAdditiveKeyword_1_0_1_0 = (Keyword)cAdditiveAssignment_1_0_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
-		private final RuleCall cValuePrimaryParserRuleCall_1_0_2_0 = (RuleCall)cValueAssignment_1_0_2.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
-		private final Assignment cNameAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_1_1_0_0 = (RuleCall)cNameAssignment_1_1_0.eContents().get(0);
-		private final Keyword cAliasKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Assignment cAliasedPropertyAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
-		private final RuleCall cAliasedPropertyPrimaryParserRuleCall_1_1_2_0 = (RuleCall)cAliasedPropertyAssignment_1_1_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAdditiveAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cAdditiveAdditiveKeyword_1_0 = (Keyword)cAdditiveAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cNameAlternatives_2_0 = (Alternatives)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0_0 = (RuleCall)cNameAlternatives_2_0.eContents().get(0);
+		private final RuleCall cNameDIRECTIONSTerminalRuleCall_2_0_1 = (RuleCall)cNameAlternatives_2_0.eContents().get(1);
+		private final Keyword cNameFound_inKeyword_2_0_2 = (Keyword)cNameAlternatives_2_0.eContents().get(2);
+		private final Assignment cAliasAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cAliasAliasKeyword_3_0 = (Keyword)cAliasAssignment_3.eContents().get(0);
+		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cValuePrimaryParserRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//PropertyDeclaration:
-		//	'Property' (name=ID additive='additive'? value=Primary
-		//	| name=ID 'alias' aliasedProperty=Primary)
+		////FIXME: DIRECTIONS should be able to cross reference the same way as attributes
+		//PropertyDirective:
+		//	"Property" additive?='additive'?
+		//	name=(ID | DIRECTIONS | 'found_in') alias?='alias'?
+		//	value=Primary?
 		//	';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Property' (name=ID additive='additive'? value=Primary | name=ID 'alias' aliasedProperty=Primary) ';'
+		//"Property" additive?='additive'? name=(ID | DIRECTIONS | 'found_in') alias?='alias'? value=Primary? ';'
 		public Group getGroup() { return cGroup; }
 		
-		//'Property'
+		//"Property"
 		public Keyword getPropertyKeyword_0() { return cPropertyKeyword_0; }
 		
-		//(name=ID additive='additive'? value=Primary | name=ID 'alias' aliasedProperty=Primary)
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//name=ID additive='additive'? value=Primary
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1_0_0() { return cNameAssignment_1_0_0; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0_0_0() { return cNameIDTerminalRuleCall_1_0_0_0; }
-		
-		//additive='additive'?
-		public Assignment getAdditiveAssignment_1_0_1() { return cAdditiveAssignment_1_0_1; }
+		//additive?='additive'?
+		public Assignment getAdditiveAssignment_1() { return cAdditiveAssignment_1; }
 		
 		//'additive'
-		public Keyword getAdditiveAdditiveKeyword_1_0_1_0() { return cAdditiveAdditiveKeyword_1_0_1_0; }
+		public Keyword getAdditiveAdditiveKeyword_1_0() { return cAdditiveAdditiveKeyword_1_0; }
 		
-		//value=Primary
-		public Assignment getValueAssignment_1_0_2() { return cValueAssignment_1_0_2; }
+		//name=(ID | DIRECTIONS | 'found_in')
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//Primary
-		public RuleCall getValuePrimaryParserRuleCall_1_0_2_0() { return cValuePrimaryParserRuleCall_1_0_2_0; }
-		
-		//name=ID 'alias' aliasedProperty=Primary
-		public Group getGroup_1_1() { return cGroup_1_1; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1_1_0() { return cNameAssignment_1_1_0; }
+		//(ID | DIRECTIONS | 'found_in')
+		public Alternatives getNameAlternatives_2_0() { return cNameAlternatives_2_0; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_1_0_0() { return cNameIDTerminalRuleCall_1_1_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0_0() { return cNameIDTerminalRuleCall_2_0_0; }
+		
+		//DIRECTIONS
+		public RuleCall getNameDIRECTIONSTerminalRuleCall_2_0_1() { return cNameDIRECTIONSTerminalRuleCall_2_0_1; }
+		
+		//'found_in'
+		public Keyword getNameFound_inKeyword_2_0_2() { return cNameFound_inKeyword_2_0_2; }
+		
+		//alias?='alias'?
+		public Assignment getAliasAssignment_3() { return cAliasAssignment_3; }
 		
 		//'alias'
-		public Keyword getAliasKeyword_1_1_1() { return cAliasKeyword_1_1_1; }
+		public Keyword getAliasAliasKeyword_3_0() { return cAliasAliasKeyword_3_0; }
 		
-		//aliasedProperty=Primary
-		public Assignment getAliasedPropertyAssignment_1_1_2() { return cAliasedPropertyAssignment_1_1_2; }
+		//value=Primary?
+		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
 		
 		//Primary
-		public RuleCall getAliasedPropertyPrimaryParserRuleCall_1_1_2_0() { return cAliasedPropertyPrimaryParserRuleCall_1_1_2_0; }
+		public RuleCall getValuePrimaryParserRuleCall_4_0() { return cValuePrimaryParserRuleCall_4_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 	public class ClassDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.github.toerob.Inform6.ClassDeclaration");
@@ -3045,7 +3025,6 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final CompilerDirectiveElements pCompilerDirective;
 	private final IncludeDeclarationElements pIncludeDeclaration;
 	private final EndDirectiveElements pEndDirective;
-	private final PropertyDirectiveElements pPropertyDirective;
 	private final LowStringDirectiveElements pLowStringDirective;
 	private final ReleaseDirectiveElements pReleaseDirective;
 	private final ReplaceDirectiveElements pReplaceDirective;
@@ -3056,7 +3035,7 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final GlobalDeclarationElements pGlobalDeclaration;
 	private final GlobalConstantValueElements pGlobalConstantValue;
 	private final AttributeDeclarationElements pAttributeDeclaration;
-	private final PropertyDeclarationElements pPropertyDeclaration;
+	private final PropertyDirectiveElements pPropertyDirective;
 	private final ClassDeclarationElements pClassDeclaration;
 	private final ObjectDeclarationElements pObjectDeclaration;
 	private final IdlessObjectDeclarationElements pIdlessObjectDeclaration;
@@ -3116,7 +3095,6 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pCompilerDirective = new CompilerDirectiveElements();
 		this.pIncludeDeclaration = new IncludeDeclarationElements();
 		this.pEndDirective = new EndDirectiveElements();
-		this.pPropertyDirective = new PropertyDirectiveElements();
 		this.pLowStringDirective = new LowStringDirectiveElements();
 		this.pReleaseDirective = new ReleaseDirectiveElements();
 		this.pReplaceDirective = new ReplaceDirectiveElements();
@@ -3127,7 +3105,7 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pGlobalDeclaration = new GlobalDeclarationElements();
 		this.pGlobalConstantValue = new GlobalConstantValueElements();
 		this.pAttributeDeclaration = new AttributeDeclarationElements();
-		this.pPropertyDeclaration = new PropertyDeclarationElements();
+		this.pPropertyDirective = new PropertyDirectiveElements();
 		this.pClassDeclaration = new ClassDeclarationElements();
 		this.pObjectDeclaration = new ObjectDeclarationElements();
 		this.pIdlessObjectDeclaration = new IdlessObjectDeclarationElements();
@@ -3240,19 +3218,19 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//	| ReplaceDirective
 	//	| SerialDirective
 	//	| SwitchesDeclaration
-	//	| GlobalDeclaration
-	//	| GlobalDefaultDeclaration
-	//	| GlobalConstantDeclaration
-	//	| GlobalFunctionDefinition
-	//	| AttributeDeclaration
-	//	| PropertyDeclaration
-	//	| ClassDeclaration
-	//	| ObjectDeclaration
-	//	| IdlessObjectDeclaration
-	//	| NearbyDeclaration
-	//	| VerbDeclaration
-	//	| ArrayDeclaration
-	//	| PropertyDirective
+	//	| globals+=GlobalDeclaration
+	//	| defaults+=GlobalDefaultDeclaration
+	//	| constants+=GlobalConstantDeclaration
+	//	| globalFunctions+=GlobalFunctionDefinition
+	//	| attributes+=AttributeDeclaration
+	//	//| properties+=PropertyDeclaration
+	//	| properties+=PropertyDirective
+	//	| classes+=ClassDeclaration
+	//	| objects+=ObjectDeclaration
+	//	| idlessobjects+=IdlessObjectDeclaration
+	//	| nearbyObjects+=NearbyDeclaration
+	//	| verbs+=VerbDeclaration
+	//	| arrays+=ArrayDeclaration
 	//	| MessageDirective
 	//	| {Directive} AbbreviateDirective
 	//	| {Directive} AbortDirective
@@ -3370,17 +3348,6 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getEndDirectiveAccess().getRule();
 	}
 	
-	////FIXME: DIRECTIONS should be able to cross reference the same way as attributes
-	//PropertyDirective:
-	//	"Property" additive='additive'? name=(ID | DIRECTIONS | 'found_in') value=Primary? ';';
-	public PropertyDirectiveElements getPropertyDirectiveAccess() {
-		return pPropertyDirective;
-	}
-	
-	public ParserRule getPropertyDirectiveRule() {
-		return getPropertyDirectiveAccess().getRule();
-	}
-	
 	//LowStringDirective:
 	//	"Lowstring" ID STRING ";";
 	public LowStringDirectiveElements getLowStringDirectiveAccess() {
@@ -3484,16 +3451,18 @@ public class Inform6GrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getAttributeDeclarationAccess().getRule();
 	}
 	
-	//PropertyDeclaration:
-	//	'Property' (name=ID additive='additive'? value=Primary
-	//	| name=ID 'alias' aliasedProperty=Primary)
+	////FIXME: DIRECTIONS should be able to cross reference the same way as attributes
+	//PropertyDirective:
+	//	"Property" additive?='additive'?
+	//	name=(ID | DIRECTIONS | 'found_in') alias?='alias'?
+	//	value=Primary?
 	//	';';
-	public PropertyDeclarationElements getPropertyDeclarationAccess() {
-		return pPropertyDeclaration;
+	public PropertyDirectiveElements getPropertyDirectiveAccess() {
+		return pPropertyDirective;
 	}
 	
-	public ParserRule getPropertyDeclarationRule() {
-		return getPropertyDeclarationAccess().getRule();
+	public ParserRule getPropertyDirectiveRule() {
+		return getPropertyDirectiveAccess().getRule();
 	}
 	
 	//ClassDeclaration:

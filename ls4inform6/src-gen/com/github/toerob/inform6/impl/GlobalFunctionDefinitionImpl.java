@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GlobalFunctionDefinitionImpl extends DirectiveImpl implements GlobalFunctionDefinition
+public class GlobalFunctionDefinitionImpl extends MinimalEObjectImpl.Container implements GlobalFunctionDefinition
 {
   /**
    * The cached value of the '{@link #getFunctionHeader() <em>Function Header</em>}' containment reference.

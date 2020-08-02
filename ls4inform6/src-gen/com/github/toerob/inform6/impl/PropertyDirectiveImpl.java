@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,34 +24,35 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl#getAdditive <em>Additive</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl#isAdditive <em>Additive</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl#isAlias <em>Alias</em>}</li>
  *   <li>{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDirective
+public class PropertyDirectiveImpl extends MinimalEObjectImpl.Container implements PropertyDirective
 {
   /**
-   * The default value of the '{@link #getAdditive() <em>Additive</em>}' attribute.
+   * The default value of the '{@link #isAdditive() <em>Additive</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdditive()
+   * @see #isAdditive()
    * @generated
    * @ordered
    */
-  protected static final String ADDITIVE_EDEFAULT = null;
+  protected static final boolean ADDITIVE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getAdditive() <em>Additive</em>}' attribute.
+   * The cached value of the '{@link #isAdditive() <em>Additive</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdditive()
+   * @see #isAdditive()
    * @generated
    * @ordered
    */
-  protected String additive = ADDITIVE_EDEFAULT;
+  protected boolean additive = ADDITIVE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -71,6 +73,26 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isAlias() <em>Alias</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAlias()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ALIAS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAlias() <em>Alias</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAlias()
+   * @generated
+   * @ordered
+   */
+  protected boolean alias = ALIAS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -109,7 +131,7 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
    * @generated
    */
   @Override
-  public String getAdditive()
+  public boolean isAdditive()
   {
     return additive;
   }
@@ -120,9 +142,9 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
    * @generated
    */
   @Override
-  public void setAdditive(String newAdditive)
+  public void setAdditive(boolean newAdditive)
   {
-    String oldAdditive = additive;
+    boolean oldAdditive = additive;
     additive = newAdditive;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DIRECTIVE__ADDITIVE, oldAdditive, additive));
@@ -151,6 +173,31 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DIRECTIVE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isAlias()
+  {
+    return alias;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAlias(boolean newAlias)
+  {
+    boolean oldAlias = alias;
+    alias = newAlias;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Inform6Package.PROPERTY_DIRECTIVE__ALIAS, oldAlias, alias));
   }
 
   /**
@@ -230,9 +277,11 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
     switch (featureID)
     {
       case Inform6Package.PROPERTY_DIRECTIVE__ADDITIVE:
-        return getAdditive();
+        return isAdditive();
       case Inform6Package.PROPERTY_DIRECTIVE__NAME:
         return getName();
+      case Inform6Package.PROPERTY_DIRECTIVE__ALIAS:
+        return isAlias();
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
         return getValue();
     }
@@ -250,10 +299,13 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
     switch (featureID)
     {
       case Inform6Package.PROPERTY_DIRECTIVE__ADDITIVE:
-        setAdditive((String)newValue);
+        setAdditive((Boolean)newValue);
         return;
       case Inform6Package.PROPERTY_DIRECTIVE__NAME:
         setName((String)newValue);
+        return;
+      case Inform6Package.PROPERTY_DIRECTIVE__ALIAS:
+        setAlias((Boolean)newValue);
         return;
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
         setValue((Primary)newValue);
@@ -278,6 +330,9 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
       case Inform6Package.PROPERTY_DIRECTIVE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case Inform6Package.PROPERTY_DIRECTIVE__ALIAS:
+        setAlias(ALIAS_EDEFAULT);
+        return;
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
         setValue((Primary)null);
         return;
@@ -296,9 +351,11 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
     switch (featureID)
     {
       case Inform6Package.PROPERTY_DIRECTIVE__ADDITIVE:
-        return ADDITIVE_EDEFAULT == null ? additive != null : !ADDITIVE_EDEFAULT.equals(additive);
+        return additive != ADDITIVE_EDEFAULT;
       case Inform6Package.PROPERTY_DIRECTIVE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case Inform6Package.PROPERTY_DIRECTIVE__ALIAS:
+        return alias != ALIAS_EDEFAULT;
       case Inform6Package.PROPERTY_DIRECTIVE__VALUE:
         return value != null;
     }
@@ -320,6 +377,8 @@ public class PropertyDirectiveImpl extends DirectiveImpl implements PropertyDire
     result.append(additive);
     result.append(", name: ");
     result.append(name);
+    result.append(", alias: ");
+    result.append(alias);
     result.append(')');
     return result.toString();
   }

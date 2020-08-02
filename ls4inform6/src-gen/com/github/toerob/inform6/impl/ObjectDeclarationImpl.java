@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ObjectDeclarationImpl extends DirectiveImpl implements ObjectDeclaration
+public class ObjectDeclarationImpl extends IdlessObjectDeclarationImpl implements ObjectDeclaration
 {
   /**
    * The default value of the '{@link #getObject() <em>Object</em>}' attribute.

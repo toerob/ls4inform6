@@ -3,6 +3,7 @@
  */
 package com.github.toerob.inform6;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,6 @@ package com.github.toerob.inform6;
  * @model
  * @generated
  */
-public interface NearbyDeclaration extends Directive
+public interface NearbyDeclaration extends EObject
 {
 } // NearbyDeclaration

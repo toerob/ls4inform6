@@ -46,19 +46,19 @@ Directive:
 	| ReplaceDirective
 	| SerialDirective
 	| SwitchesDeclaration
-	| GlobalDeclaration
-	| GlobalDefaultDeclaration
-	| GlobalConstantDeclaration
-	| GlobalFunctionDefinition
-	| AttributeDeclaration
-	| PropertyDeclaration
-	| ClassDeclaration
-	| ObjectDeclaration
-	| IdlessObjectDeclaration
-	| NearbyDeclaration
-	| VerbDeclaration
-	| ArrayDeclaration
-	| PropertyDirective
+	| globals+=GlobalDeclaration
+	| defaults+=GlobalDefaultDeclaration
+	| constants+=GlobalConstantDeclaration
+	| globalFunctions+=GlobalFunctionDefinition
+	| attributes+=AttributeDeclaration
+	//| properties+=PropertyDeclaration
+	| properties+=PropertyDirective
+	| classes+=ClassDeclaration
+	| objects+=ObjectDeclaration
+	| idlessobjects+=IdlessObjectDeclaration
+	| nearbyObjects+=NearbyDeclaration
+	| verbs+=VerbDeclaration	
+	| arrays+=ArrayDeclaration
 	| MessageDirective
 	| {Directive} AbbreviateDirective
 	| {Directive} AbortDirective
@@ -111,11 +111,6 @@ EndDirective:
 	"End" ';'
 ;
 
-//FIXME: DIRECTIONS should be able to cross reference the same way as attributes
-PropertyDirective:
-	"Property" additive='additive'? name=(ID|DIRECTIONS|'found_in') value=Primary? ';'
-;
-
 LowStringDirective:
 	"Lowstring" ID STRING ";"
 ;
@@ -145,11 +140,12 @@ AttributeDeclaration: 	{AttributeDeclaration} 'Attribute'
 ;
 
 
-PropertyDeclaration: 	'Property' 
-	(
-		name=ID additive='additive'? value=Primary 
-		| name=ID 'alias' aliasedProperty=Primary
-	)  
+//FIXME: DIRECTIONS should be able to cross reference the same way as attributes
+PropertyDirective:
+	"Property" additive?='additive'? 
+		name=(ID|DIRECTIONS|'found_in') 
+		alias?='alias'? 
+		value=Primary? 
 	';'
 ;
 

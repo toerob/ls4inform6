@@ -3,22 +3,181 @@
  */
 package com.github.toerob.inform6.impl;
 
+import com.github.toerob.inform6.ArrayDeclaration;
+import com.github.toerob.inform6.AttributeDeclaration;
+import com.github.toerob.inform6.ClassDeclaration;
 import com.github.toerob.inform6.Directive;
+import com.github.toerob.inform6.GlobalConstantDeclaration;
+import com.github.toerob.inform6.GlobalDeclaration;
+import com.github.toerob.inform6.GlobalDefaultDeclaration;
+import com.github.toerob.inform6.GlobalFunctionDefinition;
+import com.github.toerob.inform6.IdlessObjectDeclaration;
 import com.github.toerob.inform6.Inform6Package;
+import com.github.toerob.inform6.NearbyDeclaration;
+import com.github.toerob.inform6.ObjectDeclaration;
+import com.github.toerob.inform6.PropertyDirective;
+import com.github.toerob.inform6.VerbDeclaration;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Directive</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getGlobals <em>Globals</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getDefaults <em>Defaults</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getConstants <em>Constants</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getGlobalFunctions <em>Global Functions</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getObjects <em>Objects</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getIdlessobjects <em>Idlessobjects</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getNearbyObjects <em>Nearby Objects</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getVerbs <em>Verbs</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.impl.DirectiveImpl#getArrays <em>Arrays</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class DirectiveImpl extends MinimalEObjectImpl.Container implements Directive
 {
+  /**
+   * The cached value of the '{@link #getGlobals() <em>Globals</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGlobals()
+   * @generated
+   * @ordered
+   */
+  protected EList<GlobalDeclaration> globals;
+
+  /**
+   * The cached value of the '{@link #getDefaults() <em>Defaults</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDefaults()
+   * @generated
+   * @ordered
+   */
+  protected EList<GlobalDefaultDeclaration> defaults;
+
+  /**
+   * The cached value of the '{@link #getConstants() <em>Constants</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConstants()
+   * @generated
+   * @ordered
+   */
+  protected EList<GlobalConstantDeclaration> constants;
+
+  /**
+   * The cached value of the '{@link #getGlobalFunctions() <em>Global Functions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGlobalFunctions()
+   * @generated
+   * @ordered
+   */
+  protected EList<GlobalFunctionDefinition> globalFunctions;
+
+  /**
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttributes()
+   * @generated
+   * @ordered
+   */
+  protected EList<AttributeDeclaration> attributes;
+
+  /**
+   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperties()
+   * @generated
+   * @ordered
+   */
+  protected EList<PropertyDirective> properties;
+
+  /**
+   * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClasses()
+   * @generated
+   * @ordered
+   */
+  protected EList<ClassDeclaration> classes;
+
+  /**
+   * The cached value of the '{@link #getObjects() <em>Objects</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObjects()
+   * @generated
+   * @ordered
+   */
+  protected EList<ObjectDeclaration> objects;
+
+  /**
+   * The cached value of the '{@link #getIdlessobjects() <em>Idlessobjects</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdlessobjects()
+   * @generated
+   * @ordered
+   */
+  protected EList<IdlessObjectDeclaration> idlessobjects;
+
+  /**
+   * The cached value of the '{@link #getNearbyObjects() <em>Nearby Objects</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNearbyObjects()
+   * @generated
+   * @ordered
+   */
+  protected EList<NearbyDeclaration> nearbyObjects;
+
+  /**
+   * The cached value of the '{@link #getVerbs() <em>Verbs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVerbs()
+   * @generated
+   * @ordered
+   */
+  protected EList<VerbDeclaration> verbs;
+
+  /**
+   * The cached value of the '{@link #getArrays() <em>Arrays</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArrays()
+   * @generated
+   * @ordered
+   */
+  protected EList<ArrayDeclaration> arrays;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +197,413 @@ public class DirectiveImpl extends MinimalEObjectImpl.Container implements Direc
   protected EClass eStaticClass()
   {
     return Inform6Package.Literals.DIRECTIVE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<GlobalDeclaration> getGlobals()
+  {
+    if (globals == null)
+    {
+      globals = new EObjectContainmentEList<GlobalDeclaration>(GlobalDeclaration.class, this, Inform6Package.DIRECTIVE__GLOBALS);
+    }
+    return globals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<GlobalDefaultDeclaration> getDefaults()
+  {
+    if (defaults == null)
+    {
+      defaults = new EObjectContainmentEList<GlobalDefaultDeclaration>(GlobalDefaultDeclaration.class, this, Inform6Package.DIRECTIVE__DEFAULTS);
+    }
+    return defaults;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<GlobalConstantDeclaration> getConstants()
+  {
+    if (constants == null)
+    {
+      constants = new EObjectContainmentEList<GlobalConstantDeclaration>(GlobalConstantDeclaration.class, this, Inform6Package.DIRECTIVE__CONSTANTS);
+    }
+    return constants;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<GlobalFunctionDefinition> getGlobalFunctions()
+  {
+    if (globalFunctions == null)
+    {
+      globalFunctions = new EObjectContainmentEList<GlobalFunctionDefinition>(GlobalFunctionDefinition.class, this, Inform6Package.DIRECTIVE__GLOBAL_FUNCTIONS);
+    }
+    return globalFunctions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AttributeDeclaration> getAttributes()
+  {
+    if (attributes == null)
+    {
+      attributes = new EObjectContainmentEList<AttributeDeclaration>(AttributeDeclaration.class, this, Inform6Package.DIRECTIVE__ATTRIBUTES);
+    }
+    return attributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<PropertyDirective> getProperties()
+  {
+    if (properties == null)
+    {
+      properties = new EObjectContainmentEList<PropertyDirective>(PropertyDirective.class, this, Inform6Package.DIRECTIVE__PROPERTIES);
+    }
+    return properties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<ClassDeclaration> getClasses()
+  {
+    if (classes == null)
+    {
+      classes = new EObjectContainmentEList<ClassDeclaration>(ClassDeclaration.class, this, Inform6Package.DIRECTIVE__CLASSES);
+    }
+    return classes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<ObjectDeclaration> getObjects()
+  {
+    if (objects == null)
+    {
+      objects = new EObjectContainmentEList<ObjectDeclaration>(ObjectDeclaration.class, this, Inform6Package.DIRECTIVE__OBJECTS);
+    }
+    return objects;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<IdlessObjectDeclaration> getIdlessobjects()
+  {
+    if (idlessobjects == null)
+    {
+      idlessobjects = new EObjectContainmentEList<IdlessObjectDeclaration>(IdlessObjectDeclaration.class, this, Inform6Package.DIRECTIVE__IDLESSOBJECTS);
+    }
+    return idlessobjects;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<NearbyDeclaration> getNearbyObjects()
+  {
+    if (nearbyObjects == null)
+    {
+      nearbyObjects = new EObjectContainmentEList<NearbyDeclaration>(NearbyDeclaration.class, this, Inform6Package.DIRECTIVE__NEARBY_OBJECTS);
+    }
+    return nearbyObjects;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<VerbDeclaration> getVerbs()
+  {
+    if (verbs == null)
+    {
+      verbs = new EObjectContainmentEList<VerbDeclaration>(VerbDeclaration.class, this, Inform6Package.DIRECTIVE__VERBS);
+    }
+    return verbs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<ArrayDeclaration> getArrays()
+  {
+    if (arrays == null)
+    {
+      arrays = new EObjectContainmentEList<ArrayDeclaration>(ArrayDeclaration.class, this, Inform6Package.DIRECTIVE__ARRAYS);
+    }
+    return arrays;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.DIRECTIVE__GLOBALS:
+        return ((InternalEList<?>)getGlobals()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__DEFAULTS:
+        return ((InternalEList<?>)getDefaults()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__CONSTANTS:
+        return ((InternalEList<?>)getConstants()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__GLOBAL_FUNCTIONS:
+        return ((InternalEList<?>)getGlobalFunctions()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__PROPERTIES:
+        return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__CLASSES:
+        return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__OBJECTS:
+        return ((InternalEList<?>)getObjects()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__IDLESSOBJECTS:
+        return ((InternalEList<?>)getIdlessobjects()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__NEARBY_OBJECTS:
+        return ((InternalEList<?>)getNearbyObjects()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__VERBS:
+        return ((InternalEList<?>)getVerbs()).basicRemove(otherEnd, msgs);
+      case Inform6Package.DIRECTIVE__ARRAYS:
+        return ((InternalEList<?>)getArrays()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.DIRECTIVE__GLOBALS:
+        return getGlobals();
+      case Inform6Package.DIRECTIVE__DEFAULTS:
+        return getDefaults();
+      case Inform6Package.DIRECTIVE__CONSTANTS:
+        return getConstants();
+      case Inform6Package.DIRECTIVE__GLOBAL_FUNCTIONS:
+        return getGlobalFunctions();
+      case Inform6Package.DIRECTIVE__ATTRIBUTES:
+        return getAttributes();
+      case Inform6Package.DIRECTIVE__PROPERTIES:
+        return getProperties();
+      case Inform6Package.DIRECTIVE__CLASSES:
+        return getClasses();
+      case Inform6Package.DIRECTIVE__OBJECTS:
+        return getObjects();
+      case Inform6Package.DIRECTIVE__IDLESSOBJECTS:
+        return getIdlessobjects();
+      case Inform6Package.DIRECTIVE__NEARBY_OBJECTS:
+        return getNearbyObjects();
+      case Inform6Package.DIRECTIVE__VERBS:
+        return getVerbs();
+      case Inform6Package.DIRECTIVE__ARRAYS:
+        return getArrays();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.DIRECTIVE__GLOBALS:
+        getGlobals().clear();
+        getGlobals().addAll((Collection<? extends GlobalDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__DEFAULTS:
+        getDefaults().clear();
+        getDefaults().addAll((Collection<? extends GlobalDefaultDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__CONSTANTS:
+        getConstants().clear();
+        getConstants().addAll((Collection<? extends GlobalConstantDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__GLOBAL_FUNCTIONS:
+        getGlobalFunctions().clear();
+        getGlobalFunctions().addAll((Collection<? extends GlobalFunctionDefinition>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends AttributeDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__PROPERTIES:
+        getProperties().clear();
+        getProperties().addAll((Collection<? extends PropertyDirective>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__CLASSES:
+        getClasses().clear();
+        getClasses().addAll((Collection<? extends ClassDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__OBJECTS:
+        getObjects().clear();
+        getObjects().addAll((Collection<? extends ObjectDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__IDLESSOBJECTS:
+        getIdlessobjects().clear();
+        getIdlessobjects().addAll((Collection<? extends IdlessObjectDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__NEARBY_OBJECTS:
+        getNearbyObjects().clear();
+        getNearbyObjects().addAll((Collection<? extends NearbyDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__VERBS:
+        getVerbs().clear();
+        getVerbs().addAll((Collection<? extends VerbDeclaration>)newValue);
+        return;
+      case Inform6Package.DIRECTIVE__ARRAYS:
+        getArrays().clear();
+        getArrays().addAll((Collection<? extends ArrayDeclaration>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.DIRECTIVE__GLOBALS:
+        getGlobals().clear();
+        return;
+      case Inform6Package.DIRECTIVE__DEFAULTS:
+        getDefaults().clear();
+        return;
+      case Inform6Package.DIRECTIVE__CONSTANTS:
+        getConstants().clear();
+        return;
+      case Inform6Package.DIRECTIVE__GLOBAL_FUNCTIONS:
+        getGlobalFunctions().clear();
+        return;
+      case Inform6Package.DIRECTIVE__ATTRIBUTES:
+        getAttributes().clear();
+        return;
+      case Inform6Package.DIRECTIVE__PROPERTIES:
+        getProperties().clear();
+        return;
+      case Inform6Package.DIRECTIVE__CLASSES:
+        getClasses().clear();
+        return;
+      case Inform6Package.DIRECTIVE__OBJECTS:
+        getObjects().clear();
+        return;
+      case Inform6Package.DIRECTIVE__IDLESSOBJECTS:
+        getIdlessobjects().clear();
+        return;
+      case Inform6Package.DIRECTIVE__NEARBY_OBJECTS:
+        getNearbyObjects().clear();
+        return;
+      case Inform6Package.DIRECTIVE__VERBS:
+        getVerbs().clear();
+        return;
+      case Inform6Package.DIRECTIVE__ARRAYS:
+        getArrays().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case Inform6Package.DIRECTIVE__GLOBALS:
+        return globals != null && !globals.isEmpty();
+      case Inform6Package.DIRECTIVE__DEFAULTS:
+        return defaults != null && !defaults.isEmpty();
+      case Inform6Package.DIRECTIVE__CONSTANTS:
+        return constants != null && !constants.isEmpty();
+      case Inform6Package.DIRECTIVE__GLOBAL_FUNCTIONS:
+        return globalFunctions != null && !globalFunctions.isEmpty();
+      case Inform6Package.DIRECTIVE__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
+      case Inform6Package.DIRECTIVE__PROPERTIES:
+        return properties != null && !properties.isEmpty();
+      case Inform6Package.DIRECTIVE__CLASSES:
+        return classes != null && !classes.isEmpty();
+      case Inform6Package.DIRECTIVE__OBJECTS:
+        return objects != null && !objects.isEmpty();
+      case Inform6Package.DIRECTIVE__IDLESSOBJECTS:
+        return idlessobjects != null && !idlessobjects.isEmpty();
+      case Inform6Package.DIRECTIVE__NEARBY_OBJECTS:
+        return nearbyObjects != null && !nearbyObjects.isEmpty();
+      case Inform6Package.DIRECTIVE__VERBS:
+        return verbs != null && !verbs.isEmpty();
+      case Inform6Package.DIRECTIVE__ARRAYS:
+        return arrays != null && !arrays.isEmpty();
+    }
+    return super.eIsSet(featureID);
   }
 
 } //DirectiveImpl

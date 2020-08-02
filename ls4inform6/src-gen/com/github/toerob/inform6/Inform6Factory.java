@@ -87,15 +87,6 @@ public interface Inform6Factory extends EFactory
   IncludeDeclaration createIncludeDeclaration();
 
   /**
-   * Returns a new object of class '<em>Property Directive</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property Directive</em>'.
-   * @generated
-   */
-  PropertyDirective createPropertyDirective();
-
-  /**
    * Returns a new object of class '<em>Release Directive</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -177,13 +168,13 @@ public interface Inform6Factory extends EFactory
   AttributeDeclaration createAttributeDeclaration();
 
   /**
-   * Returns a new object of class '<em>Property Declaration</em>'.
+   * Returns a new object of class '<em>Property Directive</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property Declaration</em>'.
+   * @return a new object of class '<em>Property Directive</em>'.
    * @generated
    */
-  PropertyDeclaration createPropertyDeclaration();
+  PropertyDirective createPropertyDirective();
 
   /**
    * Returns a new object of class '<em>Class Declaration</em>'.

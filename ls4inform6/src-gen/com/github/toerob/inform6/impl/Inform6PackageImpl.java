@@ -32,7 +32,6 @@ import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
-import com.github.toerob.inform6.PropertyDeclaration;
 import com.github.toerob.inform6.PropertyDirective;
 import com.github.toerob.inform6.PropertySection;
 import com.github.toerob.inform6.ReleaseDirective;
@@ -113,13 +112,6 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass propertyDirectiveEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass releaseDirectiveEClass = null;
 
   /**
@@ -183,7 +175,7 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass propertyDeclarationEClass = null;
+  private EClass propertyDirectiveEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -473,6 +465,138 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
+  public EReference getDirective_Globals()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Defaults()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Constants()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_GlobalFunctions()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Attributes()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Properties()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Classes()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Objects()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Idlessobjects()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_NearbyObjects()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Verbs()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirective_Arrays()
+  {
+    return (EReference)directiveEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getMessageDirective()
   {
     return messageDirectiveEClass;
@@ -575,50 +699,6 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
   public EAttribute getIncludeDeclaration_ImportURI()
   {
     return (EAttribute)includeDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPropertyDirective()
-  {
-    return propertyDirectiveEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPropertyDirective_Additive()
-  {
-    return (EAttribute)propertyDirectiveEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPropertyDirective_Name()
-  {
-    return (EAttribute)propertyDirectiveEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPropertyDirective_Value()
-  {
-    return (EReference)propertyDirectiveEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -913,9 +993,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EClass getPropertyDeclaration()
+  public EClass getPropertyDirective()
   {
-    return propertyDeclarationEClass;
+    return propertyDirectiveEClass;
   }
 
   /**
@@ -924,9 +1004,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EAttribute getPropertyDeclaration_Name()
+  public EAttribute getPropertyDirective_Additive()
   {
-    return (EAttribute)propertyDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)propertyDirectiveEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -935,9 +1015,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EAttribute getPropertyDeclaration_Additive()
+  public EAttribute getPropertyDirective_Name()
   {
-    return (EAttribute)propertyDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)propertyDirectiveEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -946,9 +1026,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getPropertyDeclaration_Value()
+  public EAttribute getPropertyDirective_Alias()
   {
-    return (EReference)propertyDeclarationEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)propertyDirectiveEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -957,9 +1037,9 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
    * @generated
    */
   @Override
-  public EReference getPropertyDeclaration_AliasedProperty()
+  public EReference getPropertyDirective_Value()
   {
-    return (EReference)propertyDeclarationEClass.getEStructuralFeatures().get(3);
+    return (EReference)propertyDirectiveEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1889,6 +1969,18 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     createEReference(programEClass, PROGRAM__IMPORTS);
 
     directiveEClass = createEClass(DIRECTIVE);
+    createEReference(directiveEClass, DIRECTIVE__GLOBALS);
+    createEReference(directiveEClass, DIRECTIVE__DEFAULTS);
+    createEReference(directiveEClass, DIRECTIVE__CONSTANTS);
+    createEReference(directiveEClass, DIRECTIVE__GLOBAL_FUNCTIONS);
+    createEReference(directiveEClass, DIRECTIVE__ATTRIBUTES);
+    createEReference(directiveEClass, DIRECTIVE__PROPERTIES);
+    createEReference(directiveEClass, DIRECTIVE__CLASSES);
+    createEReference(directiveEClass, DIRECTIVE__OBJECTS);
+    createEReference(directiveEClass, DIRECTIVE__IDLESSOBJECTS);
+    createEReference(directiveEClass, DIRECTIVE__NEARBY_OBJECTS);
+    createEReference(directiveEClass, DIRECTIVE__VERBS);
+    createEReference(directiveEClass, DIRECTIVE__ARRAYS);
 
     messageDirectiveEClass = createEClass(MESSAGE_DIRECTIVE);
     createEAttribute(messageDirectiveEClass, MESSAGE_DIRECTIVE__NAME);
@@ -1904,11 +1996,6 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     includeDeclarationEClass = createEClass(INCLUDE_DECLARATION);
     createEAttribute(includeDeclarationEClass, INCLUDE_DECLARATION__IMPORT_URI);
-
-    propertyDirectiveEClass = createEClass(PROPERTY_DIRECTIVE);
-    createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__ADDITIVE);
-    createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__NAME);
-    createEReference(propertyDirectiveEClass, PROPERTY_DIRECTIVE__VALUE);
 
     releaseDirectiveEClass = createEClass(RELEASE_DIRECTIVE);
     createEAttribute(releaseDirectiveEClass, RELEASE_DIRECTIVE__NAME);
@@ -1945,11 +2032,11 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     createEAttribute(attributeDeclarationEClass, ATTRIBUTE_DECLARATION__NAME);
     createEAttribute(attributeDeclarationEClass, ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE);
 
-    propertyDeclarationEClass = createEClass(PROPERTY_DECLARATION);
-    createEAttribute(propertyDeclarationEClass, PROPERTY_DECLARATION__NAME);
-    createEAttribute(propertyDeclarationEClass, PROPERTY_DECLARATION__ADDITIVE);
-    createEReference(propertyDeclarationEClass, PROPERTY_DECLARATION__VALUE);
-    createEReference(propertyDeclarationEClass, PROPERTY_DECLARATION__ALIASED_PROPERTY);
+    propertyDirectiveEClass = createEClass(PROPERTY_DIRECTIVE);
+    createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__ADDITIVE);
+    createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__NAME);
+    createEAttribute(propertyDirectiveEClass, PROPERTY_DIRECTIVE__ALIAS);
+    createEReference(propertyDirectiveEClass, PROPERTY_DIRECTIVE__VALUE);
 
     classDeclarationEClass = createEClass(CLASS_DECLARATION);
     createEAttribute(classDeclarationEClass, CLASS_DECLARATION__NAME);
@@ -2091,26 +2178,13 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     zcharacterDirectiveEClass.getESuperTypes().add(this.getDirective());
     commentDeclarationEClass.getESuperTypes().add(this.getDirective());
     compilerDirectiveEClass.getESuperTypes().add(this.getCommentDeclaration());
-    propertyDirectiveEClass.getESuperTypes().add(this.getDirective());
     releaseDirectiveEClass.getESuperTypes().add(this.getDirective());
     replaceDirectiveEClass.getESuperTypes().add(this.getDirective());
     serialDirectiveEClass.getESuperTypes().add(this.getDirective());
-    globalConstantDeclarationEClass.getESuperTypes().add(this.getDirective());
-    globalDefaultDeclarationEClass.getESuperTypes().add(this.getDirective());
     switchesDeclarationEClass.getESuperTypes().add(this.getDirective());
-    globalDeclarationEClass.getESuperTypes().add(this.getDirective());
-    attributeDeclarationEClass.getESuperTypes().add(this.getDirective());
-    propertyDeclarationEClass.getESuperTypes().add(this.getDirective());
-    classDeclarationEClass.getESuperTypes().add(this.getDirective());
-    objectDeclarationEClass.getESuperTypes().add(this.getDirective());
     objectDeclarationEClass.getESuperTypes().add(this.getIdlessObjectDeclaration());
     objectDeclarationEClass.getESuperTypes().add(this.getNearbyDeclaration());
-    idlessObjectDeclarationEClass.getESuperTypes().add(this.getDirective());
-    nearbyDeclarationEClass.getESuperTypes().add(this.getDirective());
-    verbDeclarationEClass.getESuperTypes().add(this.getDirective());
-    arrayDeclarationEClass.getESuperTypes().add(this.getDirective());
     propertySectionEClass.getESuperTypes().add(this.getClassSection());
-    globalFunctionDefinitionEClass.getESuperTypes().add(this.getDirective());
     primaryEClass.getESuperTypes().add(this.getVerbAssignment());
     bytE_ARRAYEClass.getESuperTypes().add(this.getArrayType());
     worD_ARRAYEClass.getESuperTypes().add(this.getArrayType());
@@ -2123,6 +2197,18 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     initEReference(getProgram_Imports(), this.getIncludeDeclaration(), null, "imports", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(directiveEClass, Directive.class, "Directive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDirective_Globals(), this.getGlobalDeclaration(), null, "globals", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Defaults(), this.getGlobalDefaultDeclaration(), null, "defaults", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Constants(), this.getGlobalConstantDeclaration(), null, "constants", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_GlobalFunctions(), this.getGlobalFunctionDefinition(), null, "globalFunctions", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Attributes(), this.getAttributeDeclaration(), null, "attributes", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Properties(), this.getPropertyDirective(), null, "properties", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Classes(), this.getClassDeclaration(), null, "classes", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Objects(), this.getObjectDeclaration(), null, "objects", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Idlessobjects(), this.getIdlessObjectDeclaration(), null, "idlessobjects", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_NearbyObjects(), this.getNearbyDeclaration(), null, "nearbyObjects", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Verbs(), this.getVerbDeclaration(), null, "verbs", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirective_Arrays(), this.getArrayDeclaration(), null, "arrays", null, 0, -1, Directive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(messageDirectiveEClass, MessageDirective.class, "MessageDirective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMessageDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, MessageDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2138,11 +2224,6 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
 
     initEClass(includeDeclarationEClass, IncludeDeclaration.class, "IncludeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIncludeDeclaration_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, IncludeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(propertyDirectiveEClass, PropertyDirective.class, "PropertyDirective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPropertyDirective_Additive(), ecorePackage.getEString(), "additive", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPropertyDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPropertyDirective_Value(), this.getPrimary(), null, "value", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(releaseDirectiveEClass, ReleaseDirective.class, "ReleaseDirective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReleaseDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReleaseDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2179,11 +2260,11 @@ public class Inform6PackageImpl extends EPackageImpl implements Inform6Package
     initEAttribute(getAttributeDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributeDeclaration_AliasedAttribute(), ecorePackage.getEString(), "aliasedAttribute", null, 0, 1, AttributeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(propertyDeclarationEClass, PropertyDeclaration.class, "PropertyDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPropertyDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPropertyDeclaration_Additive(), ecorePackage.getEString(), "additive", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPropertyDeclaration_Value(), this.getPrimary(), null, "value", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPropertyDeclaration_AliasedProperty(), this.getPrimary(), null, "aliasedProperty", null, 0, 1, PropertyDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(propertyDirectiveEClass, PropertyDirective.class, "PropertyDirective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPropertyDirective_Additive(), ecorePackage.getEBoolean(), "additive", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPropertyDirective_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPropertyDirective_Alias(), ecorePackage.getEBoolean(), "alias", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPropertyDirective_Value(), this.getPrimary(), null, "value", null, 0, 1, PropertyDirective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classDeclarationEClass, ClassDeclaration.class, "ClassDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

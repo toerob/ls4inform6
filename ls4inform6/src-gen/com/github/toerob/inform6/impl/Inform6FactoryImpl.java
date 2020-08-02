@@ -33,7 +33,6 @@ import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
-import com.github.toerob.inform6.PropertyDeclaration;
 import com.github.toerob.inform6.PropertyDirective;
 import com.github.toerob.inform6.PropertySection;
 import com.github.toerob.inform6.ReleaseDirective;
@@ -115,7 +114,6 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
       case Inform6Package.COMMENT_DECLARATION: return createCommentDeclaration();
       case Inform6Package.COMPILER_DIRECTIVE: return createCompilerDirective();
       case Inform6Package.INCLUDE_DECLARATION: return createIncludeDeclaration();
-      case Inform6Package.PROPERTY_DIRECTIVE: return createPropertyDirective();
       case Inform6Package.RELEASE_DIRECTIVE: return createReleaseDirective();
       case Inform6Package.REPLACE_DIRECTIVE: return createReplaceDirective();
       case Inform6Package.SERIAL_DIRECTIVE: return createSerialDirective();
@@ -125,7 +123,7 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
       case Inform6Package.GLOBAL_DECLARATION: return createGlobalDeclaration();
       case Inform6Package.GLOBAL_CONSTANT_VALUE: return createGlobalConstantValue();
       case Inform6Package.ATTRIBUTE_DECLARATION: return createAttributeDeclaration();
-      case Inform6Package.PROPERTY_DECLARATION: return createPropertyDeclaration();
+      case Inform6Package.PROPERTY_DIRECTIVE: return createPropertyDirective();
       case Inform6Package.CLASS_DECLARATION: return createClassDeclaration();
       case Inform6Package.OBJECT_DECLARATION: return createObjectDeclaration();
       case Inform6Package.IDLESS_OBJECT_DECLARATION: return createIdlessObjectDeclaration();
@@ -246,18 +244,6 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
    * @generated
    */
   @Override
-  public PropertyDirective createPropertyDirective()
-  {
-    PropertyDirectiveImpl propertyDirective = new PropertyDirectiveImpl();
-    return propertyDirective;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public ReleaseDirective createReleaseDirective()
   {
     ReleaseDirectiveImpl releaseDirective = new ReleaseDirectiveImpl();
@@ -366,10 +352,10 @@ public class Inform6FactoryImpl extends EFactoryImpl implements Inform6Factory
    * @generated
    */
   @Override
-  public PropertyDeclaration createPropertyDeclaration()
+  public PropertyDirective createPropertyDirective()
   {
-    PropertyDeclarationImpl propertyDeclaration = new PropertyDeclarationImpl();
-    return propertyDeclaration;
+    PropertyDirectiveImpl propertyDirective = new PropertyDirectiveImpl();
+    return propertyDirective;
   }
 
   /**

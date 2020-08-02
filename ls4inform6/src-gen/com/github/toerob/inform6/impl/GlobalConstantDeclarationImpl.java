@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GlobalConstantDeclarationImpl extends DirectiveImpl implements GlobalConstantDeclaration
+public class GlobalConstantDeclarationImpl extends MinimalEObjectImpl.Container implements GlobalConstantDeclaration
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

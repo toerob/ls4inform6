@@ -8,6 +8,8 @@ import com.github.toerob.inform6.NearbyDeclaration;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Nearby Declaration</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NearbyDeclarationImpl extends DirectiveImpl implements NearbyDeclaration
+public class NearbyDeclarationImpl extends MinimalEObjectImpl.Container implements NearbyDeclaration
 {
   /**
    * <!-- begin-user-doc -->

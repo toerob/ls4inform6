@@ -8,6 +8,8 @@ import com.github.toerob.inform6.Inform6Package;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Idless Object Declaration</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class IdlessObjectDeclarationImpl extends DirectiveImpl implements IdlessObjectDeclaration
+public class IdlessObjectDeclarationImpl extends MinimalEObjectImpl.Container implements IdlessObjectDeclaration
 {
   /**
    * <!-- begin-user-doc -->

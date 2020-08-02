@@ -105,13 +105,121 @@ public interface Inform6Package extends EPackage
   int DIRECTIVE = 1;
 
   /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__GLOBALS = 0;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__DEFAULTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__CONSTANTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__GLOBAL_FUNCTIONS = 3;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__ATTRIBUTES = 4;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__PROPERTIES = 5;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__CLASSES = 6;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__OBJECTS = 7;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__IDLESSOBJECTS = 8;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__NEARBY_OBJECTS = 9;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__VERBS = 10;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTIVE__ARRAYS = 11;
+
+  /**
    * The number of structural features of the '<em>Directive</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECTIVE_FEATURE_COUNT = 0;
+  int DIRECTIVE_FEATURE_COUNT = 12;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.MessageDirectiveImpl <em>Message Directive</em>}' class.
@@ -122,6 +230,114 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   int MESSAGE_DIRECTIVE = 2;
+
+  /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MESSAGE_DIRECTIVE__ARRAYS = DIRECTIVE__ARRAYS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -161,6 +377,114 @@ public interface Inform6Package extends EPackage
   int ZCHARACTER_DIRECTIVE = 3;
 
   /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ZCHARACTER_DIRECTIVE__ARRAYS = DIRECTIVE__ARRAYS;
+
+  /**
    * The feature id for the '<em><b>String</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -189,6 +513,114 @@ public interface Inform6Package extends EPackage
   int COMMENT_DECLARATION = 4;
 
   /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_DECLARATION__ARRAYS = DIRECTIVE__ARRAYS;
+
+  /**
    * The number of structural features of the '<em>Comment Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -206,6 +638,114 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   int COMPILER_DIRECTIVE = 5;
+
+  /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__GLOBALS = COMMENT_DECLARATION__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__DEFAULTS = COMMENT_DECLARATION__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__CONSTANTS = COMMENT_DECLARATION__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__GLOBAL_FUNCTIONS = COMMENT_DECLARATION__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__ATTRIBUTES = COMMENT_DECLARATION__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__PROPERTIES = COMMENT_DECLARATION__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__CLASSES = COMMENT_DECLARATION__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__OBJECTS = COMMENT_DECLARATION__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__IDLESSOBJECTS = COMMENT_DECLARATION__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__NEARBY_OBJECTS = COMMENT_DECLARATION__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__VERBS = COMMENT_DECLARATION__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILER_DIRECTIVE__ARRAYS = COMMENT_DECLARATION__ARRAYS;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -254,52 +794,6 @@ public interface Inform6Package extends EPackage
   int INCLUDE_DECLARATION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl <em>Property Directive</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.PropertyDirectiveImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertyDirective()
-   * @generated
-   */
-  int PROPERTY_DIRECTIVE = 7;
-
-  /**
-   * The feature id for the '<em><b>Additive</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY_DIRECTIVE__ADDITIVE = DIRECTIVE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY_DIRECTIVE__NAME = DIRECTIVE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY_DIRECTIVE__VALUE = DIRECTIVE_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Property Directive</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY_DIRECTIVE_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 3;
-
-  /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.ReleaseDirectiveImpl <em>Release Directive</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -307,7 +801,115 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getReleaseDirective()
    * @generated
    */
-  int RELEASE_DIRECTIVE = 8;
+  int RELEASE_DIRECTIVE = 7;
+
+  /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELEASE_DIRECTIVE__ARRAYS = DIRECTIVE__ARRAYS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -344,7 +946,115 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getReplaceDirective()
    * @generated
    */
-  int REPLACE_DIRECTIVE = 9;
+  int REPLACE_DIRECTIVE = 8;
+
+  /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPLACE_DIRECTIVE__ARRAYS = DIRECTIVE__ARRAYS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -381,7 +1091,115 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getSerialDirective()
    * @generated
    */
-  int SERIAL_DIRECTIVE = 10;
+  int SERIAL_DIRECTIVE = 9;
+
+  /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERIAL_DIRECTIVE__ARRAYS = DIRECTIVE__ARRAYS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -418,7 +1236,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getGlobalConstantDeclaration()
    * @generated
    */
-  int GLOBAL_CONSTANT_DECLARATION = 11;
+  int GLOBAL_CONSTANT_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -427,7 +1245,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_CONSTANT_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int GLOBAL_CONSTANT_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -436,7 +1254,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_CONSTANT_DECLARATION__VALUE = DIRECTIVE_FEATURE_COUNT + 1;
+  int GLOBAL_CONSTANT_DECLARATION__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Global Constant Declaration</em>' class.
@@ -445,7 +1263,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_CONSTANT_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int GLOBAL_CONSTANT_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.GlobalDefaultDeclarationImpl <em>Global Default Declaration</em>}' class.
@@ -455,7 +1273,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getGlobalDefaultDeclaration()
    * @generated
    */
-  int GLOBAL_DEFAULT_DECLARATION = 12;
+  int GLOBAL_DEFAULT_DECLARATION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -464,7 +1282,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DEFAULT_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int GLOBAL_DEFAULT_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -473,7 +1291,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DEFAULT_DECLARATION__VALUE = DIRECTIVE_FEATURE_COUNT + 1;
+  int GLOBAL_DEFAULT_DECLARATION__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Global Default Declaration</em>' class.
@@ -482,7 +1300,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DEFAULT_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int GLOBAL_DEFAULT_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.SwitchesDeclarationImpl <em>Switches Declaration</em>}' class.
@@ -492,7 +1310,115 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getSwitchesDeclaration()
    * @generated
    */
-  int SWITCHES_DECLARATION = 13;
+  int SWITCHES_DECLARATION = 12;
+
+  /**
+   * The feature id for the '<em><b>Globals</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__GLOBALS = DIRECTIVE__GLOBALS;
+
+  /**
+   * The feature id for the '<em><b>Defaults</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__DEFAULTS = DIRECTIVE__DEFAULTS;
+
+  /**
+   * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__CONSTANTS = DIRECTIVE__CONSTANTS;
+
+  /**
+   * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__GLOBAL_FUNCTIONS = DIRECTIVE__GLOBAL_FUNCTIONS;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__ATTRIBUTES = DIRECTIVE__ATTRIBUTES;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__PROPERTIES = DIRECTIVE__PROPERTIES;
+
+  /**
+   * The feature id for the '<em><b>Classes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__CLASSES = DIRECTIVE__CLASSES;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__OBJECTS = DIRECTIVE__OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Idlessobjects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__IDLESSOBJECTS = DIRECTIVE__IDLESSOBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Nearby Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__NEARBY_OBJECTS = DIRECTIVE__NEARBY_OBJECTS;
+
+  /**
+   * The feature id for the '<em><b>Verbs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__VERBS = DIRECTIVE__VERBS;
+
+  /**
+   * The feature id for the '<em><b>Arrays</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SWITCHES_DECLARATION__ARRAYS = DIRECTIVE__ARRAYS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -529,7 +1455,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getGlobalDeclaration()
    * @generated
    */
-  int GLOBAL_DECLARATION = 14;
+  int GLOBAL_DECLARATION = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -538,7 +1464,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int GLOBAL_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -547,7 +1473,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION__VALUE = DIRECTIVE_FEATURE_COUNT + 1;
+  int GLOBAL_DECLARATION__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Global Declaration</em>' class.
@@ -556,7 +1482,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int GLOBAL_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.GlobalConstantValueImpl <em>Global Constant Value</em>}' class.
@@ -566,7 +1492,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getGlobalConstantValue()
    * @generated
    */
-  int GLOBAL_CONSTANT_VALUE = 15;
+  int GLOBAL_CONSTANT_VALUE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -594,7 +1520,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAttributeDeclaration()
    * @generated
    */
-  int ATTRIBUTE_DECLARATION = 16;
+  int ATTRIBUTE_DECLARATION = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -603,7 +1529,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int ATTRIBUTE_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Aliased Attribute</b></em>' attribute.
@@ -612,7 +1538,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE = DIRECTIVE_FEATURE_COUNT + 1;
+  int ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE = 1;
 
   /**
    * The number of structural features of the '<em>Attribute Declaration</em>' class.
@@ -621,26 +1547,17 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int ATTRIBUTE_DECLARATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl <em>Property Declaration</em>}' class.
+   * The meta object id for the '{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl <em>Property Directive</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.PropertyDeclarationImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertyDeclaration()
+   * @see com.github.toerob.inform6.impl.PropertyDirectiveImpl
+   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertyDirective()
    * @generated
    */
-  int PROPERTY_DECLARATION = 17;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int PROPERTY_DIRECTIVE = 16;
 
   /**
    * The feature id for the '<em><b>Additive</b></em>' attribute.
@@ -649,7 +1566,25 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_DECLARATION__ADDITIVE = DIRECTIVE_FEATURE_COUNT + 1;
+  int PROPERTY_DIRECTIVE__ADDITIVE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_DIRECTIVE__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Alias</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_DIRECTIVE__ALIAS = 2;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -658,25 +1593,16 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_DECLARATION__VALUE = DIRECTIVE_FEATURE_COUNT + 2;
+  int PROPERTY_DIRECTIVE__VALUE = 3;
 
   /**
-   * The feature id for the '<em><b>Aliased Property</b></em>' containment reference.
+   * The number of structural features of the '<em>Property Directive</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_DECLARATION__ALIASED_PROPERTY = DIRECTIVE_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Property Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROPERTY_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 4;
+  int PROPERTY_DIRECTIVE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.ClassDeclarationImpl <em>Class Declaration</em>}' class.
@@ -686,7 +1612,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getClassDeclaration()
    * @generated
    */
-  int CLASS_DECLARATION = 18;
+  int CLASS_DECLARATION = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -695,7 +1621,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int CLASS_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -704,7 +1630,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DECLARATION__CARDINALITY = DIRECTIVE_FEATURE_COUNT + 1;
+  int CLASS_DECLARATION__CARDINALITY = 1;
 
   /**
    * The feature id for the '<em><b>Max</b></em>' containment reference.
@@ -713,7 +1639,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DECLARATION__MAX = DIRECTIVE_FEATURE_COUNT + 2;
+  int CLASS_DECLARATION__MAX = 2;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -722,7 +1648,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DECLARATION__PROPERTIES = DIRECTIVE_FEATURE_COUNT + 3;
+  int CLASS_DECLARATION__PROPERTIES = 3;
 
   /**
    * The number of structural features of the '<em>Class Declaration</em>' class.
@@ -731,89 +1657,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.github.toerob.inform6.impl.ObjectDeclarationImpl <em>Object Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.github.toerob.inform6.impl.ObjectDeclarationImpl
-   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getObjectDeclaration()
-   * @generated
-   */
-  int OBJECT_DECLARATION = 19;
-
-  /**
-   * The feature id for the '<em><b>Object</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__OBJECT = DIRECTIVE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__SUPER_TYPE = DIRECTIVE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Level</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__LEVEL = DIRECTIVE_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Headline</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__HEADLINE = DIRECTIVE_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>In</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__IN = DIRECTIVE_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION__PROPERTIES = DIRECTIVE_FEATURE_COUNT + 6;
-
-  /**
-   * The number of structural features of the '<em>Object Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 7;
+  int CLASS_DECLARATION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.IdlessObjectDeclarationImpl <em>Idless Object Declaration</em>}' class.
@@ -823,7 +1667,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getIdlessObjectDeclaration()
    * @generated
    */
-  int IDLESS_OBJECT_DECLARATION = 20;
+  int IDLESS_OBJECT_DECLARATION = 19;
 
   /**
    * The number of structural features of the '<em>Idless Object Declaration</em>' class.
@@ -832,7 +1676,89 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int IDLESS_OBJECT_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 0;
+  int IDLESS_OBJECT_DECLARATION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link com.github.toerob.inform6.impl.ObjectDeclarationImpl <em>Object Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.github.toerob.inform6.impl.ObjectDeclarationImpl
+   * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getObjectDeclaration()
+   * @generated
+   */
+  int OBJECT_DECLARATION = 18;
+
+  /**
+   * The feature id for the '<em><b>Object</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__OBJECT = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__SUPER_TYPE = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Level</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__LEVEL = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__NAME = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Headline</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__HEADLINE = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>In</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__IN = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__PROPERTIES = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Object Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION_FEATURE_COUNT = IDLESS_OBJECT_DECLARATION_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.NearbyDeclarationImpl <em>Nearby Declaration</em>}' class.
@@ -842,7 +1768,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getNearbyDeclaration()
    * @generated
    */
-  int NEARBY_DECLARATION = 21;
+  int NEARBY_DECLARATION = 20;
 
   /**
    * The number of structural features of the '<em>Nearby Declaration</em>' class.
@@ -851,7 +1777,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int NEARBY_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 0;
+  int NEARBY_DECLARATION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.VerbDeclarationImpl <em>Verb Declaration</em>}' class.
@@ -861,7 +1787,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getVerbDeclaration()
    * @generated
    */
-  int VERB_DECLARATION = 22;
+  int VERB_DECLARATION = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -870,7 +1796,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int VERB_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int VERB_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Meta</b></em>' attribute.
@@ -879,7 +1805,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int VERB_DECLARATION__META = DIRECTIVE_FEATURE_COUNT + 1;
+  int VERB_DECLARATION__META = 1;
 
   /**
    * The feature id for the '<em><b>Syn</b></em>' attribute list.
@@ -888,7 +1814,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int VERB_DECLARATION__SYN = DIRECTIVE_FEATURE_COUNT + 2;
+  int VERB_DECLARATION__SYN = 2;
 
   /**
    * The feature id for the '<em><b>Defintions</b></em>' containment reference list.
@@ -897,7 +1823,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int VERB_DECLARATION__DEFINTIONS = DIRECTIVE_FEATURE_COUNT + 3;
+  int VERB_DECLARATION__DEFINTIONS = 3;
 
   /**
    * The feature id for the '<em><b>Only</b></em>' attribute.
@@ -906,7 +1832,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int VERB_DECLARATION__ONLY = DIRECTIVE_FEATURE_COUNT + 4;
+  int VERB_DECLARATION__ONLY = 4;
 
   /**
    * The number of structural features of the '<em>Verb Declaration</em>' class.
@@ -915,7 +1841,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int VERB_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 5;
+  int VERB_DECLARATION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.VerbBodyImpl <em>Verb Body</em>}' class.
@@ -925,7 +1851,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getVerbBody()
    * @generated
    */
-  int VERB_BODY = 23;
+  int VERB_BODY = 22;
 
   /**
    * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
@@ -971,7 +1897,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getVerbAssignment()
    * @generated
    */
-  int VERB_ASSIGNMENT = 24;
+  int VERB_ASSIGNMENT = 23;
 
   /**
    * The number of structural features of the '<em>Verb Assignment</em>' class.
@@ -990,7 +1916,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getArrayDeclaration()
    * @generated
    */
-  int ARRAY_DECLARATION = 25;
+  int ARRAY_DECLARATION = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -999,7 +1925,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int ARRAY_DECLARATION__NAME = DIRECTIVE_FEATURE_COUNT + 0;
+  int ARRAY_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Array Body</b></em>' containment reference.
@@ -1008,7 +1934,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int ARRAY_DECLARATION__ARRAY_BODY = DIRECTIVE_FEATURE_COUNT + 1;
+  int ARRAY_DECLARATION__ARRAY_BODY = 1;
 
   /**
    * The number of structural features of the '<em>Array Declaration</em>' class.
@@ -1017,7 +1943,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int ARRAY_DECLARATION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int ARRAY_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.ArrayTypeImpl <em>Array Type</em>}' class.
@@ -1027,7 +1953,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getArrayType()
    * @generated
    */
-  int ARRAY_TYPE = 26;
+  int ARRAY_TYPE = 25;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1064,7 +1990,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 27;
+  int EXPRESSION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1119,7 +2045,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getClassSection()
    * @generated
    */
-  int CLASS_SECTION = 28;
+  int CLASS_SECTION = 27;
 
   /**
    * The number of structural features of the '<em>Class Section</em>' class.
@@ -1138,7 +2064,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertySection()
    * @generated
    */
-  int PROPERTY_SECTION = 29;
+  int PROPERTY_SECTION = 28;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1184,7 +2110,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAttributeSection()
    * @generated
    */
-  int ATTRIBUTE_SECTION = 30;
+  int ATTRIBUTE_SECTION = 29;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1221,7 +2147,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 31;
+  int PROPERTY = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1294,7 +2220,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAbstractArray()
    * @generated
    */
-  int ABSTRACT_ARRAY = 32;
+  int ABSTRACT_ARRAY = 31;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference list.
@@ -1322,7 +2248,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAbstractProperty()
    * @generated
    */
-  int ABSTRACT_PROPERTY = 33;
+  int ABSTRACT_PROPERTY = 32;
 
   /**
    * The feature id for the '<em><b>Function Body</b></em>' attribute.
@@ -1350,7 +2276,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getGlobalFunctionDefinition()
    * @generated
    */
-  int GLOBAL_FUNCTION_DEFINITION = 34;
+  int GLOBAL_FUNCTION_DEFINITION = 33;
 
   /**
    * The feature id for the '<em><b>Function Header</b></em>' containment reference.
@@ -1359,7 +2285,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER = DIRECTIVE_FEATURE_COUNT + 0;
+  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_HEADER = 0;
 
   /**
    * The feature id for the '<em><b>Function Body</b></em>' attribute.
@@ -1368,7 +2294,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = DIRECTIVE_FEATURE_COUNT + 1;
+  int GLOBAL_FUNCTION_DEFINITION__FUNCTION_BODY = 1;
 
   /**
    * The number of structural features of the '<em>Global Function Definition</em>' class.
@@ -1377,7 +2303,7 @@ public interface Inform6Package extends EPackage
    * @generated
    * @ordered
    */
-  int GLOBAL_FUNCTION_DEFINITION_FEATURE_COUNT = DIRECTIVE_FEATURE_COUNT + 2;
+  int GLOBAL_FUNCTION_DEFINITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.github.toerob.inform6.impl.FunctionHeaderImpl <em>Function Header</em>}' class.
@@ -1387,7 +2313,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getFunctionHeader()
    * @generated
    */
-  int FUNCTION_HEADER = 35;
+  int FUNCTION_HEADER = 34;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' attribute list.
@@ -1415,7 +2341,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPrimary()
    * @generated
    */
-  int PRIMARY = 36;
+  int PRIMARY = 35;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1488,7 +2414,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getNumber()
    * @generated
    */
-  int NUMBER = 37;
+  int NUMBER = 36;
 
   /**
    * The feature id for the '<em><b>Negative</b></em>' attribute.
@@ -1525,7 +2451,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 38;
+  int ATTRIBUTE = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1553,7 +2479,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getBYTE_ARRAY()
    * @generated
    */
-  int BYTE_ARRAY = 39;
+  int BYTE_ARRAY = 38;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1599,7 +2525,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getWORD_ARRAY()
    * @generated
    */
-  int WORD_ARRAY = 40;
+  int WORD_ARRAY = 39;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1645,7 +2571,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getTABLE_ARRAY()
    * @generated
    */
-  int TABLE_ARRAY = 41;
+  int TABLE_ARRAY = 40;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1691,7 +2617,7 @@ public interface Inform6Package extends EPackage
    * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getSTRING_ARRAY()
    * @generated
    */
-  int STRING_ARRAY = 42;
+  int STRING_ARRAY = 41;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1771,6 +2697,138 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   EClass getDirective();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getGlobals <em>Globals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Globals</em>'.
+   * @see com.github.toerob.inform6.Directive#getGlobals()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Globals();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getDefaults <em>Defaults</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Defaults</em>'.
+   * @see com.github.toerob.inform6.Directive#getDefaults()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Defaults();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getConstants <em>Constants</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Constants</em>'.
+   * @see com.github.toerob.inform6.Directive#getConstants()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Constants();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getGlobalFunctions <em>Global Functions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Global Functions</em>'.
+   * @see com.github.toerob.inform6.Directive#getGlobalFunctions()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_GlobalFunctions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see com.github.toerob.inform6.Directive#getAttributes()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Attributes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see com.github.toerob.inform6.Directive#getProperties()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Properties();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getClasses <em>Classes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Classes</em>'.
+   * @see com.github.toerob.inform6.Directive#getClasses()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Classes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getObjects <em>Objects</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Objects</em>'.
+   * @see com.github.toerob.inform6.Directive#getObjects()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Objects();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getIdlessobjects <em>Idlessobjects</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Idlessobjects</em>'.
+   * @see com.github.toerob.inform6.Directive#getIdlessobjects()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Idlessobjects();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getNearbyObjects <em>Nearby Objects</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Nearby Objects</em>'.
+   * @see com.github.toerob.inform6.Directive#getNearbyObjects()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_NearbyObjects();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getVerbs <em>Verbs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Verbs</em>'.
+   * @see com.github.toerob.inform6.Directive#getVerbs()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Verbs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.github.toerob.inform6.Directive#getArrays <em>Arrays</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arrays</em>'.
+   * @see com.github.toerob.inform6.Directive#getArrays()
+   * @see #getDirective()
+   * @generated
+   */
+  EReference getDirective_Arrays();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.MessageDirective <em>Message Directive</em>}'.
@@ -1876,49 +2934,6 @@ public interface Inform6Package extends EPackage
    * @generated
    */
   EAttribute getIncludeDeclaration_ImportURI();
-
-  /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.PropertyDirective <em>Property Directive</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Property Directive</em>'.
-   * @see com.github.toerob.inform6.PropertyDirective
-   * @generated
-   */
-  EClass getPropertyDirective();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDirective#getAdditive <em>Additive</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Additive</em>'.
-   * @see com.github.toerob.inform6.PropertyDirective#getAdditive()
-   * @see #getPropertyDirective()
-   * @generated
-   */
-  EAttribute getPropertyDirective_Additive();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDirective#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.github.toerob.inform6.PropertyDirective#getName()
-   * @see #getPropertyDirective()
-   * @generated
-   */
-  EAttribute getPropertyDirective_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDirective#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.github.toerob.inform6.PropertyDirective#getValue()
-   * @see #getPropertyDirective()
-   * @generated
-   */
-  EReference getPropertyDirective_Value();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.ReleaseDirective <em>Release Directive</em>}'.
@@ -2198,58 +3213,58 @@ public interface Inform6Package extends EPackage
   EAttribute getAttributeDeclaration_AliasedAttribute();
 
   /**
-   * Returns the meta object for class '{@link com.github.toerob.inform6.PropertyDeclaration <em>Property Declaration</em>}'.
+   * Returns the meta object for class '{@link com.github.toerob.inform6.PropertyDirective <em>Property Directive</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Property Declaration</em>'.
-   * @see com.github.toerob.inform6.PropertyDeclaration
+   * @return the meta object for class '<em>Property Directive</em>'.
+   * @see com.github.toerob.inform6.PropertyDirective
    * @generated
    */
-  EClass getPropertyDeclaration();
+  EClass getPropertyDirective();
 
   /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.github.toerob.inform6.PropertyDeclaration#getName()
-   * @see #getPropertyDeclaration()
-   * @generated
-   */
-  EAttribute getPropertyDeclaration_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDeclaration#getAdditive <em>Additive</em>}'.
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDirective#isAdditive <em>Additive</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Additive</em>'.
-   * @see com.github.toerob.inform6.PropertyDeclaration#getAdditive()
-   * @see #getPropertyDeclaration()
+   * @see com.github.toerob.inform6.PropertyDirective#isAdditive()
+   * @see #getPropertyDirective()
    * @generated
    */
-  EAttribute getPropertyDeclaration_Additive();
+  EAttribute getPropertyDirective_Additive();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDeclaration#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDirective#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.github.toerob.inform6.PropertyDirective#getName()
+   * @see #getPropertyDirective()
+   * @generated
+   */
+  EAttribute getPropertyDirective_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.github.toerob.inform6.PropertyDirective#isAlias <em>Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Alias</em>'.
+   * @see com.github.toerob.inform6.PropertyDirective#isAlias()
+   * @see #getPropertyDirective()
+   * @generated
+   */
+  EAttribute getPropertyDirective_Alias();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDirective#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.github.toerob.inform6.PropertyDeclaration#getValue()
-   * @see #getPropertyDeclaration()
+   * @see com.github.toerob.inform6.PropertyDirective#getValue()
+   * @see #getPropertyDirective()
    * @generated
    */
-  EReference getPropertyDeclaration_Value();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.github.toerob.inform6.PropertyDeclaration#getAliasedProperty <em>Aliased Property</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Aliased Property</em>'.
-   * @see com.github.toerob.inform6.PropertyDeclaration#getAliasedProperty()
-   * @see #getPropertyDeclaration()
-   * @generated
-   */
-  EReference getPropertyDeclaration_AliasedProperty();
+  EReference getPropertyDirective_Value();
 
   /**
    * Returns the meta object for class '{@link com.github.toerob.inform6.ClassDeclaration <em>Class Declaration</em>}'.
@@ -3177,6 +4192,102 @@ public interface Inform6Package extends EPackage
     EClass DIRECTIVE = eINSTANCE.getDirective();
 
     /**
+     * The meta object literal for the '<em><b>Globals</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__GLOBALS = eINSTANCE.getDirective_Globals();
+
+    /**
+     * The meta object literal for the '<em><b>Defaults</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__DEFAULTS = eINSTANCE.getDirective_Defaults();
+
+    /**
+     * The meta object literal for the '<em><b>Constants</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__CONSTANTS = eINSTANCE.getDirective_Constants();
+
+    /**
+     * The meta object literal for the '<em><b>Global Functions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__GLOBAL_FUNCTIONS = eINSTANCE.getDirective_GlobalFunctions();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__ATTRIBUTES = eINSTANCE.getDirective_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__PROPERTIES = eINSTANCE.getDirective_Properties();
+
+    /**
+     * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__CLASSES = eINSTANCE.getDirective_Classes();
+
+    /**
+     * The meta object literal for the '<em><b>Objects</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__OBJECTS = eINSTANCE.getDirective_Objects();
+
+    /**
+     * The meta object literal for the '<em><b>Idlessobjects</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__IDLESSOBJECTS = eINSTANCE.getDirective_Idlessobjects();
+
+    /**
+     * The meta object literal for the '<em><b>Nearby Objects</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__NEARBY_OBJECTS = eINSTANCE.getDirective_NearbyObjects();
+
+    /**
+     * The meta object literal for the '<em><b>Verbs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__VERBS = eINSTANCE.getDirective_Verbs();
+
+    /**
+     * The meta object literal for the '<em><b>Arrays</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTIVE__ARRAYS = eINSTANCE.getDirective_Arrays();
+
+    /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.MessageDirectiveImpl <em>Message Directive</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3265,40 +4376,6 @@ public interface Inform6Package extends EPackage
      * @generated
      */
     EAttribute INCLUDE_DECLARATION__IMPORT_URI = eINSTANCE.getIncludeDeclaration_ImportURI();
-
-    /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl <em>Property Directive</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.PropertyDirectiveImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertyDirective()
-     * @generated
-     */
-    EClass PROPERTY_DIRECTIVE = eINSTANCE.getPropertyDirective();
-
-    /**
-     * The meta object literal for the '<em><b>Additive</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PROPERTY_DIRECTIVE__ADDITIVE = eINSTANCE.getPropertyDirective_Additive();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PROPERTY_DIRECTIVE__NAME = eINSTANCE.getPropertyDirective_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROPERTY_DIRECTIVE__VALUE = eINSTANCE.getPropertyDirective_Value();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.ReleaseDirectiveImpl <em>Release Directive</em>}' class.
@@ -3527,22 +4604,14 @@ public interface Inform6Package extends EPackage
     EAttribute ATTRIBUTE_DECLARATION__ALIASED_ATTRIBUTE = eINSTANCE.getAttributeDeclaration_AliasedAttribute();
 
     /**
-     * The meta object literal for the '{@link com.github.toerob.inform6.impl.PropertyDeclarationImpl <em>Property Declaration</em>}' class.
+     * The meta object literal for the '{@link com.github.toerob.inform6.impl.PropertyDirectiveImpl <em>Property Directive</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.github.toerob.inform6.impl.PropertyDeclarationImpl
-     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertyDeclaration()
+     * @see com.github.toerob.inform6.impl.PropertyDirectiveImpl
+     * @see com.github.toerob.inform6.impl.Inform6PackageImpl#getPropertyDirective()
      * @generated
      */
-    EClass PROPERTY_DECLARATION = eINSTANCE.getPropertyDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PROPERTY_DECLARATION__NAME = eINSTANCE.getPropertyDeclaration_Name();
+    EClass PROPERTY_DIRECTIVE = eINSTANCE.getPropertyDirective();
 
     /**
      * The meta object literal for the '<em><b>Additive</b></em>' attribute feature.
@@ -3550,7 +4619,23 @@ public interface Inform6Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROPERTY_DECLARATION__ADDITIVE = eINSTANCE.getPropertyDeclaration_Additive();
+    EAttribute PROPERTY_DIRECTIVE__ADDITIVE = eINSTANCE.getPropertyDirective_Additive();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY_DIRECTIVE__NAME = eINSTANCE.getPropertyDirective_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY_DIRECTIVE__ALIAS = eINSTANCE.getPropertyDirective_Alias();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -3558,15 +4643,7 @@ public interface Inform6Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROPERTY_DECLARATION__VALUE = eINSTANCE.getPropertyDeclaration_Value();
-
-    /**
-     * The meta object literal for the '<em><b>Aliased Property</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROPERTY_DECLARATION__ALIASED_PROPERTY = eINSTANCE.getPropertyDeclaration_AliasedProperty();
+    EReference PROPERTY_DIRECTIVE__VALUE = eINSTANCE.getPropertyDirective_Value();
 
     /**
      * The meta object literal for the '{@link com.github.toerob.inform6.impl.ClassDeclarationImpl <em>Class Declaration</em>}' class.

@@ -31,7 +31,7 @@ import com.github.toerob.inform6.NearbyDeclaration;
 import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.Property;
-import com.github.toerob.inform6.PropertyDeclaration;
+import com.github.toerob.inform6.PropertyDirective;
 import com.github.toerob.inform6.PropertySection;
 import com.github.toerob.inform6.ReleaseDirective;
 import com.github.toerob.inform6.ReplaceDirective;
@@ -117,7 +117,7 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 		return "Release: " + ele.getVersion();
 	}
 
-	public String text(PropertyDeclaration ele) {
+	public String text(PropertyDirective ele) {
 		return "Property: " + ele.getName().trim();
 	}
 
@@ -192,7 +192,7 @@ public class Inform6LabelProvider extends DefaultEObjectLabelProvider {
 		return "envvar_obj.png";
 	}
 
-	public String image(PropertyDeclaration ele) {
+	public String image(PropertyDirective ele) {
 		return "envvar_obj.png";
 	}
 

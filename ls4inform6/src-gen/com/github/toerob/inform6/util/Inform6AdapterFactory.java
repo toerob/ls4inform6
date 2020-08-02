@@ -32,7 +32,6 @@ import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
-import com.github.toerob.inform6.PropertyDeclaration;
 import com.github.toerob.inform6.PropertyDirective;
 import com.github.toerob.inform6.PropertySection;
 import com.github.toerob.inform6.ReleaseDirective;
@@ -153,11 +152,6 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
         return createIncludeDeclarationAdapter();
       }
       @Override
-      public Adapter casePropertyDirective(PropertyDirective object)
-      {
-        return createPropertyDirectiveAdapter();
-      }
-      @Override
       public Adapter caseReleaseDirective(ReleaseDirective object)
       {
         return createReleaseDirectiveAdapter();
@@ -203,9 +197,9 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
         return createAttributeDeclarationAdapter();
       }
       @Override
-      public Adapter casePropertyDeclaration(PropertyDeclaration object)
+      public Adapter casePropertyDirective(PropertyDirective object)
       {
-        return createPropertyDeclarationAdapter();
+        return createPropertyDirectiveAdapter();
       }
       @Override
       public Adapter caseClassDeclaration(ClassDeclaration object)
@@ -460,21 +454,6 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.PropertyDirective <em>Property Directive</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.github.toerob.inform6.PropertyDirective
-   * @generated
-   */
-  public Adapter createPropertyDirectiveAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.ReleaseDirective <em>Release Directive</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -610,16 +589,16 @@ public class Inform6AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.PropertyDeclaration <em>Property Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.github.toerob.inform6.PropertyDirective <em>Property Directive</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.github.toerob.inform6.PropertyDeclaration
+   * @see com.github.toerob.inform6.PropertyDirective
    * @generated
    */
-  public Adapter createPropertyDeclarationAdapter()
+  public Adapter createPropertyDirectiveAdapter()
   {
     return null;
   }

@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ObjectDeclaration extends Directive, IdlessObjectDeclaration, NearbyDeclaration
+public interface ObjectDeclaration extends IdlessObjectDeclaration, NearbyDeclaration
 {
   /**
    * Returns the value of the '<em><b>Object</b></em>' attribute.

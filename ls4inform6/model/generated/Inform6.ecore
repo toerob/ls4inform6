@@ -8,7 +8,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//IncludeDeclaration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Directive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Directive">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globals" upperBound="-1"
+        eType="#//GlobalDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaults" upperBound="-1"
+        eType="#//GlobalDefaultDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1"
+        eType="#//GlobalConstantDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalFunctions" upperBound="-1"
+        eType="#//GlobalFunctionDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//AttributeDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//PropertyDirective" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
+        eType="#//ClassDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" upperBound="-1"
+        eType="#//ObjectDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="idlessobjects" upperBound="-1"
+        eType="#//IdlessObjectDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nearbyObjects" upperBound="-1"
+        eType="#//NearbyDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verbs" upperBound="-1"
+        eType="#//VerbDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrays" upperBound="-1"
+        eType="#//ArrayDeclaration" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageDirective" eSuperTypes="#//Directive">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,12 +48,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="IncludeDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyDirective" eSuperTypes="#//Directive">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Primary"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReleaseDirective" eSuperTypes="#//Directive">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -41,12 +60,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GlobalConstantDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalConstantDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//GlobalConstantValue"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GlobalDefaultDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalDefaultDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//GlobalConstantValue"
         containment="true"/>
@@ -56,7 +75,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="switches" upperBound="-1"
         eType="#//Primary" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GlobalDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Primary"
         containment="true"/>
@@ -65,19 +84,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Primary"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="aliasedAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyDirective">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Primary"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aliasedProperty" eType="#//Primary"
-        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="max" eType="#//Primary"
@@ -85,7 +103,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectDeclaration" eSuperTypes="#//Directive #//IdlessObjectDeclaration #//NearbyDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectDeclaration" eSuperTypes="#//IdlessObjectDeclaration #//NearbyDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="object" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//ClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" unique="false" upperBound="-1"
@@ -96,9 +114,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IdlessObjectDeclaration" eSuperTypes="#//Directive"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NearbyDeclaration" eSuperTypes="#//Directive"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VerbDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="IdlessObjectDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NearbyDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VerbDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="meta" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="syn" unique="false" upperBound="-1"
@@ -114,7 +132,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reverse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VerbAssignment"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayDeclaration" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arrayBody" eType="#//ArrayType"
         containment="true"/>
@@ -165,7 +183,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionBody" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GlobalFunctionDefinition" eSuperTypes="#//Directive">
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalFunctionDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionHeader" eType="#//FunctionHeader"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionBody" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -3,6 +3,7 @@
  */
 package com.github.toerob.inform6;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,8 +14,9 @@ package com.github.toerob.inform6;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.github.toerob.inform6.PropertyDirective#getAdditive <em>Additive</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.PropertyDirective#isAdditive <em>Additive</em>}</li>
  *   <li>{@link com.github.toerob.inform6.PropertyDirective#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.toerob.inform6.PropertyDirective#isAlias <em>Alias</em>}</li>
  *   <li>{@link com.github.toerob.inform6.PropertyDirective#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -22,29 +24,29 @@ package com.github.toerob.inform6;
  * @model
  * @generated
  */
-public interface PropertyDirective extends Directive
+public interface PropertyDirective extends EObject
 {
   /**
    * Returns the value of the '<em><b>Additive</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Additive</em>' attribute.
-   * @see #setAdditive(String)
+   * @see #setAdditive(boolean)
    * @see com.github.toerob.inform6.Inform6Package#getPropertyDirective_Additive()
    * @model
    * @generated
    */
-  String getAdditive();
+  boolean isAdditive();
 
   /**
-   * Sets the value of the '{@link com.github.toerob.inform6.PropertyDirective#getAdditive <em>Additive</em>}' attribute.
+   * Sets the value of the '{@link com.github.toerob.inform6.PropertyDirective#isAdditive <em>Additive</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Additive</em>' attribute.
-   * @see #getAdditive()
+   * @see #isAdditive()
    * @generated
    */
-  void setAdditive(String value);
+  void setAdditive(boolean value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -67,6 +69,28 @@ public interface PropertyDirective extends Directive
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Alias</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Alias</em>' attribute.
+   * @see #setAlias(boolean)
+   * @see com.github.toerob.inform6.Inform6Package#getPropertyDirective_Alias()
+   * @model
+   * @generated
+   */
+  boolean isAlias();
+
+  /**
+   * Sets the value of the '{@link com.github.toerob.inform6.PropertyDirective#isAlias <em>Alias</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Alias</em>' attribute.
+   * @see #isAlias()
+   * @generated
+   */
+  void setAlias(boolean value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.

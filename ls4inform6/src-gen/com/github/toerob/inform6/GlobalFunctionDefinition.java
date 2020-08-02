@@ -3,6 +3,7 @@
  */
 package com.github.toerob.inform6;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package com.github.toerob.inform6;
  * @model
  * @generated
  */
-public interface GlobalFunctionDefinition extends Directive
+public interface GlobalFunctionDefinition extends EObject
 {
   /**
    * Returns the value of the '<em><b>Function Header</b></em>' containment reference.

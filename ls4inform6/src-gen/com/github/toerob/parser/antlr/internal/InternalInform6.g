@@ -188,131 +188,271 @@ ruleDirective returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getGlobalsGlobalDeclarationParserRuleCall_6_0());
+				}
+				lv_globals_6_0=ruleGlobalDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"globals",
+						lv_globals_6_0,
+						"com.github.toerob.Inform6.GlobalDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getDefaultsGlobalDefaultDeclarationParserRuleCall_7_0());
+				}
+				lv_defaults_7_0=ruleGlobalDefaultDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"defaults",
+						lv_defaults_7_0,
+						"com.github.toerob.Inform6.GlobalDefaultDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getConstantsGlobalConstantDeclarationParserRuleCall_8_0());
+				}
+				lv_constants_8_0=ruleGlobalConstantDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"constants",
+						lv_constants_8_0,
+						"com.github.toerob.Inform6.GlobalConstantDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getGlobalFunctionsGlobalFunctionDefinitionParserRuleCall_9_0());
+				}
+				lv_globalFunctions_9_0=ruleGlobalFunctionDefinition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"globalFunctions",
+						lv_globalFunctions_9_0,
+						"com.github.toerob.Inform6.GlobalFunctionDefinition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getAttributesAttributeDeclarationParserRuleCall_10_0());
+				}
+				lv_attributes_10_0=ruleAttributeDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"attributes",
+						lv_attributes_10_0,
+						"com.github.toerob.Inform6.AttributeDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getPropertiesPropertyDirectiveParserRuleCall_11_0());
+				}
+				lv_properties_11_0=rulePropertyDirective
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"properties",
+						lv_properties_11_0,
+						"com.github.toerob.Inform6.PropertyDirective");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getClassesClassDeclarationParserRuleCall_12_0());
+				}
+				lv_classes_12_0=ruleClassDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"classes",
+						lv_classes_12_0,
+						"com.github.toerob.Inform6.ClassDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getObjectsObjectDeclarationParserRuleCall_13_0());
+				}
+				lv_objects_13_0=ruleObjectDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"objects",
+						lv_objects_13_0,
+						"com.github.toerob.Inform6.ObjectDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getIdlessobjectsIdlessObjectDeclarationParserRuleCall_14_0());
+				}
+				lv_idlessobjects_14_0=ruleIdlessObjectDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"idlessobjects",
+						lv_idlessobjects_14_0,
+						"com.github.toerob.Inform6.IdlessObjectDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getNearbyObjectsNearbyDeclarationParserRuleCall_15_0());
+				}
+				lv_nearbyObjects_15_0=ruleNearbyDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"nearbyObjects",
+						lv_nearbyObjects_15_0,
+						"com.github.toerob.Inform6.NearbyDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getVerbsVerbDeclarationParserRuleCall_16_0());
+				}
+				lv_verbs_16_0=ruleVerbDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"verbs",
+						lv_verbs_16_0,
+						"com.github.toerob.Inform6.VerbDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectiveAccess().getArraysArrayDeclarationParserRuleCall_17_0());
+				}
+				lv_arrays_17_0=ruleArrayDeclaration
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectiveRule());
+					}
+					add(
+						$current,
+						"arrays",
+						lv_arrays_17_0,
+						"com.github.toerob.Inform6.ArrayDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
 		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getGlobalDeclarationParserRuleCall_6());
+			newCompositeNode(grammarAccess.getDirectiveAccess().getMessageDirectiveParserRuleCall_18());
 		}
-		this_GlobalDeclaration_6=ruleGlobalDeclaration
+		this_MessageDirective_18=ruleMessageDirective
 		{
-			$current = $this_GlobalDeclaration_6.current;
+			$current = $this_MessageDirective_18.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getGlobalDefaultDeclarationParserRuleCall_7());
-		}
-		this_GlobalDefaultDeclaration_7=ruleGlobalDefaultDeclaration
-		{
-			$current = $this_GlobalDefaultDeclaration_7.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getGlobalConstantDeclarationParserRuleCall_8());
-		}
-		this_GlobalConstantDeclaration_8=ruleGlobalConstantDeclaration
-		{
-			$current = $this_GlobalConstantDeclaration_8.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getGlobalFunctionDefinitionParserRuleCall_9());
-		}
-		this_GlobalFunctionDefinition_9=ruleGlobalFunctionDefinition
-		{
-			$current = $this_GlobalFunctionDefinition_9.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getAttributeDeclarationParserRuleCall_10());
-		}
-		this_AttributeDeclaration_10=ruleAttributeDeclaration
-		{
-			$current = $this_AttributeDeclaration_10.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getPropertyDeclarationParserRuleCall_11());
-		}
-		this_PropertyDeclaration_11=rulePropertyDeclaration
-		{
-			$current = $this_PropertyDeclaration_11.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getClassDeclarationParserRuleCall_12());
-		}
-		this_ClassDeclaration_12=ruleClassDeclaration
-		{
-			$current = $this_ClassDeclaration_12.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getObjectDeclarationParserRuleCall_13());
-		}
-		this_ObjectDeclaration_13=ruleObjectDeclaration
-		{
-			$current = $this_ObjectDeclaration_13.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getIdlessObjectDeclarationParserRuleCall_14());
-		}
-		this_IdlessObjectDeclaration_14=ruleIdlessObjectDeclaration
-		{
-			$current = $this_IdlessObjectDeclaration_14.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getNearbyDeclarationParserRuleCall_15());
-		}
-		this_NearbyDeclaration_15=ruleNearbyDeclaration
-		{
-			$current = $this_NearbyDeclaration_15.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getVerbDeclarationParserRuleCall_16());
-		}
-		this_VerbDeclaration_16=ruleVerbDeclaration
-		{
-			$current = $this_VerbDeclaration_16.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getArrayDeclarationParserRuleCall_17());
-		}
-		this_ArrayDeclaration_17=ruleArrayDeclaration
-		{
-			$current = $this_ArrayDeclaration_17.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getPropertyDirectiveParserRuleCall_18());
-		}
-		this_PropertyDirective_18=rulePropertyDirective
-		{
-			$current = $this_PropertyDirective_18.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDirectiveAccess().getMessageDirectiveParserRuleCall_19());
-		}
-		this_MessageDirective_19=ruleMessageDirective
-		{
-			$current = $this_MessageDirective_19.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getDirectiveAccess().getDirectiveAction_19_0(),
+						$current);
+				}
+			)
+			{
+				newCompositeNode(grammarAccess.getDirectiveAccess().getAbbreviateDirectiveParserRuleCall_19_1());
+			}
+			ruleAbbreviateDirective
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)
 		    |
 		(
 			(
@@ -323,9 +463,9 @@ ruleDirective returns [EObject current=null]
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getAbbreviateDirectiveParserRuleCall_20_1());
+				newCompositeNode(grammarAccess.getDirectiveAccess().getAbortDirectiveParserRuleCall_20_1());
 			}
-			ruleAbbreviateDirective
+			ruleAbortDirective
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -340,9 +480,9 @@ ruleDirective returns [EObject current=null]
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getAbortDirectiveParserRuleCall_21_1());
+				newCompositeNode(grammarAccess.getDirectiveAccess().getEndDirectiveParserRuleCall_21_1());
 			}
-			ruleAbortDirective
+			ruleEndDirective
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -357,9 +497,9 @@ ruleDirective returns [EObject current=null]
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getEndDirectiveParserRuleCall_22_1());
+				newCompositeNode(grammarAccess.getDirectiveAccess().getLowStringDirectiveParserRuleCall_22_1());
 			}
-			ruleEndDirective
+			ruleLowStringDirective
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -374,9 +514,9 @@ ruleDirective returns [EObject current=null]
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getLowStringDirectiveParserRuleCall_23_1());
+				newCompositeNode(grammarAccess.getDirectiveAccess().getPreprocessorDirectiveParserRuleCall_23_1());
 			}
-			ruleLowStringDirective
+			rulePreprocessorDirective
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -391,9 +531,9 @@ ruleDirective returns [EObject current=null]
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getPreprocessorDirectiveParserRuleCall_24_1());
+				newCompositeNode(grammarAccess.getDirectiveAccess().getFakeActionDirectiveParserRuleCall_24_1());
 			}
-			rulePreprocessorDirective
+			ruleFakeActionDirective
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -408,24 +548,7 @@ ruleDirective returns [EObject current=null]
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getFakeActionDirectiveParserRuleCall_25_1());
-			}
-			ruleFakeActionDirective
-			{
-				afterParserOrEnumRuleCall();
-			}
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getDirectiveAccess().getDirectiveAction_26_0(),
-						$current);
-				}
-			)
-			{
-				newCompositeNode(grammarAccess.getDirectiveAccess().getSystemFileDirectiveParserRuleCall_26_1());
+				newCompositeNode(grammarAccess.getDirectiveAccess().getSystemFileDirectiveParserRuleCall_25_1());
 			}
 			ruleSystemFileDirective
 			{
@@ -826,112 +949,6 @@ ruleEndDirective returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getEndDirectiveAccess().getSemicolonKeyword_1());
-		}
-	)
-;
-
-// Entry rule entryRulePropertyDirective
-entryRulePropertyDirective returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPropertyDirectiveRule()); }
-	iv_rulePropertyDirective=rulePropertyDirective
-	{ $current=$iv_rulePropertyDirective.current; }
-	EOF;
-
-// Rule PropertyDirective
-rulePropertyDirective returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Property'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getPropertyDirectiveAccess().getPropertyKeyword_0());
-		}
-		(
-			(
-				lv_additive_1_0='additive'
-				{
-					newLeafNode(lv_additive_1_0, grammarAccess.getPropertyDirectiveAccess().getAdditiveAdditiveKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
-					}
-					setWithLastConsumed($current, "additive", lv_additive_1_0, "additive");
-				}
-			)
-		)?
-		(
-			(
-				(
-					lv_name_2_1=RULE_ID
-					{
-						newLeafNode(lv_name_2_1, grammarAccess.getPropertyDirectiveAccess().getNameIDTerminalRuleCall_2_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_2_1,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-					    |
-					lv_name_2_2=RULE_DIRECTIONS
-					{
-						newLeafNode(lv_name_2_2, grammarAccess.getPropertyDirectiveAccess().getNameDIRECTIONSTerminalRuleCall_2_0_1());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_2_2,
-							"com.github.toerob.Inform6.DIRECTIONS");
-					}
-					    |
-					lv_name_2_3='found_in'
-					{
-						newLeafNode(lv_name_2_3, grammarAccess.getPropertyDirectiveAccess().getNameFound_inKeyword_2_0_2());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
-						}
-						setWithLastConsumed($current, "name", lv_name_2_3, null);
-					}
-				)
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPropertyDirectiveAccess().getValuePrimaryParserRuleCall_3_0());
-				}
-				lv_value_3_0=rulePrimary
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPropertyDirectiveRule());
-					}
-					set(
-						$current,
-						"value",
-						lv_value_3_0,
-						"com.github.toerob.Inform6.Primary");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		otherlv_4=';'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getPropertyDirectiveAccess().getSemicolonKeyword_4());
 		}
 	)
 ;
@@ -1571,15 +1588,15 @@ ruleAttributeDeclaration returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulePropertyDeclaration
-entryRulePropertyDeclaration returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPropertyDeclarationRule()); }
-	iv_rulePropertyDeclaration=rulePropertyDeclaration
-	{ $current=$iv_rulePropertyDeclaration.current; }
+// Entry rule entryRulePropertyDirective
+entryRulePropertyDirective returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPropertyDirectiveRule()); }
+	iv_rulePropertyDirective=rulePropertyDirective
+	{ $current=$iv_rulePropertyDirective.current; }
 	EOF;
 
-// Rule PropertyDeclaration
-rulePropertyDeclaration returns [EObject current=null]
+// Rule PropertyDirective
+rulePropertyDirective returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1589,110 +1606,104 @@ rulePropertyDeclaration returns [EObject current=null]
 	(
 		otherlv_0='Property'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getPropertyDeclarationAccess().getPropertyKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getPropertyDirectiveAccess().getPropertyKeyword_0());
 		}
 		(
 			(
-				(
-					(
-						lv_name_1_0=RULE_ID
-						{
-							newLeafNode(lv_name_1_0, grammarAccess.getPropertyDeclarationAccess().getNameIDTerminalRuleCall_1_0_0_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getPropertyDeclarationRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"name",
-								lv_name_1_0,
-								"org.eclipse.xtext.common.Terminals.ID");
-						}
-					)
-				)
-				(
-					(
-						lv_additive_2_0='additive'
-						{
-							newLeafNode(lv_additive_2_0, grammarAccess.getPropertyDeclarationAccess().getAdditiveAdditiveKeyword_1_0_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getPropertyDeclarationRule());
-							}
-							setWithLastConsumed($current, "additive", lv_additive_2_0, "additive");
-						}
-					)
-				)?
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getValuePrimaryParserRuleCall_1_0_2_0());
-						}
-						lv_value_3_0=rulePrimary
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPropertyDeclarationRule());
-							}
-							set(
-								$current,
-								"value",
-								lv_value_3_0,
-								"com.github.toerob.Inform6.Primary");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
+				lv_additive_1_0='additive'
+				{
+					newLeafNode(lv_additive_1_0, grammarAccess.getPropertyDirectiveAccess().getAdditiveAdditiveKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
+					}
+					setWithLastConsumed($current, "additive", lv_additive_1_0 != null, "additive");
+				}
 			)
-			    |
+		)?
+		(
 			(
 				(
-					(
-						lv_name_4_0=RULE_ID
-						{
-							newLeafNode(lv_name_4_0, grammarAccess.getPropertyDeclarationAccess().getNameIDTerminalRuleCall_1_1_0_0());
+					lv_name_2_1=RULE_ID
+					{
+						newLeafNode(lv_name_2_1, grammarAccess.getPropertyDirectiveAccess().getNameIDTerminalRuleCall_2_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getPropertyDeclarationRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"name",
-								lv_name_4_0,
-								"org.eclipse.xtext.common.Terminals.ID");
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_1,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+					    |
+					lv_name_2_2=RULE_DIRECTIONS
+					{
+						newLeafNode(lv_name_2_2, grammarAccess.getPropertyDirectiveAccess().getNameDIRECTIONSTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
 						}
-					)
-				)
-				otherlv_5='alias'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getPropertyDeclarationAccess().getAliasKeyword_1_1_1());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getAliasedPropertyPrimaryParserRuleCall_1_1_2_0());
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_2_2,
+							"com.github.toerob.Inform6.DIRECTIONS");
+					}
+					    |
+					lv_name_2_3='found_in'
+					{
+						newLeafNode(lv_name_2_3, grammarAccess.getPropertyDirectiveAccess().getNameFound_inKeyword_2_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
 						}
-						lv_aliasedProperty_6_0=rulePrimary
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getPropertyDeclarationRule());
-							}
-							set(
-								$current,
-								"aliasedProperty",
-								lv_aliasedProperty_6_0,
-								"com.github.toerob.Inform6.Primary");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						setWithLastConsumed($current, "name", lv_name_2_3, null);
+					}
 				)
 			)
 		)
-		otherlv_7=';'
+		(
+			(
+				lv_alias_3_0='alias'
+				{
+					newLeafNode(lv_alias_3_0, grammarAccess.getPropertyDirectiveAccess().getAliasAliasKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPropertyDirectiveRule());
+					}
+					setWithLastConsumed($current, "alias", lv_alias_3_0 != null, "alias");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPropertyDirectiveAccess().getValuePrimaryParserRuleCall_4_0());
+				}
+				lv_value_4_0=rulePrimary
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPropertyDirectiveRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_4_0,
+						"com.github.toerob.Inform6.Primary");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_5=';'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getPropertyDeclarationAccess().getSemicolonKeyword_2());
+			newLeafNode(otherlv_5, grammarAccess.getPropertyDirectiveAccess().getSemicolonKeyword_5());
 		}
 	)
 ;

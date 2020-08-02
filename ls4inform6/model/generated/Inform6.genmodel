@@ -10,7 +10,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Program/directives"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Program/imports"/>
     </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//Directive"/>
+    <genClasses ecoreClass="Inform6.ecore#//Directive">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/globals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/constants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/globalFunctions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/classes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/objects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/idlessobjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/nearbyObjects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/verbs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//Directive/arrays"/>
+    </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//MessageDirective">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//MessageDirective/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//MessageDirective/string"/>
@@ -24,11 +37,6 @@
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//IncludeDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//IncludeDeclaration/importURI"/>
-    </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//PropertyDirective">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/additive"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDirective/value"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ReleaseDirective">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//ReleaseDirective/name"/>
@@ -65,11 +73,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//AttributeDeclaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//AttributeDeclaration/aliasedAttribute"/>
     </genClasses>
-    <genClasses ecoreClass="Inform6.ecore#//PropertyDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDeclaration/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDeclaration/additive"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDeclaration/value"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDeclaration/aliasedProperty"/>
+    <genClasses ecoreClass="Inform6.ecore#//PropertyDirective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/additive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//PropertyDirective/alias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Inform6.ecore#//PropertyDirective/value"/>
     </genClasses>
     <genClasses ecoreClass="Inform6.ecore#//ClassDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Inform6.ecore#//ClassDeclaration/name"/>

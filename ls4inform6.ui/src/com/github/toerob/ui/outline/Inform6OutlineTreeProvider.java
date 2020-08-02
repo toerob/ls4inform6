@@ -5,12 +5,16 @@ package com.github.toerob.ui.outline;
 
 import java.lang.reflect.Method;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
 
 import com.github.toerob.inform6.AbstractArray;
+import com.github.toerob.inform6.Directive;
 import com.github.toerob.inform6.GlobalConstantValue;
 import com.github.toerob.inform6.GlobalDeclaration;
 import com.github.toerob.inform6.GlobalFunctionDefinition;
+import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.VerbDeclaration;
 
 /**
@@ -19,6 +23,26 @@ import com.github.toerob.inform6.VerbDeclaration;
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#outline
  */
 public class Inform6OutlineTreeProvider extends DefaultOutlineTreeProvider {
+
+	protected void _createChildren(DocumentRootNode outlineNode, Program program) {
+		for(Directive directive: program.getDirectives()) {
+			directive.getConstants().forEach(it->createNode(outlineNode, it));
+			directive.getDefaults().forEach(it->createNode(outlineNode, it));
+			directive.getGlobals().forEach(it->createNode(outlineNode, it));
+
+			directive.getGlobalFunctions().forEach(it->createNode(outlineNode, it));
+			directive.getClasses().forEach(it->createNode(outlineNode, it));
+			directive.getIdlessobjects().forEach(it->createNode(outlineNode, it));
+			directive.getNearbyObjects().forEach(it->createNode(outlineNode, it));
+			directive.getObjects().forEach(it->createNode(outlineNode, it));
+			directive.getVerbs().forEach(it->createNode(outlineNode, it));
+
+			directive.getArrays().forEach(it->createNode(outlineNode, it));
+			directive.getProperties().forEach(it->createNode(outlineNode, it));
+		}
+	}
+
+	
 	protected boolean _isLeaf(AbstractArray modelElement) {
 		return true;
 	}

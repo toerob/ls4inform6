@@ -32,7 +32,6 @@ import com.github.toerob.inform6.ObjectDeclaration;
 import com.github.toerob.inform6.Primary;
 import com.github.toerob.inform6.Program;
 import com.github.toerob.inform6.Property;
-import com.github.toerob.inform6.PropertyDeclaration;
 import com.github.toerob.inform6.PropertyDirective;
 import com.github.toerob.inform6.PropertySection;
 import com.github.toerob.inform6.ReleaseDirective;
@@ -169,14 +168,6 @@ public class Inform6Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Inform6Package.PROPERTY_DIRECTIVE:
-      {
-        PropertyDirective propertyDirective = (PropertyDirective)theEObject;
-        T result = casePropertyDirective(propertyDirective);
-        if (result == null) result = caseDirective(propertyDirective);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case Inform6Package.RELEASE_DIRECTIVE:
       {
         ReleaseDirective releaseDirective = (ReleaseDirective)theEObject;
@@ -205,7 +196,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         GlobalConstantDeclaration globalConstantDeclaration = (GlobalConstantDeclaration)theEObject;
         T result = caseGlobalConstantDeclaration(globalConstantDeclaration);
-        if (result == null) result = caseDirective(globalConstantDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,7 +203,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         GlobalDefaultDeclaration globalDefaultDeclaration = (GlobalDefaultDeclaration)theEObject;
         T result = caseGlobalDefaultDeclaration(globalDefaultDeclaration);
-        if (result == null) result = caseDirective(globalDefaultDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -229,7 +218,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         GlobalDeclaration globalDeclaration = (GlobalDeclaration)theEObject;
         T result = caseGlobalDeclaration(globalDeclaration);
-        if (result == null) result = caseDirective(globalDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -244,15 +232,13 @@ public class Inform6Switch<T> extends Switch<T>
       {
         AttributeDeclaration attributeDeclaration = (AttributeDeclaration)theEObject;
         T result = caseAttributeDeclaration(attributeDeclaration);
-        if (result == null) result = caseDirective(attributeDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Inform6Package.PROPERTY_DECLARATION:
+      case Inform6Package.PROPERTY_DIRECTIVE:
       {
-        PropertyDeclaration propertyDeclaration = (PropertyDeclaration)theEObject;
-        T result = casePropertyDeclaration(propertyDeclaration);
-        if (result == null) result = caseDirective(propertyDeclaration);
+        PropertyDirective propertyDirective = (PropertyDirective)theEObject;
+        T result = casePropertyDirective(propertyDirective);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -260,7 +246,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         ClassDeclaration classDeclaration = (ClassDeclaration)theEObject;
         T result = caseClassDeclaration(classDeclaration);
-        if (result == null) result = caseDirective(classDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -270,7 +255,6 @@ public class Inform6Switch<T> extends Switch<T>
         T result = caseObjectDeclaration(objectDeclaration);
         if (result == null) result = caseIdlessObjectDeclaration(objectDeclaration);
         if (result == null) result = caseNearbyDeclaration(objectDeclaration);
-        if (result == null) result = caseDirective(objectDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -278,7 +262,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         IdlessObjectDeclaration idlessObjectDeclaration = (IdlessObjectDeclaration)theEObject;
         T result = caseIdlessObjectDeclaration(idlessObjectDeclaration);
-        if (result == null) result = caseDirective(idlessObjectDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -286,7 +269,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         NearbyDeclaration nearbyDeclaration = (NearbyDeclaration)theEObject;
         T result = caseNearbyDeclaration(nearbyDeclaration);
-        if (result == null) result = caseDirective(nearbyDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -294,7 +276,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         VerbDeclaration verbDeclaration = (VerbDeclaration)theEObject;
         T result = caseVerbDeclaration(verbDeclaration);
-        if (result == null) result = caseDirective(verbDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -316,7 +297,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         ArrayDeclaration arrayDeclaration = (ArrayDeclaration)theEObject;
         T result = caseArrayDeclaration(arrayDeclaration);
-        if (result == null) result = caseDirective(arrayDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -381,7 +361,6 @@ public class Inform6Switch<T> extends Switch<T>
       {
         GlobalFunctionDefinition globalFunctionDefinition = (GlobalFunctionDefinition)theEObject;
         T result = caseGlobalFunctionDefinition(globalFunctionDefinition);
-        if (result == null) result = caseDirective(globalFunctionDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -563,22 +542,6 @@ public class Inform6Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Property Directive</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Property Directive</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePropertyDirective(PropertyDirective object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Release Directive</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -723,17 +686,17 @@ public class Inform6Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Property Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Property Directive</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Property Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Property Directive</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePropertyDeclaration(PropertyDeclaration object)
+  public T casePropertyDirective(PropertyDirective object)
   {
     return null;
   }
