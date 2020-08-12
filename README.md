@@ -16,7 +16,7 @@ As seen above, the paths can both be relative to the current file or absolute an
 
 ## Installation
 
-* Install the latest eclipse version 
+* Install the latest eclipse version (at least 2020-03)
 * Choose help/install new software
 * Add update site: https://toerob.github.io/ls4inform-update-site/
 * Select the ls4inform6 feature in the list and complete the installation
