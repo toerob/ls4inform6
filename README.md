@@ -16,10 +16,13 @@ As seen above, the paths can both be relative to the current file or absolute an
 
 ## Installation
 
-* Download the file: ls4inform6.zip from the release page.
-* Extract the contents into your eclipse installation dropins folder, e.g: "/home//eclipse-java/eclipse/dropins/"
-* Start eclipse and open an inform file (extension .h or .inf)
-* Right click in the text area and select "Open with" and choose "Inform 6 Editor"
+* Install the latest eclipse version 
+* Choose help/install new software
+* Add update site: https://toerob.github.io/ls4inform-update-site/
+* Select the ls4inform6 feature in the list and complete the installation
+* Start eclipse and create or open an inform file (use extension .h or .inf)
+* When asked if you want to open the file as a xtext editor choose yes.
+(If needs be: manually choose the editor by right click in the text area and select "Open with" and choose "Inform 6 Editor")
 
 For other editors supporting LSP (https://microsoft.github.io/language-server-protocol/implementors/tools/)
 The language server jar can executed from any client extension. 
