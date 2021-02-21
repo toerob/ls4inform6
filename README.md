@@ -7,12 +7,9 @@ Features:
   * Clickable Cross-references between files (for class and object declarations).
   * Outline in all editors supporting the Language Server Protocol
 
-NOTE: Library folders (or any unexplicit include directive) will need to be referenced via comments with compiler directive *include_path* or *language* at the top of the source file, the same way done in inform source files, e.g:
 
-!% +include_path=../../lib/,/usr/local/share/inform/lib/
 
-As seen above, the paths can both be relative to the current file or absolute and separated by commas. (No spacing allowed though)
-
+<img src="./screenshots/screenshot1.png">
 
 ## Installation
 
@@ -30,6 +27,19 @@ The language server jar can executed from any client extension.
 At the present stage I provide only one extension available for _visual studio code_ at:
 https://github.com/toerob/inf6langtools
 
+
+## Usage
+
+Library folders (or any unexplicit include directive) will need to be referenced via comments with compiler directive *include_path* or *language* at the top of the source file, the same way done in inform source files, e.g:
+
+!% +include_path=../../lib/,/usr/local/share/inform/lib/
+
+As seen above, the paths can both be relative to the current file or absolute and separated by commas. (No spacing allowed though)
+
+## Requirements
+
+* Java 10 or higher
+* Eclipse 2020-03 or later
 
 ## Disclaimer
 
