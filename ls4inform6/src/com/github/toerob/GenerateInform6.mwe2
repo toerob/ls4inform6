@@ -33,6 +33,11 @@ Workflow {
 		language = StandardLanguage {
 			name = "com.github.toerob.Inform6"
 			fileExtensions = "inf,h"
+			parserGenerator = {
+				options = {
+					ignoreCase = true
+				}
+			}
 
 			serializer = {
 				generateStub = false

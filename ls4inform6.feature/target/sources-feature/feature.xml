@@ -1,1 +1,7 @@
-<feature id="ls4inform6.feature.source" version="0.5.0.qualifier"><includes id="ls4inform6.feature" version="0.5.0.qualifier"/></feature>
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="ls4inform6.feature.source" version="0.5.0.202008090901" label="Inform6 Feature  Developer Resources">
+  <includes id="ls4inform6.feature" version="0.5.0.202008090901"/>
+  <plugin id="ls4inform6.source" version="0.5.0.202008090901" download-size="0" install-size="0" unpack="false"/>
+  <plugin id="ls4inform6.ide.source" version="0.5.0.202008090901" download-size="0" install-size="0" unpack="false"/>
+  <plugin id="ls4inform6.ui.source" version="0.5.0.202008090901" download-size="0" install-size="0" unpack="false"/>
+</feature>

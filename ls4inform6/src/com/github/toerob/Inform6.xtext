@@ -155,7 +155,7 @@ PropertyDeclaration: 	'Property'
 
 ClassDeclaration:
 	{ClassDeclaration} 
-		('Class'|'class') name=ID 
+		('Class') name=ID 
 			(cardinality='(' max=Primary ')')?
 				(properties+=(ClassSection|PropertySection|AttributeSection))? 
 				(','? properties+=(ClassSection|PropertySection|AttributeSection))*
@@ -319,7 +319,6 @@ FuzzyExpression:
 	|'table'
 	|'has'
 	|'hasnt'
-	|'Class'
 	|'class'
 	|'Object'
 	|'last'
@@ -328,6 +327,7 @@ FuzzyExpression:
 	|'additive'
 	|'alias'
 	|'found_in'
+	|'default'
 	|'remove'|'move'|'to'
 	|'give'
 	|'in'|'notin'

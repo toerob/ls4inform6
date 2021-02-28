@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="ls4inform6.feature"
+	label="Inform6 Feature "
+	version="0.5.0.202008090901">
+	<plugin
+			id="ls4inform6"
+			download-size="399"
+			install-size="1086"
+			version="0.5.0.202008090901"
+			unpack="false"/>
+	<plugin
+			id="ls4inform6.ide"
+			download-size="182"
+			install-size="761"
+			version="0.5.0.202008090901"
+			unpack="false"/>
+	<plugin
+			id="ls4inform6.ui"
+			download-size="34"
+			install-size="93"
+			version="0.5.0.202008090901"
+			unpack="false"/>
+</feature>

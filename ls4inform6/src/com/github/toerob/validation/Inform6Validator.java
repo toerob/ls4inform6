@@ -3,23 +3,40 @@
  */
 package com.github.toerob.validation;
 
+import java.util.regex.Pattern;
+
+import org.eclipse.xtext.validation.Check;
+
+import com.github.toerob.inform6.AttributeSection;
+import com.github.toerob.inform6.Inform6Package;
+import com.github.toerob.inform6.PropertySection;
 
 /**
- * This class contains custom validation rules. 
+ * This class contains custom validation rules.
  *
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
+ * See
+ * https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class Inform6Validator extends AbstractInform6Validator {
-	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					Inform6Package.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
-	
+
+	public static final String INVALID_PROPERTY_HEADER_CASING = "INVALID_PROPERTY_HEADER_CASING";
+	private static Pattern pattern = Pattern.compile("[a-z]*");
+	public static String CASE_ERROR = "case";
+
+	@Check
+	public void checkWithIslowerCase(PropertySection propertySection) {
+		if (!pattern.matcher(propertySection.getName()).matches()) {
+			error("Attribute section header must be lowercase", Inform6Package.eINSTANCE.eContainingFeature(),
+					INVALID_PROPERTY_HEADER_CASING, propertySection.getName());
+		}
+	}
+
+	@Check
+	public void checkHasIslowerCase(AttributeSection attributeSection) {
+		if (!pattern.matcher(attributeSection.getName()).matches()) {
+			error("Attribute section header must be lowercase", Inform6Package.eINSTANCE.eContainingFeature(),
+					INVALID_PROPERTY_HEADER_CASING, attributeSection.getName());
+		}
+	}
+
 }

@@ -12,4 +12,5 @@ Require-Bundle: ls4inform6,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: com.github.toerob.ide.contentassist.antlr,
- com.github.toerob.ide.contentassist.antlr.internal
+ com.github.toerob.ide.contentassist.antlr.internal,
+ com.github.toerob.ide.contentassist.antlr.lexer

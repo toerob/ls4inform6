@@ -17,20 +17,43 @@ import org.junit.jupiter.api.^extension.ExtendWith
 class Inform6ParsingTest {
 	@Inject
 	ParseHelper<Program> parseHelper
-	
-	@Test
-	def void loadModel() {
-		val result = parseHelper.parse('''
-     		Object testObject "testObject"
-     			with 
-     				property1 "string",
-     				property2 123,
-     				property3 'string array element 2' 'string array element 2'
-     			has light openable;
 
+	@Test
+	def void singleHappyObjectIsParsed() {
+		val result = parseHelper.parse('''
+			Object testObject "testObject"
+				with 
+					property1 "string",
+					property2 123,
+					property3 'string array element 2' 'string array element 2'
+				has light openable;
+			
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertEquals(1, result.directives.size());
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+
+	@Test
+	def void ignoreCasingAtDeclarationLevelObjectsAreParsed() {
+		val result = parseHelper.parse('''
+			OBJECT testObject "testObject"
+				with 
+					property1 "string",
+					property2 123,
+					property3 'string array element 2' 'string array element 2'
+				has light openable;
+				
+			claSS testClass
+			;
+			
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		Assertions.assertEquals(2, result.directives.size());
+
 	}
+
 }

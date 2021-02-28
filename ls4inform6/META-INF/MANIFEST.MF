@@ -25,5 +25,6 @@ Export-Package: com.github.toerob,
  com.github.toerob.serializer,
  com.github.toerob.scoping,
  com.github.toerob.inform6.impl,
- com.github.toerob.services
+ com.github.toerob.services,
+ com.github.toerob.parser.antlr.lexer
 Import-Package: org.apache.log4j
